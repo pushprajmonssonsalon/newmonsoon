@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
-import "./App.css";
 import { Toaster } from "react-hot-toast";
 
 import ReactGA from "react-ga";
