@@ -1,0 +1,198 @@
+.maincontainer{
+    /* background-color: red; */
+    
+
+}.aboutus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+.salonImg{
+    width:1100px;
+    height: 640px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.imagecontainer{
+    text-align: center;
+}
+.imagecontainer img{
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    /* margin-top: 100px; */
+    /* width: 100%; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+.franchiseavailable{
+    background-color:#626A70;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.grabtheBest{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .imgStyle{
+    height:400px;
+    width:'100%';
+}
+.ourservice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.servicesection{
+    border-width: 2px;
+    border-color: rebeccapurple;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+} */
+.oursalon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    margin-top:15px;
+    align-self: center;
+
+    /* width: ; */
+}
+.namebrandcontainer{
+    /* padding: 50px; */
+  width: 80%;
+  margin: auto;
+}
+  
+  
+  .background-image {
+    /* object-fit: cover; */
+    width: 100%;
+    height:100%,
+    
+    /* top:'20px' */
+  }
+  
+  .text-overlay {
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: fit-content;
+    margin: auto;
+  }
+/* 
+  font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    max-width: 700px;
+    color: #323232; */
+  .salondiscriptionText{
+    /* margin: 10px auto 15px; */
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+     max-width: 900px;
+    color: #323232;
+    /* background-color: rebeccapurple; */
+    text-align: left;
+    font-family: "poppins";
+    line-height: 1.5;
+  }
+.salonlogocontainer{
+    display: flex;
+    margin-left: 210px;
+}
+
+.namebrandstext{
+font-weight: 300px;
+padding: 20px;
+font-size: 17px;
+color: #323232;
+}
+.aboutroundimg{
+    width: 370px;
+}
+/* style={{backgroundColor:'red',fontWeight:'300px',padding:'20px'}} */
+@media screen and (max-width:600px) {
+
+    .aboutroundimg{
+        width: 300px;
+        height: 320px;
+    }
+    .salondiscriptionText{
+        font-size: 15px;
+        /* line-height: 30px; */
+        font-weight: 400;
+        /* max-width: 300px; */
+        color: #323232;
+        /* text-align: center; */
+      
+        font-family: "poppins";
+      }
+      .text-overlay {
+        font-size: 33px;
+        color: white;
+        text-align: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: -moz-fit-content;
+        height: fit-content;
+        margin: auto;
+        font-family: "poppins";
+    }
+    .namebrandcontainer {
+        /* padding: 50px; */
+        width: 84%;
+        margin: auto;
+    }
+    .salonImg{
+        /* width:1100px; */
+        height: 800px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+    .imagecontainer img{
+   height: 260px;
+    
+    }
+    
+}
+
+
+/* style={{display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:''}} */
+
+  /* style={{ display: 'flex', backgroundColor: '', marginLeft:'230px'}} */
+
+
+  /* margin: 10px auto 15px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  max-width: 300px;
+  color: #323232;
+  text-align: center; */

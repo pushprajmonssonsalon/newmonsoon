@@ -1,0 +1,41 @@
+
+   .discriptionText{
+    font-size: 16px;
+    color:#323232;
+    padding: 15px;
+   }
+   .youtubeVideo{
+    margin-top: 10px;
+    height: 500px;
+   }
+
+
+   /* .responsive-image{
+    margin-top: 40px;
+   } */
+   @media screen and(max-width:600px) {
+    .franchisepoints{
+        width: 300px;
+       }
+       .youtubeVideo{
+        /* margin-top: 80px; */
+        height: 300px;
+       }
+   }
+   .emailText a {
+    text-decoration: none;
+
+   }
+
+@media (max-width: 768px) {
+    .appointmentimg {
+      width: 350px;
+    }
+    .responsive-image{
+      margin-top: 2px;
+     }
+     .video-container{
+      margin-top: 15px;
+     }
+   
+  }

@@ -1,0 +1,9 @@
+.paperContainer {
+    transition: transform 0.3s ease;
+  }
+  
+  .paperContainer:hover {
+    transform: scale(1.1); /* Increase scale on hover */
+    /* background-color: aliceblue; */
+    /* transition: cubic-bezier(0.075, 0.82, 0.165, 1); */
+  }

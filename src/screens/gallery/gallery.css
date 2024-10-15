@@ -1,0 +1,113 @@
+.carousel .carousel-slider .control-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .carousel .carousel-slider .control-dots .dot {
+    margin: 0 5px;
+  }
+  
+  .instagram-media{
+    min-width: 220px !important;
+    width: 280px !important;
+    
+
+  }
+  .instagram-media-registered{
+    width: 280px!important;
+  
+  }
+   .insta{
+    display: none!important;
+   }
+  
+  .carousel .carousel-slider .control-dots .dot.selected,
+  .carousel .carousel-slider .control-dots .dot:hover {
+    background: #007bff; /* Change to your desired dot color */
+  }
+  .gallerymap{
+    /* style={{width:'980px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',backgroundColor:'',gap:5}} */
+    width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  @media screen and (max-width: 480px){
+    .gallerymap{
+      /* style={{width:'980px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',backgroundColor:'',gap:5}} */
+      width: 980px;
+      /* justify-content: space-between; */
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+    }
+    
+ 
+
+    
+    
+  }
+  @media screen and (max-width: 768px){
+    .gallerymap{
+      /* style={{width:'980px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',backgroundColor:'',gap:5}} */
+      width: 980px;
+      /* justify-content: space-between; */
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+    }
+   
+    
+    
+  }
+  /* .gallerymap {
+    width: 736px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 5px;
+  } */
+  @media screen and (max-width: 1086px){
+    .gallerymap{
+      /* style={{width:'980px',display:'flex',justifyContent:'space-between',flexWrap:'wrap',backgroundColor:'',gap:5}} */
+      width: 736px;
+      /* justify-content: space-between; */
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+    }
+    
+    
+  }
+  .galleymapslider{
+    margin-top: 20px;
+  }
+
+  /* @media screen and (min-width: 480px){
+
+    .instagram-media{
+      min-width: 300px !important;
+  
+    }
+  } */
+  
+  @media screen and (min-width: 1024px){
+
+    .instagram-media{
+      min-width: 220px !important;
+      width: 350px !important;
+      
+  
+    }
+    .instagram-media-registered{
+      width: 350px!important;
+    
+    }
+  }
+  

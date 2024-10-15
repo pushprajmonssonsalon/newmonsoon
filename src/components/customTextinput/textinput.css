@@ -1,0 +1,48 @@
+.salonimage{
+    height: 679px;
+    width: 453px;
+}
+.errorstyle{
+    color: red;
+    font-size: 15px;
+    
+}
+.textinputstyle{
+    /* padding: 0px 14px;
+    background-color: white;
+    border-width: 1px; */
+    /* padding-top: 10px;
+    border: 1px solid gray;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 320px; */
+
+    /* background-color: rebeccapurple; */
+    /* color: gray; */
+
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #808080;
+    outline: none;
+    border-radius: 6px;
+
+}.textinputstyle:focus {
+    border: 2px solid #066AAB;
+    border-radius: 6px;
+  }
+.callbackStyle{
+ font-size: 30px;
+ color: black;
+ font-family: sans-serif;
+}
+.form-control{
+    box-sizing: border-box;
+    /* height: 39px; */
+    padding:15px;
+    width: 300px;
+    border: 1px solid #E6E6E6;
+    border-radius:2px;
+}
