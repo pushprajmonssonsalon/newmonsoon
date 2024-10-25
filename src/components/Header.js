@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <>
     <Helmet>
-    <link rel="preload" as="image" href={LOCAL_IMAGES.IMAGE1} />
+    <link rel="preload" as="image" href={LOCAL_IMAGES.monsoonsalon22} />
 
     </Helmet>
     <div className="flex px-3 md:px-10 flex-col lg:flex-row  lg:gap-10 font-Cormorant justify-between items-center w-full mt-4 lg:mt-20 mb-5 lg:mb-10 roboto-regular ">
@@ -18,7 +18,7 @@ const Header = () => {
           <div className="w-full px-0 ">
             <div className="w-full relative  h-[350px]  sm:h-[500px] ">
               <img
-                src={LOCAL_IMAGES.IMAGE1}
+                src={LOCAL_IMAGES.monsoonsalon22}
                 className="w-full relative z-0 h-full "
                 alt="about us img"
                 loading="lazy"

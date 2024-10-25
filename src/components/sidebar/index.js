@@ -37,10 +37,10 @@ export default function Sidebar() {
         {[
           { text: 'Home', icon: <FaHome className='text-white' />, link: '/' },
           { text: 'Franchise', icon: <MdCardMembership className='text-white' />, link: '/franchise-enquiry' },
-          { text: 'Eshop', icon: <FaShoppingBag className='text-white' />, link: 'https://prosaloncart.com' },
           { text: 'Gallery', icon: <FaRegImages   className='text-white' />, link: '/gallery' },
           { text: 'Media', icon: <FaRegImages   className='text-white' />, link: '/media' },
           { text: 'About us', icon: <MailIcon className='text-white' />, link: '/about-us' },
+          { text: 'Eshop', icon: <FaShoppingBag className='text-white' />, link: 'https://prosaloncart.com' },
         
         ].map((item) => (
           <ListItem key={item.text} disablePadding>

@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./header.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { RiArrowDropDownLine } from "react-icons/ri";
-import { FaPhone } from "react-icons/fa";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LOCAL_IMAGES from "../utils/localImages";
 import useWindowDimensions from "../../hooks/WindowDimension";
@@ -63,6 +61,7 @@ const Header = () => {
             <img
               src={LOCAL_IMAGES.APP_LOGO}
               alt="Applogo"
+              loading="lazy"
               style={{ height: "100%", width: "100%", marginTop: "1px" }}
             />
           </div>
@@ -193,6 +192,7 @@ const Header = () => {
           <img
             src="https://icon-library.com/images/white-menu-icon/white-menu-icon-0.jpg"
             alt="hamburger"
+            loading="lazy"
           />
         </div>
       </div>

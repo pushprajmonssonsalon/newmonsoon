@@ -35,7 +35,8 @@ const NewGallery = () => {
   return (
     <>
       <Helmet>
-        
+      <link rel="preload" as="image" href={LOCAL_IMAGES.gallery2} />
+
       </Helmet>
       <div className=" max-w-full overflow-x-hidden">
         <div className="mb-10">

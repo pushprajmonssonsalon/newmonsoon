@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import NewFooter from "../footer";
 import LOCAL_IMAGES from "../utils/localImages";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -115,6 +114,7 @@ const SingleLocation = () => {
                 : LOCAL_IMAGES.IMAGE1
             }
             className="w-full rounded-md md:w-1/2 aspect-[16/9] object-cover"
+            loading="lazy"
             alt="Salon Detail"
           />
         </div>
@@ -205,7 +205,6 @@ const SingleLocation = () => {
           </div>
         </div>
 
-        <NewFooter />
       </div>
     </>
   );

@@ -32,6 +32,12 @@ export default function Home() {
       <div className="roboto-regular ">
         <Helmet>
           <title>Monsoon Salon </title>
+          {brandsImg.map((elm) => (
+            <link rel="preload" as="image" href={elm.brandUrl} />
+          ))}
+          {OurServicesData.map((elm) => (
+            <link rel="preload" as="image" href={elm.serviceIcon} />
+          ))}
           <meta
             name="description"
             content="In our initial phase, Monsoon will be the market leader with smart placement across top 100 cities. We want to have over 100 salons within the next two years, ...

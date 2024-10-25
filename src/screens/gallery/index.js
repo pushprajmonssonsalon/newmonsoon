@@ -46,36 +46,35 @@ export default function Gallery() {
 
   return (
     <>
-
-<Helmet>
+      <Helmet>
+        {galleryImagesData?.map((elm) => (
+          <link rel="preload" as="image" href={elm.galleryimg} />
+        ))}
+        <link rel="preload" as="image" href={LOCAL_IMAGES.gallery} />
 
       </Helmet>
-   
-    <div className="">
-      <div className="mb-10">
-        <Banner image={LOCAL_IMAGES.gallery} />
-      </div>
-      <div className=" w-[95%] my-16 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-        {galleryImagesData.map((elm, index) => (
-          <div className="grid gap-4" key={index}>
-         {elm.images.map((item,idx)=>(
-          <div key={idx}>
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src={item.galleryimg}
-                alt=""
-              />
+
+      <div className="">
+        <div className="mb-10">
+          <Banner image={LOCAL_IMAGES.gallery} />
+        </div>
+        <div className=" w-[95%] my-16 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+          {galleryImagesData.map((elm, index) => (
+            <div className="grid gap-4" key={index}>
+              {elm.images.map((item, idx) => (
+                <div key={idx}>
+                  <img
+                    className="h-auto max-w-full rounded-lg"
+                    src={item.galleryimg}
+                    alt=""
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
-         )) }
-          
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-
-      
-
-   
-    </div>
     </>
   );
 }

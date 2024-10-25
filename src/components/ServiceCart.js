@@ -7,6 +7,7 @@ const ServiceCart = ({ img, name, desc, index }) => {
             src={img}
             alt="profile"
             className="w-16 h-16 sm:w-18 sm:h-18 bg-white rounded-full mb-3"
+            loading="lazy"
           />
           <div>
           <h1 className="text-2xl text-regel-gray font-bold roboto-medium-italic">

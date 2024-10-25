@@ -1,15 +1,20 @@
+import { Helmet } from "react-helmet";
 import LOCAL_IMAGES from "../../screens/utils/localImages";
 import "./LatestWork.css";
 const LatestWork = () => {
   return (
     <>
+    <Helmet>
+    <link rel="preload" as="image" href={LOCAL_IMAGES.monsoonsalon23} />
+
+    </Helmet>
       <div className="font-Cormorant px-3 md:px-10">
         <h2 className="text-[3.5vmax]  text-center ">
           Our Latest Work
         </h2>
         <div className="flex flex-col lg:flex-row  my-9">
           <div className="w-full h-[35vh] md:h-[50vh] lg:h-[55vh]   lg:w-1/2">
-            <img className="h-full w-full" src={LOCAL_IMAGES.monsoonsalon23} />
+            <img className="h-full w-full" src={LOCAL_IMAGES.monsoonsalon23} alt="work" loading="lazy"/>
           </div>
 
           <div className="w-full  lg:h-[55vh] lg:w-1/2 relative flex items-center text-white justify-center p-9 lg:px-16 bg-[#c1816c]/50">

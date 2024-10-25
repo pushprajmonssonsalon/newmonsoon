@@ -54,11 +54,12 @@ const Navbar = () => {
   const navLinks = [
     { label: "Home", to: "/", type: "internal" },
     { label: "Franchise", to: "/franchise-enquiry", type: "internal" },
-    { label: "Eshop", to: "https://prosaloncart.com", type: "external" },
+    
     { label: "Gallery", to: "/gallery", type: "internal" },
     { label: "Media", to: "/media", type: "internal" },
     { label: "About us", to: "/about-us", type: "internal" },
     { label: "Locations", to: "/salon-location-near-me", type: "internal" },
+    { label: "Eshop", to: "https://prosaloncart.com", type: "external" },
   ];
   return (
     <>
@@ -70,7 +71,7 @@ const Navbar = () => {
           <div
             className={` ${
               isScrolled ? " z-[20] " : ""
-            }  w-full bg-primary  h-auto absolute -top-[104px] z-[10] shadow-md    roboto-medium-italic    flex gap-[15%] items-center px-6 py-5  transition-all ease-in-out duration-500`}
+            }  w-full bg-primary  h-auto absolute -top-[105px] z-[10]   roboto-medium-italic    flex gap-[15%] items-center px-6 py-5  transition-all ease-in-out duration-500`}
           >
             <div>
               <Link to="/">
@@ -78,6 +79,7 @@ const Navbar = () => {
                   src={LOCAL_IMAGES.monsoonlogo}
                   className="w-[200px] h-16"
                   alt="logo"
+                  loading="lazy"
                 />
               </Link>
             </div>

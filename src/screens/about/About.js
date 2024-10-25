@@ -55,6 +55,12 @@ const About = () => {
         <title>
           Salon Franchise in India, Fastest Growing Salon Chain India
         </title>
+        {brandsImg.map((elm) => (
+            <link rel="preload" as="image" href={elm.brandUrl} />
+          ))}
+          <link rel="preload" as="image" href={LOCAL_IMAGES.aboutuspage} />
+          <link rel="preload" as="image" href={LOCAL_IMAGES.about} />
+
         <meta
           name="description"
           content="The Monsoon Salon is a young brand for the refined consumer that is after International experience with exceptional talent that is on a continuous journey."
@@ -74,6 +80,7 @@ const About = () => {
             src={LOCAL_IMAGES.about}
             alt="aboutus"
             className="aboutroundimg"
+            loading="lazy"
           />
 
           <div className="mx-6 lg:ml-[50px] lg:mb-[80px] ">
@@ -141,19 +148,22 @@ const About = () => {
         <h2 className="text-[2rem] md:text-[3rem] w-fit my-6 font-medium font-poppins mx-auto ">
           Partner Brands
         </h2>
+        <div className="">
         <Slider {...settings}>
           {brandsImg.map((item, index) => {
             return (
-              <div key={index} className="h-[50px] w-[50px] bg-green-600">
+              <div key={index} className="">
                 <img
                   src={item.brandUrl}
                   className="h-[60%] w-[50%]"
                   alt="galleryimages"
+                  loading="lazy"
                 />
               </div>
             );
           })}
         </Slider>
+        </div>
       </div>
     </>
   );

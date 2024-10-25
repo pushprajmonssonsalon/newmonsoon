@@ -1,10 +1,8 @@
 import axios from "axios";
 
 export const BASE_URL = "https://monsoonsalon.com/api/";
-// export const BASE_URL = "http://192.168.2.19:4010/api/";
 export const BASE_URL2 = "https://crm.smartsalon.in/";
 
-// const BASE_URL = "http://192.168.2.25:4000/api";
 
 const postApiData = (endpoint, apidata, success, failur) => {
   const instance = axios.create({

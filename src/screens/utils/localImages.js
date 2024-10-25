@@ -1,5 +1,5 @@
 const LOCAL_IMAGES={
-    IMAGE1:require('../../assets/images/image2.jpg'),
+    IMAGE1:require('../../assets/images/image2.webp'),
    
     monsoonlogo:require('../../assets/images/monsoonlogo.png'),
     skincoIcon:require('../../assets/images/Skinco.png'),
@@ -12,8 +12,8 @@ const LOCAL_IMAGES={
 
 
     aboutUs:require('../../assets/images/aboutus.jpg'),
-    gallery:require('../../assets/images/gallery.jpg'),
-    gallery2:require('../../assets/images/gallery2.jpg'),
+    gallery:require('../../assets/images/gallery.webp'),
+    gallery2:require('../../assets/images/gallery2.webp'),
     aboutuspage:require('../../assets/images/about_us_banner.png'),
     about:require('../../assets/images/about.png'),
     hairIcon:require('../../assets/images/hair_icon.png'),
