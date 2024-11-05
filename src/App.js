@@ -68,7 +68,7 @@ export default function App() {
         {window.location.pathname !== "/customSalon" && <Navbar />}
         <ScrollToTop />
         <Suspense fallback={<OverLayloader/>}>
-        <div className="xl:mt-[104px]">
+        <div className="">
         
           <Routes>
             <Route path="/" element={<Home />} />

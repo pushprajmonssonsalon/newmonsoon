@@ -31,7 +31,19 @@ export default function Home() {
     <>
       <div className="roboto-regular ">
         <Helmet>
-          <title>Monsoon Salon </title>
+          <title>
+            India's Leading Salon Franchise Chain - Monsoon Salon | Monsoon
+            Salon Franchise
+          </title>
+          <meta
+            name="description"
+            content="Monsoon Salon is a top salon franchise in India, renowned for its premium beauty and grooming services. With locations across India, including Delhi, Monsoon offers expert hair, skincare, and bridal treatments."
+          />
+          <meta
+            name="keywords"
+            content="salon franchise, best salon franchise, affordable salon franchise, salon franchise booking portal, unisex salon franchise"
+          />
+          <link rel="canonical" href="https://monsoonsalon.com/" />
           {brandsImg.map((elm) => (
             <link rel="preload" as="image" href={elm.brandUrl} />
           ))}

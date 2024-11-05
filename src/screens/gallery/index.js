@@ -47,11 +47,26 @@ export default function Gallery() {
   return (
     <>
       <Helmet>
+        <title>
+          Explore the Monsoon Salon Franchise Gallery - Discover Our Salon and
+          Franchise
+        </title>
+        <meta
+          name="description"
+          content="Explore our gallery to see Monsoon Salon's elegant spaces, cutting-edge services, and inspiring franchise success stories in India’s beauty and grooming industry."
+        />
+        <meta
+          name="keywords"
+          content="monsoon salon gallery, explore gallery"
+        />
+             <link
+              rel="canonical"
+              href="https://monsoonsalon.com/gallery"
+            />
         {galleryImagesData?.map((elm) => (
           <link rel="preload" as="image" href={elm.galleryimg} />
         ))}
         <link rel="preload" as="image" href={LOCAL_IMAGES.gallery} />
-
       </Helmet>
 
       <div className="">

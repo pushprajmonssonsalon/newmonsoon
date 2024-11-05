@@ -77,16 +77,14 @@ export default function ContactUs() {
       "/contactUsForm",
       data,
       (res) => {
-       
-          toast.success("Form Sumbited");
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phoneNumber: "",
-            description: "",
-          });
-        
+        toast.success("Form Sumbited");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phoneNumber: "",
+          description: "",
+        });
       },
       (err) => {
         console.log(err);
@@ -149,14 +147,20 @@ export default function ContactUs() {
   };
   return (
     <>
-     <Helmet>
-        <title>Salon Franchise in India, Fastest Growing Salon Chain India</title>
-        <meta name="description" content="The Professional Hair Salon & Spa (India) Pvt. Ltd., Plot No – 62, Okhla Industrial Estate, Phase – 3, New Delhi – 110020 Phone : +91-11-43011111" />
-        <meta name="keywords" content="contactus Monsoon Salon, Monsoon Salon information, Monsoon Salon contact us, Monsoon Salon profile" />
-      
-        
-     
-   
+      <Helmet>
+        <title>
+          Contact Us: Moving Solutions Contact Details - Address, Email, Phone
+          Number
+        </title>
+        <meta
+          name="description"
+          content="Want to contact monsoonsalon.com? Here is complete contact details of Moving Solutions including address, email, and phone number."
+        />
+        <meta
+          name="keywords"
+          content="monsoon salon contact details, monsoon salon address, monsoon salon phone number, monsoon salon email"
+        />
+        <link rel="canonical" href="https://monsoonsalon.com/contact-us" />
       </Helmet>
       <div className="mb-20">
         <div className="w-[90%] md:w-[80%] mx-auto h-full my-10 md:my-0 md:h-[calc(100vh-88px)] flex items-center justify-center">
@@ -183,35 +187,41 @@ export default function ContactUs() {
                   } = input;
 
                   return (
-                    <div className={`mb-4 ${name==="email"|| name==="phoneNumber"?"col-span-full":""}`}>
-                    <CustomInput
-                      key={idx}
-                      fullSpan={name === "email" || name === "phoneNumber"}
-                      type={type}
-                      label={label}
-                      value={value}
-                      placeholder={placeholder}
-                      required={required}
-                      name={name}
-                      error={error} // Red border if error
-                      helperText={helperText}
-                      onChange={handleChange}
-                    />
+                    <div
+                      className={`mb-4 ${
+                        name === "email" || name === "phoneNumber"
+                          ? "col-span-full"
+                          : ""
+                      }`}
+                    >
+                      <CustomInput
+                        key={idx}
+                        fullSpan={name === "email" || name === "phoneNumber"}
+                        type={type}
+                        label={label}
+                        value={value}
+                        placeholder={placeholder}
+                        required={required}
+                        name={name}
+                        error={error} // Red border if error
+                        helperText={helperText}
+                        onChange={handleChange}
+                      />
                     </div>
                   );
                 })}
                 <div className="mb-2 col-span-full">
-                <CustomTextArea
-                  type={textAreaFields.type}
-                  label={textAreaFields.label}
-                  value={textAreaFields.value}
-                  placeholder={textAreaFields.placeholder}
-                  required={textAreaFields.required}
-                  name={textAreaFields.name}
-                  error={textAreaFields.error} // Red border if error
-                  helperText={textAreaFields.helperText}
-                  onChange={handleChange}
-                />
+                  <CustomTextArea
+                    type={textAreaFields.type}
+                    label={textAreaFields.label}
+                    value={textAreaFields.value}
+                    placeholder={textAreaFields.placeholder}
+                    required={textAreaFields.required}
+                    name={textAreaFields.name}
+                    error={textAreaFields.error} // Red border if error
+                    helperText={textAreaFields.helperText}
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
 
@@ -286,7 +296,6 @@ export default function ContactUs() {
       </div>{" "}
       {/* <img src="https://developers.google.com/static/maps/images/landing/hero_mobile_maps_sdks.png" alt="map" style={{ width: '100%', height: 300 }} /> */}
       {/* <SubFooter /> */}
-     
     </>
   );
 }

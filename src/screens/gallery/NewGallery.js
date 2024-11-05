@@ -12,7 +12,7 @@ const NewGallery = () => {
 
     "https://www.instagram.com/reel/C62uWqBJYvR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     "https://www.instagram.com/reel/C4mhzkOteie/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-   
+
     "https://www.instagram.com/reel/C-XD1T_S6qO/?utm_source=ig_embed&amp;utm_campaign=loading",
     "https://www.instagram.com/p/C9_mDR1gsjq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     "https://www.instagram.com/p/C9T2EEStR19/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -25,7 +25,7 @@ const NewGallery = () => {
 
     "https://www.instagram.com/reel/C6DVoTQJ_E4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     "https://www.instagram.com/reel/C1tbQcvpvv5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-    
+
     "https://www.instagram.com/reel/C37p5UdJkCr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     "https://www.instagram.com/reel/Csc5vq0IrbA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
     "https://www.instagram.com/reel/Ce1LodtuPVt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
@@ -35,8 +35,21 @@ const NewGallery = () => {
   return (
     <>
       <Helmet>
-      <link rel="preload" as="image" href={LOCAL_IMAGES.gallery2} />
+        <title>
+          Monsoon Salon Media Page - Coverage and Highlights of Our Premium
+          Beauty Services and Franchise Success
+        </title>
+        <meta
+          name="description"
+          content="Explore the latest news, features, and media coverage of Monsoon Salon. Discover our brand's journey, success stories, and highlights in the beauty industry, showcasing our commitment to excellence and client satisfaction."
+        />
+        <meta
+          name="keywords"
+          content="monsoon salon media, salon franchise news, media coverage, franchise success stories, beauty industry news, salon updates"
+        />
+        <link rel="canonical" href="https://monsoonsalon.com/media" />
 
+        <link rel="preload" as="image" href={LOCAL_IMAGES.gallery2} />
       </Helmet>
       <div className=" max-w-full overflow-x-hidden">
         <div className="mb-10">
@@ -49,7 +62,6 @@ const NewGallery = () => {
             </div>
           ))}
         </div>
-       
       </div>
     </>
   );

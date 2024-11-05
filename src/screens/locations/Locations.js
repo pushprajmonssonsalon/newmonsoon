@@ -26,14 +26,11 @@ const Locations = () => {
       (err) => {}
     );
   }, []);
-  const handleSingleSalon = async (id,locate) => {
-    if(locate){
+  const handleSingleSalon = async (id, locate) => {
+    if (locate) {
       navigate(`${id}?scroll=${true}`);
-
-    }
-    else{
+    } else {
       navigate(`${id}`);
-
     }
   };
 
@@ -59,15 +56,21 @@ const Locations = () => {
   return (
     <>
       <Helmet>
-        <title>All Monsoon Salon Location and Contact Number</title>
+        <title>
+          Find Your Nearest Monsoon Salon - Explore Our Locations Across India
+        </title>
         <meta
           name="description"
-          content="Monsoon Salon. Kankavali. V Mall, Valanju building, Bazarpet Rd, near Zenda Chouk, Kankavli, Maharashtra 416602. Open all days: 10am to 8pm · Monsoon Salon ..."
+          content="Discover a Monsoon Salon near you! With branches nationwide, experience our premium beauty and grooming services, trusted professionals, and luxurious atmosphere at convenient locations across India."
         />
         <meta
           name="keywords"
-          content="Monsoon Salon near me, Salon near me, Monsoon Salon information, Monsoon Salon address, Monsoon Salon location"
+          content="monsoon salon near me, monsoon salon near you, monsoon salon locations, citywise monsoon salon, monsoon salon franchise locations"
         />
+         <link
+              rel="canonical"
+              href="https://monsoonsalon.com/salon-location-near-me"
+            />
       </Helmet>
       <div className="pt-9 pb-16">
         <div className="py-9">
@@ -102,13 +105,13 @@ const Locations = () => {
 
                     <div className="flex gap-3 ">
                       <button
-                        onClick={() => handleSingleSalon(salon._id,true)}
+                        onClick={() => handleSingleSalon(salon._id, true)}
                         className="transition-all ease-in duration-100 bg-black border border-transparent hover:border-black hover:bg-white hover:text-black  w-1/2 h-[40px] flex items-center justify-center text-white font-bold text-md rounded-md "
                       >
                         Locate
                       </button>
                       <button
-                        onClick={() => handleSingleSalon(salon._id,false)}
+                        onClick={() => handleSingleSalon(salon._id, false)}
                         className="transition-all ease-in duration-100 border border-black  w-1/2 h-[40px] hover:bg-black hover:text-white flex items-center justify-center text-black font-bold text-md rounded-md"
                       >
                         Visit

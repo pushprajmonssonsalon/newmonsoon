@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import LOCAL_IMAGES from "../utils/localImages";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SmallNavbar from "./SmallNavbar";
 import "./index.css";
 const Navbar = () => {
-  const navigate = useNavigate();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(location.pathname);
 
@@ -31,26 +29,11 @@ const Navbar = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > 500); // Set isScrolled based on scroll position
-      if (scrollTop > 500) {
-        setIsScrolled(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  
   useEffect(() => {
     setActiveTab(location.pathname);
   }, [location.pathname]);
-  const handleFinder = () => {
-    navigate("/salonfinder");
-  };
+  
   const navLinks = [
     { label: "Home", to: "/", type: "internal" },
     { label: "Franchise", to: "/franchise-enquiry", type: "internal" },
@@ -69,9 +52,7 @@ const Navbar = () => {
         <>
         <div className="relative">
           <div
-            className={` ${
-              isScrolled ? " z-[20] " : ""
-            }  w-full bg-primary  h-auto absolute -top-[105px] z-[10]   roboto-medium-italic    flex gap-[15%] items-center px-6 py-5  transition-all ease-in-out duration-500`}
+            className={`  w-full bg-primary   roboto-medium-italic    flex gap-[15%] items-center px-6 py-5  transition-all ease-in-out duration-500`}
           >
             <div>
               <Link to="/">

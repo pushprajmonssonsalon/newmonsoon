@@ -110,12 +110,12 @@
   .salondiscriptionText{
     /* margin: 10px auto 15px; */
     font-size: 18px;
-    line-height: 30px;
+   
     font-weight: 400;
-     max-width: 900px;
+    
     color: #323232;
     /* background-color: rebeccapurple; */
-    text-align: left;
+    
     font-family: "poppins";
     line-height: 1.5;
   }

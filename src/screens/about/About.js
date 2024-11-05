@@ -1,6 +1,5 @@
 import "./Aboutus.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Typography } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -48,18 +47,28 @@ const About = () => {
       },
     ],
   };
-  
+
   return (
     <>
       <Helmet>
         <title>
-          Salon Franchise in India, Fastest Growing Salon Chain India
+          Monsoon Salon Franchise - About us | Trusted Monsoon Salon
         </title>
+        <meta
+          name="description"
+          content="About Us - Monsoon Salon Franchise is a premier name in India’s beauty industry, offering luxurious salon services and a reliable franchise model. Visit us today and experience the difference."
+        />
+        <meta
+          name="keywords"
+          content="about monsoon salon, monsoon salon information, monsoon about us, monsoon salon profile"
+        />
+        <link rel="canonical" href="https://monsoonsalon.com/about-us" />
+
         {brandsImg.map((elm) => (
-            <link rel="preload" as="image" href={elm.brandUrl} />
-          ))}
-          <link rel="preload" as="image" href={LOCAL_IMAGES.aboutuspage} />
-          <link rel="preload" as="image" href={LOCAL_IMAGES.about} />
+          <link rel="preload" as="image" href={elm.brandUrl} />
+        ))}
+        <link rel="preload" as="image" href={LOCAL_IMAGES.aboutuspage} />
+        <link rel="preload" as="image" href={LOCAL_IMAGES.about} />
 
         <meta
           name="description"
@@ -75,52 +84,35 @@ const About = () => {
           <Banner image={LOCAL_IMAGES.aboutuspage} />
         </div>
 
-        <div className=" mt-6 flex items-center justify-center flex-col lg:flex-row">
-          <img
-            src={LOCAL_IMAGES.about}
-            alt="aboutus"
-            className="aboutroundimg"
-            loading="lazy"
-          />
+        <div className=" mt-3 w-[90%] lg:w-[80%] mx-auto">
+          <h2 className="text-[2rem] md:text-[3rem] font-medium font-poppins text-center ">
+            {" "}
+            About Us
+          </h2>
+          <div className="w-[70%] lg:w-1/2 mx-auto border-t md:border-t-2 border-dashed border-black my-2 lg:my-6"></div>
 
-          <div className="mx-6 lg:ml-[50px] lg:mb-[80px] ">
-            <Typography
-              variant="h2"
-              sx={{
-                fontSize: 42,
-                fontWeight: "500",
-                color: "#000000",
-                fontFamily: "Poppins",
-              }}
-            >
-              About Us
-            </Typography>
-
-
-            <p className="salondiscriptionText mt-3 lg:mt-auto">
-              The Monsoon Salon is a young brand for the refined consumer that
-              is after International experience with exceptional talent that is
-              on a continuous journey to refine and develop there skills. We are
-              a brand that does not just do what you say, we are a brand and
-              team that will give you what you need through education.
-            </p>
-            <p className="salondiscriptionText mt-3 lg:mt-auto">
-              There comes a time when growth and opportunity meets, we have had
-              to look at the brand and evolve it in order to be able to maintain
-              our connect with the audience. The Hairdressing Industry is
-              evolving so rapidly in India and with our growth plans we want to
-              ensure that the brand stands for more than one thing or reliant on
-              one person. We want to ensure we are setting up a Team of able
-              people that will have the same opportunities to succeed and
-              flourish in the Industry here in India. We have invested and will
-              continue to invest a large amount of time and money into training
-              of our people as we believe that is with the right people anything
-              is possible.
-            </p>
-          </div>
+          <p className="salondiscriptionText pt-3  md:pt-9">
+            The Monsoon Salon is a young brand for the refined consumer that is
+            after International experience with exceptional talent that is on a
+            continuous journey to refine and develop there skills. We are a
+            brand that does not just do what you say, we are a brand and team
+            that will give you what you need through education.
+          </p>
+          <p className="salondiscriptionText ">
+            There comes a time when growth and opportunity meets, we have had to
+            look at the brand and evolve it in order to be able to maintain our
+            connect with the audience. The Hairdressing Industry is evolving so
+            rapidly in India and with our growth plans we want to ensure that
+            the brand stands for more than one thing or reliant on one person.
+            We want to ensure we are setting up a Team of able people that will
+            have the same opportunities to succeed and flourish in the Industry
+            here in India. We have invested and will continue to invest a large
+            amount of time and money into training of our people as we believe
+            that is with the right people anything is possible.
+          </p>
         </div>
 
-        <div className="mx-6 lg:w-[80%] lg:mx-auto  mt-3 lg:mt-0">
+        <div className="mt-3 md:mt-9 w-[90%] lg:w-[80%] mx-auto">
           <p className="salondiscriptionText">
             A name or brand means different things to different people, however
             the brand Monsoon for me means renew, rejuvenation and coming to
@@ -133,36 +125,38 @@ const About = () => {
             in the World.
           </p>
           <p className="salondiscriptionText mt-3 lg:mt-0">
-            We have a very specific plan, detailed and concise that will be
-            executed with precision and finesse over the next 3-5 years with
-            expert detailed training being our primary focus. The brand Monsoon
-            will be market leader and strategically placed throughout Delhi/NCR
-            in our first phase. In the next 3 years we will have 30+ salons
-            adding selected sites furthering to 50 in the last 2 years of our
-            expansion. With a very strong info structure in place that supports
-            such expansion we will only multiply when all key areas of our
-            business is adequately aligned.
+            With over 200 salons across 77+ cities and 4 Union Territories,
+            Monsoon Salon has a clear and targeted expansion plan set to unfold
+            over the next 3-5 years. Our focus is on precision and finesse,
+            supported by expert, comprehensive training. In our first phase,
+            Monsoon will establish a strong presence as a market leader
+            strategically positioned throughout India. Within three years,
+            we aim to add 30+ salons, expanding to a total of 50 locations in
+            the following two years as we select key sites for further growth.
+            With a very strong info structure in place that supports such
+            expansion we will only multiply when all key areas of our business
+            is adequately aligned.
           </p>
         </div>
 
         <h2 className="text-[2rem] md:text-[3rem] w-fit my-6 font-medium font-poppins mx-auto ">
           Partner Brands
         </h2>
-        <div className="">
-        <Slider {...settings}>
-          {brandsImg.map((item, index) => {
-            return (
-              <div key={index} className="">
-                <img
-                  src={item.brandUrl}
-                  className="h-[60%] w-[50%]"
-                  alt="galleryimages"
-                  loading="lazy"
-                />
-              </div>
-            );
-          })}
-        </Slider>
+        <div className="overflow-hidden">
+          <Slider {...settings}>
+            {brandsImg.map((item, index) => {
+              return (
+                <div key={index} className="">
+                  <img
+                    src={item.brandUrl}
+                    className="h-[60%] w-[50%]"
+                    alt="galleryimages"
+                    loading="lazy"
+                  />
+                </div>
+              );
+            })}
+          </Slider>
         </div>
       </div>
     </>

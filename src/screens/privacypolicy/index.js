@@ -55,7 +55,11 @@ export default function PrivacyPolicy() {
     <>
     <Helmet>
     
-     
+    <title>Privacy Policy - Monsoon Salon</title>
+    <meta name="description" content="Learn about Monsoon Salon's commitment to protecting your privacy. Our Privacy Policy outlines how we collect, use, and safeguard your personal information while you enjoy our premium beauty services."/>
+    <meta name="keywords" content="privacy policy, data protection, personal information, user privacy"/>
+    <link rel="canonical" href="https://monsoonsalon.com/privacypolicy" />
+
     </Helmet>
     <div className="py-9">
       <div className="flex items-center  justify-center">
