@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import LOCAL_IMAGES from "../utils/localImages";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
@@ -19,7 +18,6 @@ const SingleLocation = () => {
   const apiKey = process.env.REACT_APP_MAP_API_KEY;
 
   console.log("singleSalonDetail", singleSalonDetail.name);
- 
 
   useEffect(() => {
     getApiCall(
@@ -37,30 +35,26 @@ const SingleLocation = () => {
       }
     );
   }, [params.id]);
-  const scrollToDivWithOffset = useCallback(
-    () => {
-      const element = document.getElementById("map");
-      if (element ) {
-        const offset = 100; // Offset of 100px
-        const elementPosition =
-          element.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - offset;
+  const scrollToDivWithOffset = useCallback(() => {
+    const element = document.getElementById("map");
+    if (element) {
+      const offset = 100; // Offset of 100px
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - offset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth", // Smooth scroll
-        });
-      }
-    },
-    [isScroll]
-  );
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth", // Smooth scroll
+      });
+    }
+  }, [isScroll]);
 
   useEffect(() => {
     if (isScroll) {
-        scrollToDivWithOffset(isScroll)
+      scrollToDivWithOffset(isScroll);
     }
   }, [isScroll]);
-  
 
   const mapContainerStyle = {
     width: "100%",
@@ -119,21 +113,14 @@ const SingleLocation = () => {
           />
         </div>
 
-        <div id="map" className="flex flex-col md:flex-row mt-8 space-y-4 md:space-y-0 md:space-x-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+        <div
+          id="map"
+          className="flex flex-col md:flex-row mt-8 space-y-4 md:space-y-0 md:space-x-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"
+        >
           <div className="flex-1">
-            {isLoading && latitude && longitude ? (
-              <LoadScript googleMapsApiKey={apiKey}>
-                <GoogleMap
-                  mapContainerStyle={mapContainerStyle}
-                  center={center}
-                  zoom={15}
-                >
-                  <Marker position={center} />
-                </GoogleMap>
-              </LoadScript>
-            ) : (
+            {  latitude && longitude && (
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3504.6701034106613!2d77.267363!3d28.549634!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24a702d1c55%3A0x9a5500a8d4eee992!2sMonsoon%20Salon%20Head%20Office!5e0!3m2!1sen!2sin!4v1695618174537!5m2!1sen!2sin"
+                src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${latitude},${longitude}`}
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
@@ -204,7 +191,6 @@ const SingleLocation = () => {
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

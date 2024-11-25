@@ -90,7 +90,7 @@ const Locations = () => {
               return (
                 <div
                   key={idx}
-                  className="border flex flex-col min-h-[300px] gap-5 justify-between rounded-xl p-3 shadow-xl "
+                  className="border bg-neutral-50 flex flex-col min-h-[300px] gap-5 justify-between rounded-[25px] p-6 shadow-md "
                 >
                   <div className="">
                     <h2 className="font-bold text-2xl mb-3">{salon.name}</h2>
