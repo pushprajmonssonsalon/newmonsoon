@@ -118,7 +118,7 @@ const SingleLocation = () => {
           className="flex flex-col md:flex-row mt-8 space-y-4 md:space-y-0 md:space-x-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12"
         >
           <div className="flex-1">
-            {  latitude && longitude && (
+            {latitude && longitude && (
               <iframe
                 src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${latitude},${longitude}`}
                 width="100%"
