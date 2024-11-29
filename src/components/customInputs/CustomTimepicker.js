@@ -15,7 +15,7 @@ const CustomTimepicker = ({ error = null }) => {
 
   const handleTimeChange = () => {
     const selectedTime = `${hour}:${minute} ${amPm}`;
-    console.log("Selected Time:", selectedTime);
+    
     // You can handle the time selection as per your requirement
   };
 

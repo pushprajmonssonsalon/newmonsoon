@@ -43,7 +43,7 @@ const Locations = () => {
         ?.includes(text?.split(" ")?.join("")?.toLowerCase())
     );
 
-    console.log(filterSalons, text, "text");
+    
     setFilterSalons(filtered);
   };
 

@@ -148,7 +148,7 @@ export default function Newfranchise() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
+    
     setFormValues((prev) => ({
       ...prev,
       [name]: value,
@@ -294,11 +294,10 @@ export default function Newfranchise() {
       });
     }
   };
-  const videoUrl = "https://d16a6xzchwrohg.cloudfront.net/franchiseVideo.mp4";
+  const videoUrl ="https://d16a6xzchwrohg.cloudfront.net/franchiseVideo.mp4";
 
   useEffect(() => {
     const isSubmited = sessionStorage.getItem("isSubmitted");
-    console.log(isSubmited, typeof isSubmited, "isSubmitted");
     if (isSubmited === "true") {
       setIsSubmited(true);
     }
@@ -336,20 +335,31 @@ export default function Newfranchise() {
               content="Monsoon Salon franchise, Monsoon Salon franchise in India, affordable salon franchise in india, top salon franchise opportunities in india, franchise for salon"
             />
           </Helmet>
-          <div className="bg-[#fafafa] p-3 h-[35vh] flex flex-col xl:flex-row items-center gap-12 justify-center">
-            <div className="text-[#191918] text-center text-[1.9rem] sm:text-[2rem] md:text-[3.8rem] font-extrabold">
+          <div className="bg-[#fafafa] p-3 relative h-[40vh] flex flex-col xl:flex-row items-center gap-12 justify-center">
+            <div className="md:text-[#191918] text-white z-[3] drop-shadow-2xl text-center text-[1.9rem] sm:text-[2rem] 2xl:text-[3.8rem] font-extrabold">
               FRANCHISE WITH US
             </div>
             <button
               onClick={() => scrollToDivWithOffset("franchise")}
-              className="bg-[#191918] h-[45px] text-white w-[150px] font-medium"
+              className="bg-[#191918] z-[3] h-[45px] text-white border-2 border-white rounded-[10px] w-[150px] font-bold"
             >
               Apply here
             </button>
+            <div className="absolute md:hidden z-[2]  w-full top-0 left-0  h-full">
+                <video
+                  className="w-full h-full object-cover"
+                  src={videoUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controlsList="nodownload"
+                />
+              </div>
           </div>
-          <div className="flex flex-col items-center justify-center">
-            <div className="w-full h-[30vh] md:h-[70vh] overflow-hidden">
-              <div className="relative aspect-w-16 aspect-h-9 h-full">
+          <div className="bg-[#191918]   hidden py-16 2xl:py-28 md:flex md:flex-col md:items-center md:justify-center">
+            <div className=" xl:w-[60vw]  md:h-[60vh] border-2 border-gray-200 md:rounded-[12px] overflow-hidden">
+              <div className="relative  h  h-full">
                 <video
                   className="w-full h-full object-cover"
                   src={videoUrl}

@@ -13,14 +13,14 @@ const postApiData = (endpoint, apidata, success, failur) => {
       "Content-Type": "application/json", // Sample content type header
     },
   });
-  // console.log("endpointdata",apidata)
+  // 
   instance
     .post(endpoint, apidata)
     .then((res) => {
       success(res?.data?.data);
     })
     .catch((error) => {
-      console.log("databaase", error);
+      
       failur(error);
     });
 };

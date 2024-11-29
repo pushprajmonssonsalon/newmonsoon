@@ -23,7 +23,7 @@ export default function Home() {
         setBannerImg(res);
       },
       (err) => {
-        console.log("getting error", err);
+        
       }
     );
   }, []);

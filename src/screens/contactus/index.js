@@ -87,7 +87,7 @@ export default function ContactUs() {
         });
       },
       (err) => {
-        console.log(err);
+        
       }
     );
   };

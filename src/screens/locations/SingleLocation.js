@@ -17,7 +17,7 @@ const SingleLocation = () => {
   const params = useParams();
   const apiKey = process.env.REACT_APP_MAP_API_KEY;
 
-  console.log("singleSalonDetail", singleSalonDetail.name);
+  
 
   useEffect(() => {
     getApiCall(

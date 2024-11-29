@@ -11,7 +11,7 @@ const Header = () => {
   const navigate = useNavigate();
   const loactiondata = useLocation();
   const { pathname } = loactiondata;
-  // console.log("pathname",loactiondata);
+  // 
   const onpressgallery = () => {
     navigate("/gallery");
   };
@@ -28,7 +28,7 @@ const Header = () => {
     referrerpolicy="no-referrer"
   />;
   const [shownav, setShowNav] = useState(false);
-  // console.log("object", shownav);
+  // 
   const onpresshamburger = () => {
     setShowNav(!shownav);
   };
