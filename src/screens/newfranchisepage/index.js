@@ -357,8 +357,8 @@ export default function Newfranchise() {
                 />
               </div>
           </div>
-          <div className="bg-[#191918]   hidden py-16 2xl:py-28 md:flex md:flex-col md:items-center md:justify-center">
-            <div className=" xl:w-[60vw]  md:h-[60vh] border-2 border-gray-200 md:rounded-[12px] overflow-hidden">
+          <div className="bg-[#191918] w-[80vw] h-[90vh] mx-auto p-16 rounded-[25px] my-6   hidden  md:flex md:flex-col md:items-center md:justify-center">
+            <div className="w-full h-full border-4 border-gray-200 md:rounded-[12px] overflow-hidden">
               <div className="relative  h  h-full">
                 <video
                   className="w-full h-full object-cover"
