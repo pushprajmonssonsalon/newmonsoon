@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import "./newfranchise.css";
 import { Helmet } from "react-helmet";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -148,7 +149,7 @@ export default function Newfranchise() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     setFormValues((prev) => ({
       ...prev,
       [name]: value,
@@ -294,7 +295,7 @@ export default function Newfranchise() {
       });
     }
   };
-  const videoUrl ="https://d16a6xzchwrohg.cloudfront.net/franchiseVideo.mp4";
+  const videoUrl = "https://d16a6xzchwrohg.cloudfront.net/franchiseVideo.mp4";
 
   useEffect(() => {
     const isSubmited = sessionStorage.getItem("isSubmitted");
@@ -335,27 +336,33 @@ export default function Newfranchise() {
               content="Monsoon Salon franchise, Monsoon Salon franchise in India, affordable salon franchise in india, top salon franchise opportunities in india, franchise for salon"
             />
           </Helmet>
-          <div className="bg-[#fafafa] p-3 relative h-[40vh] flex flex-col xl:flex-row items-center gap-12 justify-center">
-            <div className="md:text-[#191918] text-white z-[3] drop-shadow-2xl text-center text-[1.9rem] sm:text-[2rem] 2xl:text-[3.8rem] font-extrabold">
-              FRANCHISE WITH US
-            </div>
+          <div className="bg-neutral-100 p-3 relative h-[40vh] xl:h-[30vh] flex flex-col xl:flex-row items-center gap-12 justify-center">
+            <ScrollAnimation delay={500} animateOnce={true} animateIn="animate__fadeInDown">
+              <div className="md:text-[#191918] text-white z-[3] drop-shadow-2xl text-center text-[1.9rem] sm:text-[2.7rem] lg:text-[3rem] 2xl:text-[3.8rem] font-extrabold">
+                FRANCHISE WITH US
+              </div>
+            </ScrollAnimation>
+            <ScrollAnimation delay={800} animateOnce={true} animateIn="animate__fadeInDown">
+
             <button
               onClick={() => scrollToDivWithOffset("franchise")}
-              className="bg-[#191918] z-[3] h-[45px] text-white border-2 border-white rounded-[10px] w-[150px] font-bold"
+              className="bg-[#191918] z-[3] h-[45px] xl:h-[50px] text-white border-2 border-white rounded-[10px] w-[150px] font-bold"
             >
               Apply here
             </button>
+            </ScrollAnimation>
+
             <div className="absolute md:hidden z-[2]  w-full top-0 left-0  h-full">
-                <video
-                  className="w-full h-full object-cover"
-                  src={videoUrl}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controlsList="nodownload"
-                />
-              </div>
+              <video
+                className="w-full h-full object-cover"
+                src={videoUrl}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controlsList="nodownload"
+              />
+            </div>
           </div>
           <div className="bg-[#191918] w-[80vw] h-[90vh] mx-auto p-16 rounded-[25px] my-6   hidden  md:flex md:flex-col md:items-center md:justify-center">
             <div className="w-full h-full border-4 border-gray-200 md:rounded-[12px] overflow-hidden">

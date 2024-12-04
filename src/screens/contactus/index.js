@@ -163,8 +163,8 @@ export default function ContactUs() {
         <link rel="canonical" href="https://monsoonsalon.com/contact-us" />
       </Helmet>
       <div className="mb-20">
-        <div className="w-[90%] md:w-[80%] mx-auto h-full my-10 md:my-0 md:h-[calc(100vh-88px)] flex items-center justify-center">
-          <div className="flex flex-col gap-6 md:gap-0 md:flex-row relative z-0 w-full items-center justify-between">
+        <div className="w-[90%] md:w-[80%] mx-auto h-full my-10 gap-9 md:gap-0  flex items-center justify-center">
+          <div className="flex flex-col gap-9 md:gap-0 md:flex-row relative z-0 w-full items-center justify-between">
             <div className="w-full text-center md:text-left md:w-[calc(100%-350px)] lg:w-[calc(100%-400px)] relative z-2">
               <h2 className="text-3xl  font-medium  mb-9">Contact Us</h2>
               <p className="text-[#323232]">
@@ -172,7 +172,7 @@ export default function ContactUs() {
                 or find the official email you'd like to contact below
               </p>
             </div>
-            <div className="w-auto md:w-[330px]  lg:w-[370px] border px-5 py-9  shadow-md relative z-2">
+            <div className="w-auto md:w-[330px] rounded-md  lg:w-[370px] border px-6 py-9  shadow-md relative z-2">
               <div className=" h-fit grid grid-cols-2 gap-5 ">
                 {formFields.map((input, idx) => {
                   const {

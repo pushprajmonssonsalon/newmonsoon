@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
+import "animate.css/animate.compat.css";
 
 import ReactGA from "react-ga";
 import "animate.css/animate.min.css";

@@ -30,7 +30,7 @@ function CustomInput({
         <input
           type={type}
           id={name}
-          className={`block h-full bg-white outline-none px-[14px]  ${
+          className={`block rounded-sm h-full bg-white outline-none px-[14px]  ${
             error ? "placeholder:text-red-600" : "placeholder:text-black"
           }  py-[8.5px] w-full text-sm text-gray-900 border ${
             error ? "border-red-600" : "border-gray-600"
