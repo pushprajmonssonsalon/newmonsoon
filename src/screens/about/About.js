@@ -150,7 +150,7 @@ const About = () => {
                   <img
                     src={item.brandUrl}
                     className="h-[60%] w-[50%]"
-                    alt="galleryimages"
+                    alt="Monsoon Salon"
                     loading="lazy"
                   />
                 </div>

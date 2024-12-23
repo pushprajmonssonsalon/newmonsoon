@@ -116,7 +116,7 @@ export default function Home() {
                 <img
                   src={item.brandUrl}
                   className="h-[70%] w-[70%]"
-                  alt="galleryimages"
+                  alt="Monsoon Salon"
                 />
               </div>
             );

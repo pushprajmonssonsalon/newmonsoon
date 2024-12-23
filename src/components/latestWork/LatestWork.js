@@ -14,7 +14,7 @@ const LatestWork = () => {
         </h2>
         <div className="flex flex-col lg:flex-row  my-9">
           <div className="w-full h-[35vh] md:h-[50vh] lg:h-[55vh]   lg:w-1/2">
-            <img className="h-full w-full" src={LOCAL_IMAGES.monsoonsalon23} alt="work" loading="lazy"/>
+            <img className="h-full w-full" src={LOCAL_IMAGES.monsoonsalon23} alt="monsoon salon" loading="lazy"/>
           </div>
 
           <div className="w-full  lg:h-[55vh] lg:w-1/2 relative flex items-center text-white justify-center p-9 lg:px-16 bg-[#c1816c]/50">

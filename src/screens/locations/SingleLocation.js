@@ -109,7 +109,7 @@ const SingleLocation = () => {
             }
             className="w-full rounded-md md:w-1/2 aspect-[16/9] object-cover"
             loading="lazy"
-            alt="Salon Detail"
+            alt="Monsoon Salon"
           />
         </div>
 

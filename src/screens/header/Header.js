@@ -60,7 +60,7 @@ const Header = () => {
           <div className="applogo">
             <img
               src={LOCAL_IMAGES.APP_LOGO}
-              alt="Applogo"
+              alt="Monsoon Salon"
               loading="lazy"
               style={{ height: "100%", width: "100%", marginTop: "1px" }}
             />
@@ -191,7 +191,7 @@ const Header = () => {
         <div className="menu_icon" onClick={onpresshamburger}>
           <img
             src="https://icon-library.com/images/white-menu-icon/white-menu-icon-0.jpg"
-            alt="hamburger"
+            alt="Monsoon Salon"
             loading="lazy"
           />
         </div>

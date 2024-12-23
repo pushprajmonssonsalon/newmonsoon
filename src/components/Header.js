@@ -20,7 +20,7 @@ const Header = () => {
               <img
                 src={LOCAL_IMAGES.monsoonsalon22}
                 className="w-full relative z-0 h-full "
-                alt="about us img"
+                alt="Monsoon Salon"
                 loading="lazy"
               />
               <a

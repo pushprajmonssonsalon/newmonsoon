@@ -294,8 +294,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>{" "}
-      {/* <img src="https://developers.google.com/static/maps/images/landing/hero_mobile_maps_sdks.png" alt="map" style={{ width: '100%', height: 300 }} /> */}
-      {/* <SubFooter /> */}
+     
     </>
   );
 }

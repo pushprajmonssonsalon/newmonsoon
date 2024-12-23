@@ -59,7 +59,7 @@ const Navbar = () => {
                 <img
                   src={LOCAL_IMAGES.monsoonlogo}
                   className="w-[200px] h-16"
-                  alt="logo"
+                  alt="Monsoon Salon"
                   loading="lazy"
                 />
               </Link>

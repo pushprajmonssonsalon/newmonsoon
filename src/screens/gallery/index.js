@@ -81,7 +81,7 @@ export default function Gallery() {
                   <img
                     className="h-auto max-w-full rounded-lg"
                     src={item.galleryimg}
-                    alt=""
+                    alt="Monsoon Salon"
                     loading="lazy"
                   />
                 </div>

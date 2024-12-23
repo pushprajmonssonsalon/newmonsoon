@@ -568,7 +568,7 @@ export default function Newfranchise() {
                         <img
                           src={item.brandUrl}
                           style={{ height: "60%", width: "50%" }}
-                          alt="galleryimages"
+                          alt="Monsoon Salon"
                           loading="lazy"
                         />
                       </div>

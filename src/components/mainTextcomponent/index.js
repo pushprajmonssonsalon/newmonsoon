@@ -6,7 +6,7 @@ export default function MainText({textdata}) {
     <h2 className='aboutcontainertext ' style={{marginBottom: '0px'}}>{textdata}</h2>
     {/* <img 
         src={LOCAL_IMAGES.lineIcon} 
-        alt=''
+        alt="Monsoon Salon"
         style={{marginTop: '5px'}}
     /> */}
 </div>

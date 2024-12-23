@@ -58,7 +58,7 @@ const InstaSlider = () => {
                     loading="lazy"
                     sizes="100vw"
                     src={image}
-                    alt={`Slide ${index}`}
+                    alt={`Monsoon Salon`}
                     decoding="async"
                     data-nimg="responsive"
                     className="absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0"
@@ -71,7 +71,6 @@ const InstaSlider = () => {
                     }}
                   />
 
-                  {/* <img src={image.image_link} alt={`Slide ${index}`} className='w-full h-full object-cover'/> */}
                 </div>
               </Link>
             </>
