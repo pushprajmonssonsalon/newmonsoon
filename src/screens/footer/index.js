@@ -27,7 +27,7 @@ const NewFooter = () => {
             <h1 className='text-xl foot-link md:text-md mb-5 mt-0 font-normal text-white  md:mt-0'>Get in touch</h1>
             <div className="flex flex-col gap-3">
 
-            <h1 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />7703900678 , 9315788084</h1>
+            <h1 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084 , 7703900678  </h1>
             <h1 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoMail size={20} />info@theprofessionalworld.com</h1>
             </div>
          </div>
