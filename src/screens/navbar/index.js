@@ -75,15 +75,15 @@ const Navbar = () => {
                     }`}
                     onClick={() => handleTabClick(link.to)}
                   >
-                    <h1 className="text-white font-medium link-text cursor-pointer">
+                    <span className="text-white font-medium link-text cursor-pointer">
                       {link.label}
-                    </h1>
+                    </span>
                   </Link>
                 ) : (
                   <a key={index} href={link.to} className="btn-hover">
-                    <h1 className="text-white font-medium link-text cursor-pointer">
+                    <span className="text-white font-medium link-text cursor-pointer">
                       {link.label}
-                    </h1>
+                    </span>
                   </a>
                 )
               )}

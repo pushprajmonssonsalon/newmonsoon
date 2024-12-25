@@ -85,10 +85,10 @@ const About = () => {
         </div>
 
         <div className=" mt-3 w-[90%] lg:w-[80%] mx-auto">
-          <h2 className="text-[2rem] md:text-[3rem] font-medium font-poppins text-center ">
+          <h1 className="text-[2rem] md:text-[3rem] font-medium font-poppins text-center ">
             {" "}
             About Us
-          </h2>
+          </h1>
           <div className="w-[70%] lg:w-1/2 mx-auto border-t md:border-t-2 border-dashed border-black my-2 lg:my-6"></div>
 
           <p className="salondiscriptionText pt-3  md:pt-9">

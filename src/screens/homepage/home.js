@@ -83,12 +83,12 @@ export default function Home() {
 
         <LatestWork />
 
-        <h1 className="text-xl font-medium text-center  roboto-regular opacity-80 ">
+        <h2 className="text-xl font-medium text-center  roboto-regular opacity-80 ">
           What We Do
-        </h1>
-        <h1 className="text-[2.5rem] md:text-[3rem] px-3 md:px-5 text-center font-medium font-Cormorant opacity-80 mb-5">
+        </h2>
+        <h2 className="text-[2.5rem] md:text-[3rem] px-3 md:px-5 text-center font-medium font-Cormorant opacity-80 mb-5">
           Your Complete Beauty Journey Starts{" "}
-        </h1>
+        </h2>
 
         <div className="px-3 sm:w-[90%] 2xl:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center justify-items-center   md:mb-10">
           {OurServicesData.map((item, index) => (
@@ -103,9 +103,9 @@ export default function Home() {
 
         <Testimonial />
 
-        <h1 className="text-2xl md:text-4xl text-center font-normal roboto-regular opacity-80 mb-5">
+        <h2 className="text-2xl md:text-4xl text-center font-normal roboto-regular opacity-80 mb-5">
           Partner Brands
-        </h1>
+        </h2>
         <div className="mb-16 grid gap-4  grid-cols-2 md:grid-cols-3 w-[90%] md:w-[80%] 2xl:w-[70%] mx-auto">
           {brandsImg?.map((item, index) => {
             return (

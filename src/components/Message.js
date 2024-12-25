@@ -7,14 +7,14 @@ const Message = ({ img, name, desc }) => {
         <p className="w-[90%] xl:w-[80%] 2xl:w-[70%] mx-auto">"{desc}"</p>
       </div>
       <div className="flex w-fi my-6 mx-auto uppercase">
-        <h1 className="text-xl text-black font-bold ">{name}</h1>
+        <span className="text-xl text-black font-bold ">{name}</span>
       </div>
-      <h1 className="mx-auto flex items-center gap-1 text-yellow-500 text-[1.4rem] md:text-[2rem]">
+      <h2 className="mx-auto flex items-center gap-1 text-yellow-500 text-[1.4rem] md:text-[2rem]">
         <FaStar />
         <FaStar />
         <FaStar />
         <FaStar />
-      </h1>
+      </h2>
     </div>
   );
 };

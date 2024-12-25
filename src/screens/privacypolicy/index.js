@@ -63,7 +63,7 @@ export default function PrivacyPolicy() {
     </Helmet>
     <div className="py-9">
       <div className="flex items-center  justify-center">
-        <h4 className="font-semibold text-3xl" > Privacy Policy</h4>
+        <h1 className="font-semibold text-3xl" > Privacy Policy</h1>
       </div>
 
       <ul className=" w-[90%] md:w-[60%] my-9 mx-auto   rounded-md">

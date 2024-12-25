@@ -94,14 +94,14 @@ const Locations = () => {
                 >
                   <div className="">
                     <h2 className="font-bold text-2xl mb-3">{salon.name}</h2>
-                    <h2 className=" text-lg mb-3 line-clamp-4 overflow-hidden text-ellipsis">
+                    <p className=" text-lg mb-3 line-clamp-4 overflow-hidden text-ellipsis">
                       {salon.address} {salon.address2}
-                    </h2>
+                    </p>
                   </div>
                   <div className="">
-                    <h2 className=" text-lg font-medium  mb-3">
+                    <p className=" text-lg font-medium  mb-3">
                       {salon.stateName}
-                    </h2>
+                    </p>
 
                     <div className="flex gap-3 ">
                       <button

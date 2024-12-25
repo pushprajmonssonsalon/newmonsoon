@@ -10,9 +10,9 @@ const ServiceCart = ({ img, name, desc, index }) => {
             loading="lazy"
           />
           <div>
-          <h1 className="text-2xl text-regel-gray font-bold roboto-medium-italic">
+          <h3 className="text-2xl text-regel-gray font-bold roboto-medium-italic">
             {name}
-          </h1>
+          </h3>
           <div className="text-lg  text-regel-gray mt-2 md:mt-5 flex flex-wrap roboto-medium-italic">
           <p className="text-lg roboto-medium-italic ">{desc}</p>
         </div>

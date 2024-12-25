@@ -166,7 +166,7 @@ export default function ContactUs() {
         <div className="w-[90%] md:w-[80%] mx-auto h-full my-10 gap-9 md:gap-0  flex items-center justify-center">
           <div className="flex flex-col gap-9 md:gap-0 md:flex-row relative z-0 w-full items-center justify-between">
             <div className="w-full text-center md:text-left md:w-[calc(100%-350px)] lg:w-[calc(100%-400px)] relative z-2">
-              <h2 className="text-3xl  font-medium  mb-9">Contact Us</h2>
+              <h1 className="text-5xl  font-medium  mb-9">Contact Us</h1>
               <p className="text-[#323232]">
                 Need to get in touch with us? Either fill out the form with your
                 or find the official email you'd like to contact below

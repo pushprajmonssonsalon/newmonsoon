@@ -380,9 +380,9 @@ export default function Newfranchise() {
             </p>
           </div>
           <div className="px-6 my-8 md:my-16  text-center">
-            <h1 className="font-bold text-xl mb-5   md:text-[2rem]">
+            <h2 className="font-bold text-xl mb-5   md:text-[2rem]">
               Why is Monsoon Salon Franchise the Best?
-            </h1>
+            </h2>
 
             {franchiseBestData?.map((item, index) => {
               return (
@@ -401,9 +401,9 @@ export default function Newfranchise() {
         </div>
         <div className=" flex flex-col items-center py-9 px-3 mb-8">
           <div>
-            <h2 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-9">
+            <h1 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-9">
               Top Benefits of Opening a Monsoon Salon Franchise
-            </h2>
+            </h1>
 
             <p className="text-center font-medium text-lg mt-3 mb-6">
               India’s most stable, growing salon chain
@@ -429,7 +429,7 @@ export default function Newfranchise() {
           </div>
         </div>
         <div id="franchise" className="" style={{ bgcolor: "white" }}>
-          <div className="my-6  w-[90%] md:w-[70%] mx-auto  md:mt-9 md:mb-16 text-center text-[1.5rem] md:text-[2.3rem] text-pretty font-extrabold">
+          <div className="my-6  w-[90%] md:w-[70%] mx-auto  md:mt-9 md:mb-16 text-center text-[1.5rem] md:text-[2.3rem] text-pretty font-bold">
             Join the elite circle of beauty pioneers by opening a Monsoon
             franchise in India. Elevate your business with a brand that reshapes
             trends, inspires confidence, and sets the gold standard in salon

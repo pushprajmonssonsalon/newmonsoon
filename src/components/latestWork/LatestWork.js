@@ -9,9 +9,9 @@ const LatestWork = () => {
 
     </Helmet>
       <div className="font-Cormorant px-3 md:px-10">
-        <h2 className="text-[3.5vmax]  text-center ">
+        <h1 className="text-[3.5vmax] font-bold  text-center ">
           Our Latest Work
-        </h2>
+        </h1>
         <div className="flex flex-col lg:flex-row  my-9">
           <div className="w-full h-[35vh] md:h-[50vh] lg:h-[55vh]   lg:w-1/2">
             <img className="h-full w-full" src={LOCAL_IMAGES.monsoonsalon23} alt="monsoon salon" loading="lazy"/>
