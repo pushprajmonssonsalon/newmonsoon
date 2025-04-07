@@ -334,6 +334,19 @@ export default function Newfranchise() {
               name="keywords"
               content="Monsoon Salon franchise, Monsoon Salon franchise in India, affordable salon franchise in india, top salon franchise opportunities in india, franchise for salon"
             />
+            {/* End Google Tag Manager (noscript) */}
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=AW-870359358"
+            ></script>
+            <script>
+              {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-870359358');
+          `}
+            </script>
           </Helmet>
           <div className="bg-neutral-100 p-3 relative h-[40vh] sm:h-[60vh] xl:h-[80vh] flex flex-col xl:flex-row items-center gap-12 justify-center">
             <div className="  text-white relative z-[9] drop-shadow-2xl text-center text-[1.9rem] sm:text-[2.7rem] lg:text-[3rem] 2xl:text-[3.8rem] font-extrabold">
