@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
@@ -83,12 +83,12 @@ export default function App() {
 
             <Route path="/franchise-enquiry" element={<Newfranchise />} />
             <Route path="/franchise-d" element={<Newfranchise />} />
-            <Route path="/franchise-enquiry*" element={<Newfranchise />} />
+            <Route path="/franchise-enquiry*" element={<Navigate to="/franchise-enquiry" replace />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/media" element={<NewGallery />} />
-            <Route path="*" element={<Newfranchise />} />
+            <Route path="*" element={<Navigate to="/franchise-enquiry" replace />} />
           </Routes>
         </div>
         </Suspense>

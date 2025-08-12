@@ -18,6 +18,7 @@ module.exports = {
         'new-yellow':"#dfa700",
         "description":'#323232',
          "new-green":"#26d367",
+         'khaki':"rgba(255, 245, 235, 1)",
          "navyblue":"rgb(25, 118, 210)"
       },
       dropShadow:{

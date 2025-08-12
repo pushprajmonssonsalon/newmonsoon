@@ -257,12 +257,7 @@ export default function ContactUs() {
                 <h2 className="font-medium text-lg md:text-xl mt-3 mb-1">
                   Phone
                 </h2>
-                <a
-                  href="tel:+91-9315788084"
-                  className="text-regel-gray text-sm md:text-base"
-                >
-                  +91-9315788084
-                </a>
+               
                 <a
                   href="tel:+91-8882766591"
                   className="text-regel-gray text-sm md:text-base"
