@@ -41,9 +41,7 @@ const Newfranchise = lazy(() => lazyRetry(()=>import("./screens/newfranchisepage
 const Gallery = lazy(() => lazyRetry(()=>import("./screens/gallery")));
 const NewGallery = lazy(() => lazyRetry(()=>import("./screens/gallery/NewGallery")));
 const Locations = lazy(() => lazyRetry(()=>import("./screens/locations/Locations")));
-const SingleLocation = lazy(() =>
- lazyRetry(()=> import("./screens/locations/SingleLocation.js"))
-);
+const SingleLocation = lazy(() =>lazyRetry(()=> import("./screens/locations/SingleLocation.js")));
 const TRACKING_ID = "G-H8LMPD3V4F"; // Replace with your tracking ID
 ReactGA.initialize(TRACKING_ID);
 

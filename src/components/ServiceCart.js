@@ -5,7 +5,7 @@ const ServiceCart = ({ img, name, desc, index }) => {
         <div className="flex p-3 md:px-6 pt-3 md:pt-6 justify-start gap-3 items-center">
           <img
             src={img}
-            alt="Monsoon Salon"
+            alt={name}
             className="w-16 h-16 sm:w-18 sm:h-18 bg-white rounded-full mb-3"
             loading="lazy"
           />

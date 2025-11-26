@@ -192,22 +192,41 @@ export const salonFranchiseDiscription = [
 export const brandsImg = [
   {
     brandUrl: LOCAL_IMAGES.argatinIcon,
+    name:"Argatin",
+    name2:"Best salon franchise india",
+    name3:"salon franchise opportunities"
   },
   {
     brandUrl: LOCAL_IMAGES.springIcon,
+    name:"Spring H2o",
+    name2:"Beauty salon franchise",
+    name3:"monsoon franchise opportunity"
   },
 
   {
     brandUrl: LOCAL_IMAGES.skinIcon,
+    name:"Skinco",
+    name2:"Monsoon salon india",
+    name3:"about monsoon salon"
   },
   {
     brandUrl: LOCAL_IMAGES.thalgoIcon,
+    name:"Thalgo",
+    name2:"Monsoon franchise enquiry",
+    name3:"salon franchise"
   },
   {
     brandUrl: LOCAL_IMAGES.lorealIcon,
+    name:"Monsoon beauty salon",
+    name2:"Monsoon beauty salon",
+    name3:"Monsoon beauty salon"
   },
   {
     brandUrl: LOCAL_IMAGES.kerastaseIcon,
+    name:"Kerastase",
+    name2:"Kerastase",
+    name3:"Kerastase",
+
   },
 ];
 
@@ -216,16 +235,20 @@ export const galleryImagesData = [
     images: [
       {
         galleryimg: LOCAL_IMAGES.monsoonsalon12,
+        name:"Beauty salon in india"
       },
       {
         galleryimg: LOCAL_IMAGES.monsoonsalon13,
+        name:"Spa franchise"
       },
 
       {
         galleryimg: LOCAL_IMAGES.monsoonsalon14,
+         name:"Monsoon spa franchise"
       },
       {
         galleryimg: LOCAL_IMAGES.monsoonsalon21,
+         name:"Monsoon beauty salon"
       },
     ],
   },

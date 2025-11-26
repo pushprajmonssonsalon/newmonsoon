@@ -48,21 +48,20 @@ export default function Gallery() {
     <>
       <Helmet>
         <title>
-          Explore the Monsoon Salon Franchise Gallery - Discover Our Salon and
-          Franchise
+          Monsoon Salon | Beauty Salon & Spa Franchise in India
         </title>
         <meta
           name="description"
-          content="Explore our gallery to see Monsoon Salon's elegant spaces, cutting-edge services, and inspiring franchise success stories in India’s beauty and grooming industry."
+          content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
         <meta
           name="keywords"
-          content="monsoon salon gallery, explore gallery"
+          content="monsoon salon , explore salon"
         />
-             <link
-              rel="canonical"
-              href="https://monsoonsalon.com/gallery"
-            />
+        <link
+          rel="canonical"
+          href="https://monsoonsalon.com/gallery"
+        />
         {galleryImagesData?.map((elm) => (
           <link rel="preload" as="image" href={elm.galleryimg} />
         ))}
@@ -73,6 +72,42 @@ export default function Gallery() {
         <div className="mb-10">
           <Banner image={LOCAL_IMAGES.gallery} />
         </div>
+        <div className="mt-8 md:mt-16 text-center w-[95%] md:w-[80%] mx-auto">
+          <h1 className="font-bold text-xl leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
+            Monsoon Beauty Salon Franchise in India
+          </h1>
+          <p className="text-lg py-6  text-center w-[80%] mx-auto  text-regel-gray">
+
+            Welcome to the Monsoon Salon Gallery! Here, you can explore the vibrant world of our
+            <strong> beauty salon franchise</strong> and get a closer look at the stunning salons we’ve established across
+            India. Our franchises blend style, comfort, and top-tier beauty services to create an
+            unforgettable experience for every client. Whether you&#39;re looking for inspiration or
+            considering joining our growing network, this gallery offers a glimpse into what makes our
+            salons stand out.
+
+          </p>
+          <p className="text-lg py-1  text-center w-[80%] mx-auto  text-regel-gray">
+
+            As one of the leading <strong>beauty salon franchises in India</strong>, Monsoon Salon is committed to
+            delivering excellence. Each franchise location is designed with the latest trends, state-of-the-
+            art equipment, and a welcoming atmosphere that enhances the customer experience. Our
+            salons reflect our commitment to both quality and luxury, providing the best services in the
+            industry.
+
+          </p>
+
+          <p className="text-lg py-1  text-center w-[80%] mx-auto  text-regel-gray">Our <strong>salon and spa franchise in India</strong> model combines innovation, scalability, and
+            affordability, making it easier for entrepreneurs to run their own beauty business. In this
+            gallery, you’ll see examples of how our salons are equipped to offer an extensive range of
+            services, from haircuts and styling to luxurious spa treatments all under one roof.</p>
+          <p className="text-lg py-6 text-center w-[80%] mx-auto  text-regel-gray">
+            Ready to start your own beauty salon franchise with us? Browse through our gallery to see
+            how Monsoon Salon locations are designed for success. From interior aesthetics to customer
+            satisfaction, our franchises set the standard for beauty and wellness in India.
+          </p>
+        </div>
+
+
         <div className=" w-[95%] my-16 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryImagesData.map((elm, index) => (
             <div className="grid gap-4" key={index}>
@@ -81,7 +116,8 @@ export default function Gallery() {
                   <img
                     className="h-auto max-w-full rounded-lg"
                     src={item.galleryimg}
-                    alt="Monsoon Salon"
+                    alt={item.name}
+                    
                     loading="lazy"
                   />
                 </div>

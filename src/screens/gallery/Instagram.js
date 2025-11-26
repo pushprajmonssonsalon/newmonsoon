@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 const Instagram = ({ url }) => {
+  
   useEffect(() => {
     // Re-render the Instagram embed script after component mounts
     window?.instgrm?.Embeds?.process();

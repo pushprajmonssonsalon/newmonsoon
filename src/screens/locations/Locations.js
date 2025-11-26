@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import MainText from "../../components/mainTextcomponent";
 import { getApiCall } from "../../utils/services";
 import { Helmet } from "react-helmet";
-import useDebouncer from "../../hooks/UseDebouncer";
 import { useNavigate } from "react-router-dom";
 import { FaClock, FaFilter, FaMapPin, FaSearch, FaStar } from "react-icons/fa";
 import { IoNavigate } from "react-icons/io5";
@@ -10,12 +9,8 @@ import { IoNavigate } from "react-icons/io5";
 const Locations = () => {
   const [salons, setSalons] = useState([]);
   const [filterSalons, setFilterSalons] = useState([]);
-  const [text, setText] = useState("");
-  const { debouncedFunction } = useDebouncer();
   const navigate = useNavigate();
-  const handleTextChange = (e) => {
-    setText(e.target.value);
-  };
+
 
   useEffect(() => {
     getApiCall(
@@ -35,7 +30,7 @@ const Locations = () => {
     }
   };
 
-  
+
 
 
 
@@ -47,82 +42,84 @@ const Locations = () => {
   const states = [...new Set(salons.map(salon => salon.stateName))].sort();
 
   // Filter salons based on search and state
-const searchTimeoutRef = useRef(null);
+  const searchTimeoutRef = useRef(null);
 
-const filterSalonsFunction = (query, state) => {
-  console.log("Filtering with query:", query, "and state:", state);
-  
-  let filtered = salons;
-  
-  // Apply search filter
-  if (query && query.trim().length > 0) {
-    const searchTerm = query.toLowerCase().trim();
-    filtered = filtered.filter(salon =>
-      salon?.name?.toLowerCase().includes(searchTerm) ||
-      salon?.address2?.toLowerCase().includes(searchTerm) ||
-      salon?.stateName?.toLowerCase().includes(searchTerm)
-    );
-  }
-  
-  // Apply state filter
-  if (state) {
-    filtered = filtered.filter(salon => salon?.stateName === state);
-  }
-  
-  setFilterSalons(filtered);
-};
+  const filterSalonsFunction = (query, state) => {
+    console.log("Filtering with query:", query, "and state:", state);
 
-useEffect(() => {
-  // Clear existing timeout
-  if (searchTimeoutRef.current) {
-    clearTimeout(searchTimeoutRef.current);
-  }
-  
-  // If no search query and no selected state, show all salons immediately
-  if (!searchQuery.trim() && !selectedState) {
-    console.log("Showing all salons");
-    setFilterSalons(salons);
-    return;
-  }
-  
-  // Set new timeout for debounced search
-  searchTimeoutRef.current = setTimeout(() => {
-    filterSalonsFunction(searchQuery, selectedState);
-  }, 300); // 300ms delay
-  
-  // Cleanup function
-  return () => {
+    let filtered = salons;
+
+    // Apply search filter
+    if (query && query.trim().length > 0) {
+      const searchTerm = query.toLowerCase().trim();
+      filtered = filtered.filter(salon =>
+        salon?.name?.toLowerCase().includes(searchTerm) ||
+        salon?.address2?.toLowerCase().includes(searchTerm) ||
+        salon?.stateName?.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // Apply state filter
+    if (state) {
+      filtered = filtered.filter(salon => salon?.stateName === state);
+    }
+
+    setFilterSalons(filtered);
+  };
+
+  useEffect(() => {
+    // Clear existing timeout
     if (searchTimeoutRef.current) {
       clearTimeout(searchTimeoutRef.current);
     }
+
+    // If no search query and no selected state, show all salons immediately
+    if (!searchQuery.trim() && !selectedState) {
+      console.log("Showing all salons");
+      setFilterSalons(salons);
+      return;
+    }
+
+    // Set new timeout for debounced search
+    searchTimeoutRef.current = setTimeout(() => {
+      filterSalonsFunction(searchQuery, selectedState);
+    }, 300); // 300ms delay
+
+    // Cleanup function
+    return () => {
+      if (searchTimeoutRef.current) {
+        clearTimeout(searchTimeoutRef.current);
+      }
+    };
+  }, [searchQuery, selectedState, salons]);
+
+  const clearFilters = () => {
+    // Clear any pending timeout
+    if (searchTimeoutRef.current) {
+      clearTimeout(searchTimeoutRef.current);
+    }
+
+    setSearchQuery('');
+    setSelectedState('');
   };
-}, [searchQuery, selectedState, salons]);
+  let MonsoonImage = "https://smartsalon.in/static/media/monsoon_logo.d13fe17aff633a52f677.png"
+  let MonsoonProImage = "https://smartsalon.in/static/media/newLogooo.ea324a2b4aaefefd6201.png"
+  const getImageUrl = (salon) => {
 
-const clearFilters = () => {
-  // Clear any pending timeout
-  if (searchTimeoutRef.current) {
-    clearTimeout(searchTimeoutRef.current);
+    return salon.name === "Monsoon" ? MonsoonImage : MonsoonProImage
+
   }
-  
-  setSearchQuery('');
-  setSelectedState('');
-};
-let MonsoonImage="https://smartsalon.in/static/media/monsoon_logo.d13fe17aff633a52f677.png"
-let MonsoonProImage="https://smartsalon.in/static/media/newLogooo.ea324a2b4aaefefd6201.png"
-const getImageUrl =(salon)=>{
 
- return  salon.name==="Monsoon"?MonsoonImage:MonsoonProImage
 
-}
   return (
     <>
       <Helmet>
         <title>
-          Find Your Nearest Monsoon Salon - Explore Our Locations Across India
+          Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More
         </title>
         <meta
           name="description"
-          content="Discover a Monsoon Salon near you! With branches nationwide, experience our premium beauty and grooming services, trusted professionals, and luxurious atmosphere at convenient locations across India."
+          content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
         />
         <meta
           name="keywords"
@@ -133,15 +130,63 @@ const getImageUrl =(salon)=>{
           href="https://monsoonsalon.com/salon-location-near-me"
         />
       </Helmet>
-      <div className="min-h-screen ">
+      <div className="min-h-screen">
         <div className="pt-9 pb-16">
           <div className="py-9">
-            <MainText textdata={"Our Premium Salons"} />
-            <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-              Discover the finest beauty salons across India. Professional services, expert stylists, and luxurious experiences await you.
+            <div className="w-[90%] md:w-[80%] mx-auto">
+  <h1 className="font-bold text-xl text-center leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
+          Explore Premium Beauty Salons and Franchise Opportunities Across India
+          </h1>
+           
+            <p className="text-center text-gray-600 mt-4">
+
+            India&#39;s beauty industry is experiencing a dynamic transformation, with premium salons
+            offering cutting-edge services designed to elevate your self-care routine. From rejuvenating
+            facials to trendy hair makeovers, the finest beauty salons across the country promise
+            exceptional treatments that blend luxury, expertise, and personalized care. Whether you&#39;re in
+            a metropolitan hub or a growing city, these salons offer an unforgettable experience that
+            leaves you feeling refreshed, confident, and beautiful.
+
             </p>
+            <p className="text-center text-gray-600 mt-4">
+            For those seeking <strong>affordable yet high-quality beauty services</strong>, cities like <strong>Chennai</strong> are
+            home to some of the <strong>cheapest and best salon franchises</strong> in India. These franchises offer the
+            perfect mix of expert care and cost-effective pricing, ensuring clients get the best value
+            without compromising on quality. The <strong>salon franchise in Chennai </strong>has become a sought-
+            after choice for entrepreneurs looking to invest in a fast-growing industry with immense
+            potential.
+
+            </p>
+            <p className="text-center text-gray-600 mt-4">
+            In India’s bustling metropolitan cities like <strong>Delhi, Mumbai, Bangalore, Hyderabad</strong>, and
+            Kolkata, salon franchises are flourishing. Cities like <strong>Noida, Pune, Ahmedabad</strong>, and
+            <strong>Chandigarh</strong> also feature thriving beauty markets, creating lucrative opportunities for
+            business owners through <strong>salon franchise</strong> models. Whether you’re looking for a hair salon
+            franchise for sale or aiming to invest in a <strong>salon franchise in Pune</strong>, these cities offer prime
+            locations and a strong customer base for franchise growth.
+
+            </p>
+            <p className="text-center text-gray-600 mt-4">
+            From the metros to tier-2 cities like <strong>Surat, Jaipur, Indore,</strong> and <strong>Lucknow</strong>, India&#39;s beauty
+            salons are redefining the salon experience. With a growing demand for premium beauty
+            services in <strong>Nagpur, Coimbatore, Bhubaneswar</strong>, and <strong>Visakhapatnam</strong>, opportunities to own
+            a salon franchise have never been better.
+
+            </p>
+            <p className="text-center text-gray-600 mt-4">
+
+            Whether you’re a client looking for luxurious, high-quality beauty services or an entrepreneur
+            ready to invest in the growing beauty industry, <strong>salon franchises</strong> in cities across India—from
+            <strong> Kochi to Gurgaon</strong>—offer unmatched business potential and an exceptional customer
+            experience.
+            </p>
+            </div>
           </div>
 
+            <MainText textdata={"Our Premium Salons"} />
+            <h2 className="text-center text-gray-600 mt-4  mx-auto max-w-2xl mb-4">
+              Discover the finest beauty salons across India. Professional services, expert stylists, and luxurious experiences await you.
+            </h2>
           {/* Search and Filter Section */}
           <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto mb-8">
             <div className="bg-white rounded-2xl p-6 shadow-lg border">
@@ -202,29 +247,29 @@ const getImageUrl =(salon)=>{
                   key={idx}
                   className="bg-white relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
                 >
-                 <div className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
-                      <div className="flex items-center gap-1">
-                        <FaStar className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        <span className="text-sm font-semibold">{salon.rating}</span>
-                      </div>
+                  <div className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
+                    <div className="flex items-center gap-1">
+                      <FaStar className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="text-sm font-semibold">{salon.rating}</span>
                     </div>
+                  </div>
                   {/* Salon Image */}
                   <div className="relative p-6 border-black overflow-hidden">
                     <img
                       src={getImageUrl(salon)}
-                      alt={salon.name}
-                      style={{aspectRatio:"290 / 95"}}
+                      alt={`${salon?.name} ${salon?.stateName}`}
+                      style={{ aspectRatio: "290 / 95" }}
                       className="w-1/3"
                     />
-                   
+
                   </div>
 
                   {/* Content */}
                   <div className="p-6">
                     <div className="mb-4">
-                      <h2 className="font-bold text-xl mb-2 text-gray-800 line-clamp-1">
+                      <div className="font-bold text-xl mb-2 text-gray-800 line-clamp-1">
                         {salon.name}
-                      </h2>
+                      </div>
 
                       <div className="flex items-center gap-1 mb-2 text-gray-600">
                         <FaMapPin className="w-4 h-4" />
@@ -236,8 +281,8 @@ const getImageUrl =(salon)=>{
                         <span className="text-sm">10:00 AM - 10:00 PM</span>
                       </div>
 
-                     
-                     
+
+
 
                       {/* Services Tags */}
                       <div className="flex flex-wrap gap-1 mb-4">
@@ -292,7 +337,7 @@ const getImageUrl =(salon)=>{
             )}
           </div>
 
-         
+
         </div>
       </div>
     </>

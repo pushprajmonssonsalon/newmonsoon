@@ -27,18 +27,18 @@ const NewFooter = () => {
             <h3 className='text-xl foot-link md:text-md mb-5 mt-0 font-normal text-white  md:mt-0'>Get in touch</h3>
             <div className="flex flex-col gap-3">
 
-            <h4 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />+91 8882766591   </h4>
+            <h4 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084 , 8882766591   </h4>
             <h4 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoMail size={20} />info@theprofessionalworld.com</h4>
             </div>
          </div>
          <div className='flex flex-col'>
             <h3 className='text-xl foot-link  md:text-md mb-5 font-normal text-white  mt-0'>Our Social Media</h3>
             <div className='flex flex-row gap-x-3 md:gap-x-5'>
-               <a href={"https://www.instagram.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
-               <a href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
-               <a href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
-               <a href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
-               <a href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
+               <a target="_blank" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
+               <a target="_blank" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
+               <a target="_blank" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
+               <a target="_blank" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
+               <a target="_blank" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
             </div>
          </div>
       </div>

@@ -149,12 +149,11 @@ export default function ContactUs() {
     <>
       <Helmet>
         <title>
-          Contact Us: Moving Solutions Contact Details - Address, Email, Phone
-          Number
+          Contact Us | Monsoon Salon Franchise Team
         </title>
         <meta
           name="description"
-          content="Want to contact monsoonsalon.com? Here is complete contact details of Moving Solutions including address, email, and phone number."
+          content="Reach out to Monsoon Salon today and explore exciting opportunities to join our growing saloon franchise business network in India."
         />
         <meta
           name="keywords"
@@ -257,7 +256,12 @@ export default function ContactUs() {
                 <h2 className="font-medium text-lg md:text-xl mt-3 mb-1">
                   Phone
                 </h2>
-               
+                <a
+                  href="tel:+91-9315788084"
+                  className="text-regel-gray text-sm md:text-base"
+                >
+                  +91-9315788084
+                </a>
                 <a
                   href="tel:+91-8882766591"
                   className="text-regel-gray text-sm md:text-base"

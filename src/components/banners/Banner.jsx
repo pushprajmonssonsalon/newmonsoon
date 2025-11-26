@@ -1,5 +1,5 @@
 import "./Banner.css";
-const Banner = ({image}) => {
+const Banner = ({image,index=0}) => {
   return (
     <>
       <div
@@ -17,7 +17,7 @@ const Banner = ({image}) => {
           lazyboundary="800px"
           sizes="100vw"
           src={image}
-          alt={`Monsoon salon`}
+          alt={`Luxury Salon Franchise ${index}`}
           decoding="async"
           data-nimg="responsive"
           className="border border-silverSurfer-300  absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 img-styles"

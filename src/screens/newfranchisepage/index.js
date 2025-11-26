@@ -308,12 +308,11 @@ export default function Newfranchise() {
         <div className="max-w-[100vw] overflow-x-hidden">
           <Helmet>
             <title>
-              Monsoon Salon Franchise Opportunity in India - Join the Monsoon
-              Salon Network
+              Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon
             </title>
             <meta
               name="description"
-              content="Monsoon Salon offers a lucrative franchise opportunity across India. Become part of our trusted network, known for premium beauty services, expert professionals, and a strong brand reputation. Start your journey in the beauty industry with Monsoon Salon today."
+              content="Start your business with Monsoon Salon – the best beauty salon franchise in India. Own a top, low-cost salon franchise with trusted brand support."
             />
             <meta
               name="keywords"
@@ -391,6 +390,19 @@ export default function Newfranchise() {
               Also on the list of the best salon franchises in India is Monsoon
               Salon.
             </p>
+            <p className="discriptionText ">
+              As one of the <strong>best beauty salon franchises in India</strong>, we provide comprehensive support
+              from training to marketing, ensuring your salon operates smoothly and attracts a loyal
+              customer base. Our franchise program is designed to suit both experienced entrepreneurs and
+              newcomers, offering flexibility and scalability to match your goals.
+              Why choose us? Our <strong>low-cost franchise</strong> model combines quality with affordability, giving
+              you access to premium beauty products, expert guidance, and a recognized brand name.
+              Whether you&#39;re looking to open a single salon or expand across multiple locations, we offer a
+              franchise model that adapts to your needs.
+              Join one of the most trusted beauty salon franchises in India and become part of an ever-
+              growing industry. Start your journey toward success today with the <strong> best salon franchise in
+              India</strong>, and turn your passion for beauty into a thriving business.
+            </p>
           </div>
           <div className="px-6 my-8 md:my-16  text-center">
             <h2 className="font-bold text-xl mb-5   md:text-[2rem]">
@@ -414,9 +426,9 @@ export default function Newfranchise() {
         </div>
         <div className=" flex flex-col items-center py-9 px-3 mb-8">
           <div>
-            <h1 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-9">
+            <h4 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-9">
               Top Benefits of Opening a Monsoon Salon Franchise
-            </h1>
+            </h4>
 
             <p className="text-center font-medium text-lg mt-3 mb-6">
               India’s most stable, growing salon chain

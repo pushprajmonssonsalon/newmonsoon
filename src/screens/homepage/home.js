@@ -32,12 +32,11 @@ export default function Home() {
       <div className="roboto-regular ">
         <Helmet>
           <title>
-            India's Leading Salon Franchise Chain - Monsoon Salon | Monsoon
-            Salon Franchise
+            Monsoon Salon | India’s Leading Salon Franchise Chain
           </title>
           <meta
             name="description"
-            content="Monsoon Salon is a top salon franchise in India, renowned for its premium beauty and grooming services. With locations across India, including Delhi, Monsoon offers expert hair, skincare, and bridal treatments."
+            content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
           />
           <meta
             name="keywords"
@@ -73,7 +72,7 @@ export default function Home() {
           >
             {bannerImg?.reverse()?.map((image, index) => (
               <div key={index} className="h-full ">
-                <Banner image={image} />
+                <Banner image={image} key={index} index={index} />
               </div>
             ))}
           </Carousel>
@@ -83,13 +82,24 @@ export default function Home() {
 
         <LatestWork />
 
-        <h2 className="text-xl font-medium text-center  roboto-regular opacity-80 ">
+        <h4 className="text-xl font-medium text-center  roboto-regular opacity-80 ">
           What We Do
-        </h2>
-        <h2 className="text-[2.5rem] md:text-[3rem] px-3 md:px-5 text-center font-medium font-Cormorant opacity-80 mb-5">
+        </h4>
+        <h5 className="text-[2.5rem] md:text-[3rem] px-3 md:px-5 text-center font-medium font-Cormorant opacity-80 mb-5">
           Your Complete Beauty Journey Starts{" "}
-        </h2>
+        </h5>
+                <div className="px-5 sm:w-[90%] 2xl:w-[70%] mx-auto ">
 
+        <p className="w-full text-xl md:text-2xl  p-3 md:px-6 font-Cormorant text-regel-gray ">
+          We believe that every beauty journey is uniquely yours, and it all starts with you. From the
+moment you walk through our doors, we focus on enhancing your natural beauty with
+personalized services tailored to your specific needs. Whether you’re looking for a fresh
+haircut, a bold color transformation, a refreshing skin treatment, or a flawless bridal
+makeover, our expert team is here to turn your vision into reality. We are committed to
+making you look and feel your absolute best, guiding you every step of the way. Let us take
+you on a transformative journey that leaves you feeling confident, radiant, and renewed.
+        </p>
+</div>
         <div className="px-3 sm:w-[90%] 2xl:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 place-items-center justify-items-center   md:mb-10">
           {OurServicesData.map((item, index) => (
             <ServiceCart
@@ -103,9 +113,9 @@ export default function Home() {
 
         <Testimonial />
 
-        <h2 className="text-2xl md:text-4xl text-center font-normal roboto-regular opacity-80 mb-5">
+        <h5 className="text-2xl md:text-4xl text-center font-normal roboto-regular opacity-80 mb-5">
           Partner Brands
-        </h2>
+        </h5>
         <div className="mb-16 grid gap-4  grid-cols-2 md:grid-cols-3 w-[90%] md:w-[80%] 2xl:w-[70%] mx-auto">
           {brandsImg?.map((item, index) => {
             return (
@@ -116,7 +126,7 @@ export default function Home() {
                 <img
                   src={item.brandUrl}
                   className="h-[70%] w-[70%]"
-                  alt="Monsoon Salon"
+                  alt={item.name}
                 />
               </div>
             );

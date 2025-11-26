@@ -6,6 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+        screens: {
+              "3xl": "1720px", // 👈 Custom breakpoint
+              "4xl": "1800px", // 👈 Custom breakpoint
+
+
+        },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         // Add more custom font families as needed

@@ -5,16 +5,134 @@ import { FaMailBulk, FaPhone, FaWhatsapp } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { getApiCall } from "../../utils/services";
 
+
+const salonFranchiseData = [
+  {
+    state: "Maharashtra",
+    text: "Salon Franchise in Mumbai Near Me | Monsoon Salon",
+    description:
+      "Start your own salon franchise in Mumbai near me with Monsoon Salon. Get full support, training, and a trusted brand to grow your beauty business."
+  },
+  {
+    state: "Meghalaya",
+    text: "Salon Franchise in Meghalaya Near Me | Monsoon Salon",
+    description:
+      "Explore salon franchise opportunities in Meghalaya and start a successful beauty business with complete guidance and support."
+  },
+  {
+    state: "Uttar Pradesh",
+    text: "Salon Franchise Uttar Pradesh | Start Your Beauty Business in UP",
+    description:
+      "Looking for a salon franchise near me in Uttar Pradesh? Explore top salon franchise opportunities in UP and launch your successful beauty business with expert support and proven models."
+  },
+  {
+    state: "Assam",
+    text: "Salon Franchise Assam | Start Your Beauty Business",
+    description:
+      "Looking for a salon franchise near me in Assam? Explore top opportunities and start your profitable beauty business with expert support."
+  },
+  {
+    state: "Jharkhand",
+    text: "Salon Franchise Jharkhand | Start Your Beauty Business",
+    description:
+      "Launch your beauty business in Jharkhand with trusted salon franchise opportunities and complete support for growth."
+  },
+  {
+    state: "West Bengal",
+    text: "Salon Franchise West Bengal | Start Your Beauty Business",
+    description:
+      "Find top salon franchise opportunities in West Bengal and start a successful beauty business with full support and training."
+  },
+  {
+    state: "New Delhi",
+    text: "Salon Franchise New Delhi | Start Your Beauty Business",
+    description:
+      "Find a salon franchise near me in New Delhi and launch your beauty business with top franchise opportunities and expert guidance."
+  },
+  {
+    state: "Telangana",
+    text: "Salon Franchise Telangana | Launch Your Beauty Business",
+    description:
+      "Looking for a salon franchise near me in Telangana? Discover top opportunities and start your successful beauty business today."
+  },
+  {
+    state: "Tamil Nadu",
+    text: "Salon Franchise Tamil Nadu | Launch Your Beauty Business",
+    description:
+      "Explore salon franchise opportunities in Tamil Nadu and launch a profitable beauty business with full support."
+  },
+  {
+    state: "Rajasthan",
+    text: "Salon Franchise Rajasthan | Start Your Beauty Business",
+    description:
+      "Explore a salon franchise near me in Rajasthan and start a profitable beauty business with expert guidance and proven franchise models."
+  },
+  {
+    state: "Chandigarh",
+    text: "Salon Franchise Chandigarh | Start Your Beauty Business",
+    description:
+      "Searching for a salon franchise near me in Chandigarh? Launch your beauty business with top franchise support and expert guidance."
+  },
+  {
+    state: "Ladakh",
+    text: "Salon Franchise Ladakh | Launch Your Beauty Business",
+    description:
+      "Find a salon franchise near me in Ladakh and start a successful beauty business with trusted franchise opportunities and expert support."
+  },
+  {
+    state: "Manipur",
+    text: "Salon Franchise Manipur | Start Your Beauty Business",
+    description:
+      "Looking for a salon franchise near me in Manipur? Explore top opportunities to launch your profitable beauty business successfully."
+  },
+  {
+    state: "Madhya Pradesh",
+    text: "Salon Franchise MP | Launch Your Beauty Business",
+    description:
+      "Find a salon franchise near me in Madhya Pradesh and start a successful beauty business with expert guidance and proven franchise models."
+  },
+  {
+    state: "Arunachal Pradesh",
+    text: "Salon Franchise AP | Start Your Beauty Business",
+    description:
+      "Explore salon franchise opportunities in Arunachal Pradesh and launch a successful beauty business with complete support."
+  },
+  {
+    state: "Andhra Pradesh",
+    text: "Salon Franchise Andhra Pradesh | Start Your Beauty Business",
+    description:
+      "Explore a salon franchise near me in Andhra Pradesh and launch your profitable beauty business with top franchise support and expert guidance."
+  },
+  {
+    state: "Jammu Kashmir",
+    text: "Salon Franchise Jammu Kashmir | Start Your Beauty Business",
+    description:
+      "Find salon franchise opportunities in Jammu & Kashmir and start your beauty business with complete training and guidance."
+  },
+  {
+    state: "Punjab",
+    text: "Salon Franchise Punjab | Start Your Beauty Business",
+    description:
+      "Looking for a salon franchise near me in Punjab? Discover top franchise opportunities to grow your beauty business successfully."
+  },
+  {
+    state: "Haryana",
+    text: "Salon Franchise Haryana | Launch Your Beauty Business",
+    description:
+      "Find a salon franchise near me in Haryana and start a successful beauty business with expert support and proven franchise models."
+  }
+];
+
 const SingleLocation = () => {
   const [searchParams] = useSearchParams();
   const isScroll = searchParams.get("scroll");
-
+  
   const [singleSalonDetail, setSingleSalonDetail] = useState({});
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const params = useParams();
-
-
+  
+  
 
   useEffect(() => {
     getApiCall(
@@ -35,35 +153,42 @@ const SingleLocation = () => {
     if (element) {
       const offset = 100; // Offset of 100px
       const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
+      element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
-
+      
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth", // Smooth scroll
       });
     }
   }, [isScroll]);
-
+  
   useEffect(() => {
     if (isScroll) {
       scrollToDivWithOffset(isScroll);
     }
   }, [isScroll]);
-
-  const mapContainerStyle = {
-    width: "100%",
-    height: "400px",
-  };
-
-  const center = {
-    lat: latitude,
-    lng: longitude,
-  };
-
+  
+  const obj={
+    text: `Salon Franchise  ${singleSalonDetail?.stateName || ""} | Start Your Beauty Business`,
+    description:`Looking for a salon franchise near me in ${singleSalonDetail?.stateName || ""}? Explore top opportunities and start your profitable beauty business with expert support.`
+  }
+  const salonData =salonFranchiseData?.find((elm)=>elm.state===singleSalonDetail?.stateName)||obj
+  const metaTitle =salonData?.text;
+  const metaDescription =salonData?.description;
   return (
     <>
-      <Helmet></Helmet>
+      <Helmet>
+        <title>
+          {metaTitle}
+        </title>
+        <meta
+          name="description"
+          content={metaDescription}
+        />
+        <link rel="canonical" href={`https://monsoonsalon.com/salon-location-near-me/${params?.id}`} />
+
+      </Helmet>
 
       <div className="flex flex-col items-center">
         {/* <h1 className="text-center my-4 md:my-9 px-3 font-bold font-[Montserrat]   text-xl md:text-3xl ">
@@ -73,9 +198,9 @@ const SingleLocation = () => {
 
         <div className="flex flex-col md:flex-row mt-4 md:mt-8 space-y-4 md:space-y-0 md:space-x-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
           <div className="flex-1">
-            <p className="font-bold text-lg  md:text-2xl">
+            <h1 className="font-bold text-lg  md:text-2xl">
               Best Salon in {singleSalonDetail?.stateName}{" "}
-            </p>
+            </h1>
             <p className="mt-4 text-sm md:text-base">
               {`Looking for a rejuvenating salon experience in the heart of `}
               <span className="font-bold">{singleSalonDetail?.stateName} </span>
@@ -102,10 +227,14 @@ const SingleLocation = () => {
                 ? singleSalonDetail?.images[0]
                 : LOCAL_IMAGES.IMAGE1
             }
-            className="w-full rounded-md md:w-1/2 aspect-[16/9] object-cover"
-            loading="lazy"
-            alt="Monsoon Salon"
+            onError={(e) => {
+              e.target.onerror = null; // Prevent infinite loop if fallback also fails
+              e.target.src = LOCAL_IMAGES.IMAGE1; // Use your local fallback image
+            }}
+            alt={`${singleSalonDetail?.name} ${singleSalonDetail?.stateName}`}
+            style={{ objectFit: "cover" }}
           />
+
         </div>
 
         <div
@@ -144,46 +273,46 @@ const SingleLocation = () => {
           </div>
         </div>
         {/* Enhanced Contact Section */}
-      <div className="mt-12 w-full bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
-        <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
-          Ready to Transform Your Look?
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <a 
-            href="mailto:enquiry@theprofessionalworld.com"
-            className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
-          >
-            <FaMailBulk className="text-blue-500 group-hover:text-blue-600 mb-3" size={32} />
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
-            <p className="text-gray-600 text-center text-sm">
-              enquiry@theprofessionalworld.com
-            </p>
-          </a>
-          
-          <a 
-            href="tel:+919315743367"
-            className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
-          >
-            <FaPhone className="text-green-500 group-hover:text-green-600 mb-3" size={32} />
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Call Now</h3>
-            <p className="text-gray-600 text-center text-sm">
-              +91 9315743367
-            </p>
-          </a>
-          
-          <a 
-            href="https://wa.me/+919315743367"
-            className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
-          >
-            <FaWhatsapp className="text-green-500 group-hover:text-green-600 mb-3" size={32} />
-            <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
-            <p className="text-gray-600 text-center text-sm">
-              Click to Chat
-            </p>
-          </a>
+        <div className="mt-12 w-full bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8">
+          <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            Ready to Transform Your Look?
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="mailto:enquiry@theprofessionalworld.com"
+              className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
+            >
+              <FaMailBulk className="text-blue-500 group-hover:text-blue-600 mb-3" size={32} />
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
+              <p className="text-gray-600 text-center text-sm">
+                enquiry@theprofessionalworld.com
+              </p>
+            </a>
+
+            <a
+              href="tel:+919315743367"
+              className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
+            >
+              <FaPhone className="text-green-500 group-hover:text-green-600 mb-3" size={32} />
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Call Now</h3>
+              <p className="text-gray-600 text-center text-sm">
+                +91 9315743367
+              </p>
+            </a>
+
+            <a
+              href="https://wa.me/+919315743367"
+              className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
+            >
+              <FaWhatsapp className="text-green-500 group-hover:text-green-600 mb-3" size={32} />
+              <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
+              <p className="text-gray-600 text-center text-sm">
+                Click to Chat
+              </p>
+            </a>
+          </div>
         </div>
-      </div>
       </div>
     </>
   );

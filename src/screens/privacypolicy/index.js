@@ -55,16 +55,79 @@ export default function PrivacyPolicy() {
     <>
     <Helmet>
     
-    <title>Privacy Policy - Monsoon Salon</title>
-    <meta name="description" content="Learn about Monsoon Salon's commitment to protecting your privacy. Our Privacy Policy outlines how we collect, use, and safeguard your personal information while you enjoy our premium beauty services."/>
+    <title>Monsoon Salon Franchise Policy | Investment, Benefits & Requirements</title>
+    <meta name="description" content="Partner with Monsoon Salon! Learn about our franchise policy, investment options, and business support to start your own premium salon with India’s trusted beauty brand."/>
     <meta name="keywords" content="privacy policy, data protection, personal information, user privacy"/>
     <link rel="canonical" href="https://monsoonsalon.com/privacypolicy" />
 
     </Helmet>
     <div className="py-9">
       <div className="flex items-center  justify-center">
-        <h1 className="font-semibold text-3xl" > Privacy Policy</h1>
+        <h1 className="font-semibold text-3xl py-6" > Monsoon Salon - Privacy Policy</h1>
       </div>
+      <div className="w-[90%] md:w-[80%] mx-auto">
+        <p className=" text-gray-600 mt-4">
+          At Monsoon Salon Franchise, we are committed to protecting your privacy and ensuring the
+security of your personal information when you use our e-commerce platforms, including our
+website, mobile app, and online services. We collect information that you provide to us
+directly, such as your name, email address, phone number, billing and shipping addresses,
+payment details, and account credentials. We also collect transactional information, including
+your order history, service bookings, and subscription preferences. Additionally, we may
+collect information automatically through your interactions with our website or app,
+including IP address, browser type, device information, cookies, and usage patterns. We may
+also record your marketing preferences when you consent to receive newsletters, promotional
+emails, or special offers.
+
+
+
+
+
+
+        </p>
+        <p className=" text-gray-600 mt-4">
+      We use the information we collect to process your orders and payments securely, manage
+online appointments, provide personalized services and recommendations, and enhance your
+overall experience on our digital platforms. Your information may also be used to
+communicate updates, promotions, and marketing materials (with your consent), detect and
+prevent fraudulent activity, and comply with legal and regulatory requirements.
+        </p>
+        <p className=" text-gray-600 mt-4">
+    We do not sell your personal information to third parties. However, we may share
+information with trusted service providers who help us process payments, manage IT
+infrastructure, deliver products, or conduct marketing campaigns. Franchise locations may
+also receive information necessary to fulfil your online orders or manage appointments.
+Additionally, we may share information with legal authorities when required by law or to
+protect our rights, users, or property, and in the event of business transfers, such as mergers or
+acquisitions.
+        </p>
+        <p className=" text-gray-600 mt-4">
+  We implement reasonable administrative, technical, and physical safeguards to protect your
+personal information, though no method of transmission or storage over the internet can be
+guaranteed to be completely secure. You have the right to access, update, or correct your
+information through your account or by contacting us directly. You can also opt-out of
+marketing communications and request deletion of your personal information, subject to legal
+and operational requirements.
+        </p>
+        <p className=" text-gray-600 mt-4">
+  Our website and app may use cookies and other tracking technologies to enhance your
+browsing experience, analyse traffic, and deliver personalized content. You can manage your
+cookie preferences through your browser settings. Our platforms may contain links to third-
+party websites, but we are not responsible for the privacy practices of these sites and
+encourage you to review their policies.
+        </p>
+        <p className=" text-gray-600 mt-4">
+  We do not knowingly collect personal information from individuals under 13, and any such
+information discovered will be deleted immediately. We may update this Privacy Policy
+periodically, and any changes will be posted on our website with an updated effective date.
+We encourage you to review this policy from time to time to stay informed about how we
+protect your information.
+        </p>
+        <p className=" text-gray-600 mt-4">
+ If you have any questions or concerns regarding this Privacy Policy or our practices, you may
+contact us freely.
+        </p>
+      </div>
+            <h2 className="font-semibold text-center text-2xl py-9" >Frequently Asked Questions</h2>
 
       <ul className=" w-[90%] md:w-[60%] my-9 mx-auto   rounded-md">
        {accordionData.map((item,index)=>{
@@ -88,7 +151,7 @@ export default function PrivacyPolicy() {
               <span className="font-medium text-xl">{item.title}</span>
             </summary>
             <article className="px-4 pb-4">
-              <p>
+              <p className=" text-gray-600 mt-4">
                 {item.details}
               </p>
             </article>
