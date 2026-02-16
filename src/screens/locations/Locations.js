@@ -10,18 +10,88 @@ const Locations = () => {
   const [salons, setSalons] = useState([]);
   const [filterSalons, setFilterSalons] = useState([]);
   const navigate = useNavigate();
-
-
+  
   useEffect(() => {
     getApiCall(
       "salons",
 
       (res) => {
         setSalons(res);
+        console.log(res?.map((elm)=>elm._id),"salons")
       },
       (err) => { }
     );
   }, []);
+  let arr=[
+    "61ea59ddcb083202e8e5af84",
+    "632831991c1ed46df4f2a39e",
+    "6027c23499ed2c6612cf241d",
+    "605c90a71e3ed5375545e1f4",
+    "65aa29d6a8758f9cb542d26f",
+    "65aa29d6a8758f9cb542d278",
+    "65aa29d6a8758f9cb542d27b",
+    "65aa29d6a8758f9cb542d287",
+    "65aa29d6a8758f9cb542d26c",
+    "65aa29d6a8758f9cb542d285",
+    "65aa29d6a8758f9cb542d289",
+    "65aa29d6a8758f9cb542d277",
+    "65aa29d6a8758f9cb542d284",
+    "65aa29d6a8758f9cb542d26b",
+    "65aa29d6a8758f9cb542d272",
+    "62fdd4e66f264ab6c15a3ccd",
+    "601a50be94675375189a1f08",
+    "65aa29d6a8758f9cb542d27f",
+    "65aa29d6a8758f9cb542d283",
+    "65aa29d6a8758f9cb542d288",
+    "65aa29d6a8758f9cb542d26d",
+    "66e2af8ddf7573853816bb5f",
+    "60c329d8031ffd6e924e60fc",
+    "62faf6cf3d304d7b51e3ac05",
+    "65aa29d6a8758f9cb542d270",
+    "6660554c07a1db23039fe58c",
+    "5f54b67be83cec41bd7648b3",
+    "65aa29d6a8758f9cb542d274",
+    "65aa29d6a8758f9cb542d27e",
+    "65aa29d6a8758f9cb542d273",
+    "65aa29d6a8758f9cb542d275",
+    "65aa29d6a8758f9cb542d27d",
+    "65aa29d6a8758f9cb542d281",
+    "65aa29d6a8758f9cb542d282",
+    "669658564b4131b93753a35e",
+    "6238591825ce9b713b4c68d0",
+    "65aa29d6a8758f9cb542d271",
+    "65aa29d6a8758f9cb542d27c",
+    "65aa29d6a8758f9cb542d280",
+    "65aa29d6a8758f9cb542d286",
+    "65aa29d6a8758f9cb542d279",
+    "65aa29d6a8758f9cb542d27a",
+    "66fa6c46995da128d6f01cb2",
+    "674453aa60cc0db932011c54",
+    "67caca89c3a6b82924065c15",
+    "67e0dc6b55b8a70880a252cb",
+    "67ff5608564d02be0e34d7d6",
+    "67ff5a4d564d02be0e34d7db",
+    "684fc0aadd70be9bdbc55f56",
+    "68621a568f434e3508101ddb",
+    "68ad87e9babf8c1847151a55",
+    "68ea0bc8134c8e50a1cd4976",
+    "68ea3471134c8e50a1cd498f"
+]
+const BASE_URL = "https://monsoonsalon.com/salon-location-near-me/";
+const lastmod = new Date().toISOString();
+
+const sitemapEntries = arr
+  .map(
+    (id) => `
+  <url>
+    <loc>${BASE_URL}${id}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <priority>1.0</priority>
+  </url>`
+  )
+  .join("");
+
+console.log(sitemapEntries,"updateArr")
   const handleSingleSalon = async (id, locate) => {
     if (locate) {
       navigate(`${id}?scroll=${true}`);

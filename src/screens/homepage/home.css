@@ -3,6 +3,36 @@ background-color: white;
 }
 .image_insta {
   position: relative;
+}.custom-shape-divider-bottom-1770896521 {
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0; */
+}
+
+.custom-shape-divider-bottom-1770896521 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 215px;
+}
+
+.custom-shape-divider-bottom-1770896521 .shape-fill {
+    fill: #FFFFFF;
+}
+.bg-clip-circle {
+  position: relative;
+}
+
+.bg-clip-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFF5EB;
+  clip-path: circle(74.7% at 48% 21%);
+  z-index: -1;
 }
 
 .image-hover-effect:hover::after {

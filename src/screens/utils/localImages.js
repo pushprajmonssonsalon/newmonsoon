@@ -2,10 +2,10 @@ const LOCAL_IMAGES={
     IMAGE1:require('../../assets/images/image2.webp'),
    
     monsoonlogo:require('../../assets/images/monsoonlogo.png'),
-    skincoIcon:require('../../assets/images/Skinco.png'),
-    kerastaseIcon:require('../../assets/images/Kerastase.jpg'),
-    thalgoIcon:require('../../assets/images/Thalgo.png'),
-    argatinIcon:require('../../assets/images/Argatin.png'),
+    skincoIcon:require('../../assets/images/skinco2.png'),
+    kerastaseIcon:require('../../assets/images/karastase2.png'),
+    thalgoIcon:require('../../assets/images/thalgo2.png'),
+    argatinIcon:require('../../assets/images/argatin2.png'),
    
 
 
@@ -30,14 +30,18 @@ const LOCAL_IMAGES={
    //brands banner 
 
 
-   argatinIcon:require('../../assets/images/argatin.jpg'),
-  springIcon:require('../../assets/images/spring.jpg'),
-  skinIcon:require('../../assets/images/skinco.jpg'),
-  thalgoIcon:require('../../assets/images/thalgo.jpg'),
-  lorealIcon:require('../../assets/images/lorealbrand.png'),
+   argatinIcon:require('../../assets/images/argatin2.png'),
+  springIcon:require('../../assets/images/spring2.png'),
+  skinIcon:require('../../assets/images/skinco2.png'),
+  thalgoIcon:require('../../assets/images/thalgo2.png'),
+  lorealIcon:require('../../assets/images/loreal2.png'),
 
 
-  //
+  //phool pati
+  phool1:require('../../assets/images/phool1.png'),
+  phool2:require('../../assets/images/phool2.png'),
+  patti1:require('../../assets/images/patti1.png'),
+  patti2:require('../../assets/images/patti2.png'),
 
 
 
@@ -61,6 +65,8 @@ const LOCAL_IMAGES={
    monsoonsalon25:require('../../assets/images/monsoon25.jpg'),
    monsoonsalon26:require('../../assets/images/monsoon26.jpg'),
    monsoonsalon27:require('../../assets/images/monsoon27.jpg'),
+   monsoonsalon28:require('../../assets/images/monsoon28.avif'),
+   monsoonsalon29:require('../../assets/images/monsoon29.png'),
 
 
    

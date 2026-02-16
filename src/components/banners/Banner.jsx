@@ -3,7 +3,7 @@ const Banner = ({image,index=0}) => {
   return (
     <>
       <div
-        className="md:w-full  h-auto md:h-full box-border block overflow-hidden  bg-none opacity-100 border-0 m-0 p-0 relative"
+        className="md:w-full rounded-[25px]  h-auto md:h-full box-border block overflow-hidden  bg-none opacity-100 border-0 m-0 p-0 relative"
        
       >
         {/* Apply the className here */}

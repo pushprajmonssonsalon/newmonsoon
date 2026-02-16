@@ -17,31 +17,76 @@ function TestimonalSlider() {
     prevArrow: <TestimonialPrevArrow />,
     nextArrow: <TestimonialNextArrow />,
   };
-  const testimonials = [
-    {
-      name: "Arpita Solanki",
-      desc: "Walking into Monsoon Salon was a game-changer for my beauty routine. From the welcoming ambiance to the professional approach of the stylists, every detail was impeccable. I was impressed by how well the team understood my hair's unique needs. After the session, my hair looked vibrant and healthy, exactly how I had envisioned it. Monsoon Salon has truly set a high standard in beauty services, offering more than just haircuts—they deliver confidence and satisfaction with every visit.",
-    },
-    {
-      name: "Roshini Panchal",
-      desc: "Walking into Monsoon Salon was a game-changer for my beauty routine. From the welcoming ambiance to the professional approach of the stylists, every detail was impeccable. I was impressed by how well the team understood my hair's unique needs. After the session, my hair looked vibrant and healthy, exactly how I had envisioned it. Monsoon Salon has truly set a high standard in beauty services, offering more than just haircuts—they deliver confidence and satisfaction with every visit.",
-    },
-    {
-      name: "Arpita Solanki",
-      desc: "My experience at Monsoon Salon was nothing short of amazing. From the moment I walked in, I was treated with exceptional care. The stylist listened closely to my needs and gave my hair a fresh, lively look that I absolutely loved. The atmosphere was relaxing, and the service was top-notch. Monsoon Salon isn't just about great haircuts; it's about making you feel your absolute best when you walk out the door.",
-    },
-  ];
+   const testimonials = [
+  {
+    name: "Aarav Sharma",
+    review:
+      "Amazing experience! The stylists understood exactly what I wanted and the results were perfect. Premium ambience and very professional staff.",
+  },
+  {
+    name: "Riya Patel",
+    review:
+      "Best salon visit I’ve ever had. My hair feels healthier and the service was extremely relaxing. Highly recommended!",
+  },
+  {
+    name: "Karan Mehta",
+    review:
+      "Great grooming services and very hygienic environment. The staff is polite and skilled.",
+  },
+  {
+    name: "Sneha Verma",
+    review:
+      "Loved my bridal makeup! It lasted all day and looked flawless in photos. Thank you Monsoon team!",
+  },
+  {
+    name: "Rahul Gupta",
+    review:
+      "Professional haircut and beard styling. The ambience itself feels luxurious and calming.",
+  },
+  {
+    name: "Ananya Iyer",
+    review:
+      "Skin treatment worked wonders. My face feels refreshed and glowing. Definitely coming back again!",
+  },
+];
   return (
-    <div className=" relative my-10 md:my-10 lg:my-6 w-full max-w-full overflow-x-hidden h-full ">
-      <Slider {...settings}>
-       
-        {testimonials.map((testimonial, idx) => {
-          const { name, desc } = testimonial;
-          return <Message key={idx} name={name} desc={desc} />;
-        })}
+    <>
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className="text-3xl font-kotta md:text-5xl font-semibold text-neutral-800 mb-14">
+          Client Testimonials
+        </h2>
+        <div className="">
+          <Slider {...settings}>
 
-      </Slider>
-    </div>
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="bg-white/70 backdrop-blur rounded-[28px] p-8 shadow-md hover:shadow-xl transition"
+              >
+                <div className="text-amber-500 text-xl mb-4">★★★★★</div>
+                <p className="text-neutral-600 font-jaldi text-sm leading-relaxed mb-6">
+                  {t.review}
+                </p>
+                <p className="font-semibold font-jaldi text-neutral-800 tracking-wide">
+                  {t.name}
+                </p>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
+
+      {/* <div className=" relative my-10 md:my-10 lg:my-6 w-full max-w-full overflow-x-hidden h-full ">
+        <Slider {...settings}>
+
+          {testimonials.map((testimonial, idx) => {
+            const { name, desc } = testimonial;
+            return <Message key={idx} name={name} desc={desc} />;
+          })}
+
+        </Slider>
+      </div> */}
+    </>
   );
 }
 

@@ -52,7 +52,7 @@ const Navbar = () => {
         <>
         <div className="relative">
           <div
-            className={`  w-full bg-primary   roboto-medium-italic    flex gap-[15%] items-center px-6 py-5  transition-all ease-in-out duration-500`}
+            className={`  w-full bg-white   roboto-medium-italic    flex gap-[15%] items-center px-6 py-5  transition-all ease-in-out duration-500`}
           >
             <div>
               <Link to="/">

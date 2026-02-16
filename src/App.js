@@ -10,6 +10,7 @@ import "animate.css/animate.min.css";
 import NewFooter from "./screens/footer";
 import Navbar from "./screens/navbar";
 import OverLayloader from "./components/loaders/OverLayloader.js";
+import Header from "./screens/navbar/StickyNavbar.js";
 const lazyRetry = function (componentImport) {
   return new Promise((resolve, reject) => {
     const hasRefreshed = JSON.parse(
@@ -64,7 +65,7 @@ export default function App() {
       <Toaster />
 
       <BrowserRouter>
-        {window.location.pathname !== "/customSalon" && <Navbar />}
+        {window.location.pathname !== "/customSalon" && <Header />}
         <ScrollToTop />
         <Suspense fallback={<OverLayloader/>}>
         <div className="">

@@ -73,14 +73,7 @@ const About = () => {
         <link rel="preload" as="image" href={LOCAL_IMAGES.aboutuspage} />
         <link rel="preload" as="image" href={LOCAL_IMAGES.about} />
 
-        <meta
-          name="description"
-          content="The Monsoon Salon is a young brand for the refined consumer that is after International experience with exceptional talent that is on a continuous journey."
-        />
-        <meta
-          name="keywords"
-          content="about Monsoon Salon, Monsoon Salon information, Monsoon Salon about us, Monsoon Salon profile"
-        />
+       
       </Helmet>
       <div className="maincontainer">
         <div className="relative">
