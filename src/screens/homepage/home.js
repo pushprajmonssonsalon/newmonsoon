@@ -1,22 +1,19 @@
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./home.css";
 import { Helmet } from "react-helmet";
+import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { brandsImg, OurServicesData } from "../utils/dummydata";
-import Testimonial from "../../components/Testimonial";
 import Header from "../../components/Header";
-import ServiceCart from "../../components/ServiceCart";
 import LatestWork from "../../components/latestWork/LatestWork";
 import Banner from "../../components/banners/Banner";
 import { getApiCall } from "../../utils/services";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import hair from "../../assets/images/hair2.png"
-import beauty from "../../assets/images/beauty2.png"
-import makeup from "../../assets/images/beauty1.png"
-import nail from "../../assets/images/nail1.png"
+import hair from "../../assets/images/hair2.png";
+import beauty from "../../assets/images/beauty2.png";
+import makeup from "../../assets/images/beauty1.png";
+import nail from "../../assets/images/nail1.png";
 export default function Home() {
   const [bannerImg, setBannerImg] = useState([]);
   const services = [
@@ -92,7 +89,17 @@ export default function Home() {
     "THALGO",
     "L'ORÉAL",
   ];
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    pauseOnHover: true,
 
+    autoplaySpeed: 50,
+  };
   return (
     <>
       <div className="roboto-regular bg-[#FFF5EB]">
@@ -120,25 +127,14 @@ export default function Home() {
         </Helmet>
 
 
-        <div className="mainsliderContainer">
-          <Carousel
-
-            showArrows={false}
-            showStatus={false}
-            showIndicators={false}
-            infiniteLoop={true}
-
-            autoPlay={true}
-            interval={2000}
-            pauseOnHover={false}
-            showThumbs={false}
-          >
+        <div className="mainsliderContainer p-2 rounded-[25px] overflow-hidden">
+           <Slider {...settings}>
             {bannerImg?.reverse()?.map((image, index) => (
-              <div key={index} className="h-full m-2">
+              <div key={index} className="h-full p-2">
                 <Banner image={image} key={index} index={index} />
               </div>
             ))}
-          </Carousel>
+          </Slider>
         </div>
         <div className="relative z-[40px] mx-3 sm:mx-9   overflow-hidden">
           {/* <div
@@ -175,7 +171,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading */}
             <div className="text-center mb-14">
-              <p className="text-sm font-kotta tracking-[0.3em] text-amber-600 uppercase">Our Services</p>
+              <p className="text-xl font-kotta tracking-[0.3em] text-amber-600 uppercase">Our Services</p>
               <h2 className="text-3xl md:text-5xl font-kotta font-semibold text-neutral-800 mt-3">
                 Premium Care For Every Style
               </h2>

@@ -294,7 +294,7 @@ export default function Newfranchise() {
       });
     }
   };
-  const videoUrl = "https://mycombos.s3.ap-south-1.amazonaws.com/franchiseVideo.mp4";
+  const videoUrl = "https://cdn.salon-kart.com/franchiseVideo.mp4";
 
   useEffect(() => {
     const isSubmited = sessionStorage.getItem("isSubmitted");
@@ -325,7 +325,7 @@ export default function Newfranchise() {
 
             <link rel="preload" as="video" href={videoUrl} />
 
-           
+
             {/* End Google Tag Manager (noscript) */}
             <script
               async
@@ -354,7 +354,7 @@ export default function Newfranchise() {
 
 
             <div className="absolute  z-[2]  w-full top-0 left-0  h-full">
-              {/* <video
+              <video
                 className="w-full h-full object-cover"
                 src={videoUrl}
                 autoPlay
@@ -362,169 +362,169 @@ export default function Newfranchise() {
                 muted
                 playsInline
                 controlsList="nodownload"
-              /> */}
-<iframe
-  width="100%"
-  height="100%"
-  src="https://www.youtube.com/embed/vVxTlq2jMaU?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3"
-  frameborder="0"
-  allow="autoplay; encrypted-media"
-  allowfullscreen>
-</iframe>
+              />
+              {/* <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/vVxTlq2jMaU?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+              </iframe> */}
             </div>
           </div>
-           
-             <div id="franchise" className="" style={{ bgcolor: "white" }}>
-          <div className="my-6  w-[90%] md:w-[70%] mx-auto  md:mt-9 md:mb-16 text-center text-[1rem] sm:text-[1.5rem] 2xl:text-[2.3rem] text-pretty font-bold">
-            Join the elite circle of beauty pioneers by opening a Monsoon
-            franchise in India. Elevate your business with a brand that reshapes
-            trends, inspires confidence, and sets the gold standard in salon
-            excellence worldwide.
-          </div>
-          <div className="bg-white ">
-            {!isSubmited ? (
-              <div className="w-[90%] xl:w-[80%] mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {inputFields.map((input, index) => {
-                    const {
-                      placeholder,
-                      value,
-                      name,
-                      label,
-                      type,
-                      required,
-                      error,
-                      helperText,
-                    } = input;
-                    return (
-                      <div className="mb-5">
-                        <CustomInput
-                          key={index}
-                          type={type}
-                          label={label}
-                          value={value}
-                          placeholder={placeholder}
-                          required={required}
-                          name={name}
-                          error={error} // Red border if error
-                          helperText={helperText}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    );
-                  })}
-                  {selectFields.map((input, index) => {
-                    const {
-                      value,
-                      name,
-                      label,
-                      required,
-                      error,
-                      helperText,
-                      options,
-                    } = input;
 
-                    return (
-                      <div
-                        className={`mb-5 w-full bg-white ${label === "Budget" ? "col-span-full" : ""
-                          }`}
+          <div id="franchise" className="" style={{ bgcolor: "white" }}>
+            <div className="my-6  w-[90%] md:w-[70%] mx-auto  md:mt-9 md:mb-16 text-center text-[1rem] sm:text-[1.5rem] 2xl:text-[1.5rem] text-pretty font-bold">
+              Join the elite circle of beauty pioneers by opening a Monsoon
+              franchise in India. Elevate your business with a brand that reshapes
+              trends, inspires confidence, and sets the gold standard in salon
+              excellence worldwide.
+            </div>
+            <div className="bg-white ">
+              {!isSubmited ? (
+                <div className="w-[90%] xl:w-[60%] mx-auto">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {inputFields.map((input, index) => {
+                      const {
+                        placeholder,
+                        value,
+                        name,
+                        label,
+                        type,
+                        required,
+                        error,
+                        helperText,
+                      } = input;
+                      return (
+                        <div className="mb-5">
+                          <CustomInput
+                            key={index}
+                            type={type}
+                            label={label}
+                            value={value}
+                            placeholder={placeholder}
+                            required={required}
+                            name={name}
+                            error={error} // Red border if error
+                            helperText={helperText}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      );
+                    })}
+                    {selectFields.map((input, index) => {
+                      const {
+                        value,
+                        name,
+                        label,
+                        required,
+                        error,
+                        helperText,
+                        options,
+                      } = input;
+
+                      return (
+                        <div
+                          className={`mb-5 w-full bg-white ${label === "Budget" ? "col-span-full" : ""
+                            }`}
+                        >
+                          <CustomSelect
+                            key={index}
+                            options={options}
+                            label={label}
+                            value={value}
+                            required={required}
+                            name={name}
+                            error={error} // Red border if error
+                            helperText={helperText}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      );
+                    })}
+                    <div className="mb-5 col-span-full ">
+                      <CustomTextArea
+                        type={descFields.type}
+                        label={descFields.label}
+                        value={descFields.value}
+                        placeholder={descFields.placeholder}
+                        name={descFields.name}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="" style={{ display: "flex" }}>
+                    {!loading ? (
+                      <button
+                        onClick={submithandle}
+                        className="inline-flex mt-5  w-[150px] h-[45px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  "
                       >
-                        <CustomSelect
-                          key={index}
-                          options={options}
-                          label={label}
-                          value={value}
-                          required={required}
-                          name={name}
-                          error={error} // Red border if error
-                          helperText={helperText}
-                          onChange={handleChange}
-                        />
-                      </div>
-                    );
-                  })}
-                  <div className="mb-5 col-span-full ">
-                    <CustomTextArea
-                      type={descFields.type}
-                      label={descFields.label}
-                      value={descFields.value}
-                      placeholder={descFields.placeholder}
-                      name={descFields.name}
-                      onChange={handleChange}
-                    />
+                        Submit
+                      </button>
+                    ) : (
+                      <button className="inline-flex mt-5 h-[45px] w-[150px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  ">
+                        <div role="status">
+                          <svg
+                            aria-hidden="true"
+                            className="w-8 h-8 text-gray-200 animate-spin  fill-blue-600"
+                            viewBox="0 0 100 101"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                              fill="currentFill"
+                            />
+                          </svg>
+                          <span className="sr-only">Loading...</span>
+                        </div>
+                      </button>
+                    )}
                   </div>
                 </div>
-
-                <div className="" style={{ display: "flex" }}>
-                  {!loading ? (
-                    <button
-                      onClick={submithandle}
-                      className="inline-flex mt-5  w-[150px] h-[45px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  "
-                    >
-                      Submit
-                    </button>
-                  ) : (
-                    <button className="inline-flex mt-5 h-[45px] w-[150px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  ">
-                      <div role="status">
-                        <svg
-                          aria-hidden="true"
-                          className="w-8 h-8 text-gray-200 animate-spin  fill-blue-600"
-                          viewBox="0 0 100 101"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                            fill="currentColor"
-                          />
-                          <path
-                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                            fill="currentFill"
-                          />
-                        </svg>
-                        <span className="sr-only">Loading...</span>
-                      </div>
-                    </button>
-                  )}
+              ) : (
+                <div className="flex w-full items-center justify-between">
+                  <FaRegCheckCircle className="w-[100px] mx-auto h-[100px] text-green-600 " />
                 </div>
-              </div>
-            ) : (
-              <div className="flex w-full items-center justify-between">
-                <FaRegCheckCircle className="w-[100px] mx-auto h-[100px] text-green-600 " />
-              </div>
-            )}
+              )}
 
-            <div className="mt-9">
-              <MainText textdata={"Partner Brands"} />
-              <div
-                className="my-6 overflow-hidden"
-              // style={{ marginTop: 10, marginBottom: '10px', height: '100px', backgroundColor: '', justifyContent: 'center', alignItems: 'center' }}
-              >
-                <Slider {...settings}>
-                  {brandsImg?.map((item, index) => {
-                    return (
-                      <div
-                        key={index}
-                        style={{
-                          height: "50px",
-                          width: "50px",
-                          backgroundColor: "green",
-                        }}
-                      >
-                        <img
-                          src={item.brandUrl}
-                          style={{ height: "60%", width: "50%" }}
-                          alt="Monsoon Salon"
-                          loading="lazy"
-                        />
-                      </div>
-                    );
-                  })}
-                </Slider>
+              <div className="mt-9">
+                <MainText textdata={"Partner Brands"} />
+                <div
+                  className="my-6 overflow-hidden"
+                // style={{ marginTop: 10, marginBottom: '10px', height: '100px', backgroundColor: '', justifyContent: 'center', alignItems: 'center' }}
+                >
+                  <Slider {...settings}>
+                    {brandsImg?.map((item, index) => {
+                      return (
+                        <div
+                          key={index}
+                          style={{
+                            height: "50px",
+                            width: "50px",
+                            backgroundColor: "green",
+                          }}
+                        >
+                          <img
+                            src={item.brandUrl}
+                            style={{ height: "60%", width: "50%" }}
+                            alt="Monsoon Salon"
+                            loading="lazy"
+                          />
+                        </div>
+                      );
+                    })}
+                  </Slider>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
           <div className="mt-8 md:mt-9 text-center w-[95%] md:w-[80%] mx-auto">
             <h1 className="font-bold text-xl  px-6  md:text-[2.5rem] mb-4">
@@ -553,7 +553,7 @@ export default function Newfranchise() {
               franchise model that adapts to your needs.
               Join one of the most trusted beauty salon franchises in India and become part of an ever-
               growing industry. Start your journey toward success today with the <strong> best salon franchise in
-              India</strong>, and turn your passion for beauty into a thriving business.
+                India</strong>, and turn your passion for beauty into a thriving business.
             </p>
           </div>
           <div className="px-6 my-8 md:my-9  text-center">
@@ -605,7 +605,7 @@ export default function Newfranchise() {
             ))}
           </div>
         </div>
-      
+
 
         {/* <Footer/> */}
       </Box>

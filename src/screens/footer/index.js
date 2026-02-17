@@ -26,8 +26,8 @@ const NewFooter = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/franchise-enquiry">Franchise</Link></li>
-            <li><Link to="/about-us">AboutUs</Link></li>
-            <li><Link to="/contact-us">ContactUs</Link></li>
+            <li><Link to="/about-us">About</Link></li>
+            <li><Link to="/contact-us">Contact</Link></li>
             <li><Link to="/privacypolicy">Privacy Policy</Link></li>
           </ul>
         </div>

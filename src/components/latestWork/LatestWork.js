@@ -21,7 +21,7 @@ import ReadMoreMobile from "../mainTextcomponent/ReadMoreMobile";
             services designed to enhance your natural charm. Our experienced professionals carefully craft
             every look using modern techniques and trusted products to match your lifestyle and preferences.
             From routine grooming to complete transformations, we focus on comfort, hygiene, and quality at
-            every step, <strong  className="text-[#B14648]"> ensuring you leave refreshed, confident, and truly satisfied with your experience.</strong>
+            every step, ensuring you leave refreshed, confident, and truly satisfied with your experience.
 
           </p>
 

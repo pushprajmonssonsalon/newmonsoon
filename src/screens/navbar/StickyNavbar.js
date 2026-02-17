@@ -9,10 +9,12 @@ export default function Header() {
   const NavLinks = ({ onClick }) => (
     <>
       <Link to="/" onClick={onClick} className="hover:text-amber-600 transition">Home</Link>
-      <Link to="/gallery" onClick={onClick} className="hover:text-amber-600 transition">Gallery</Link>
-      <Link to="/salon-location-near-me" onClick={onClick} className="hover:text-amber-600 transition">Locations</Link>
       <Link to="/franchise-enquiry" onClick={onClick} className="hover:text-amber-600 transition">Franchise</Link>
+      <Link to="/salon-location-near-me" onClick={onClick} className="hover:text-amber-600 transition">Locations</Link>
+      <Link to="/gallery" onClick={onClick} className="hover:text-amber-600 transition">Gallery</Link>
       <Link to="/contact-us" onClick={onClick} className="hover:text-amber-600 transition">Contact</Link>
+      <Link to="/about-us" onClick={onClick} className="hover:text-amber-600 transition">About</Link>
+      <Link to="https://prosaloncart.com/" onClick={onClick} className="hover:text-amber-600 transition">Eshop</Link>
     </>
   );
   const handleNavigate=()=>{
@@ -32,12 +34,12 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-2 md:gap-8 text-xs lg:text-sm font-medium">
           <NavLinks />
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           
         <Link
             to="/booking"

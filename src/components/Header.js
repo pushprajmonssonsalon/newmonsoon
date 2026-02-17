@@ -9,16 +9,16 @@ const Text = () => {
   return (
     <>
 
-      <div className="clear-both md:hidden"></div>
+      <div className="clear-both md:hidden z-2 relative"></div>
 
-      <p className=" font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
-        Our <strong className="text-[#B14648]">unisex salon franchise</strong> offers a prime opportunity to join a leading brand and provide exceptional beauty services to both men and women.
-        With our proven business model, you&#39;ll receive full training and ongoing support to ensure growth and profitability. Expand quickly with a scalable system and become part of one of the <strong className="text-[#B14648]">top salon franchises in India.</strong>
+      <p className="relative z-2 font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
+        Our <strong className="">unisex salon franchise</strong> offers a prime opportunity to join a leading brand and provide exceptional beauty services to both men and women.
+        With our proven business model, you&#39;ll receive full training and ongoing support to ensure growth and profitability. Expand quickly with a scalable system and become part of one of the <strong className="">top salon franchises in India.</strong>
       </p>
 
-      <p className=" font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
+      <p className="relative z-2 font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
         Partner with Monsoon Salon today and turn your passion for beauty into a profitable, future-ready
-        <Link to="/salon-franchise"><strong className="text-[#B14648]"> Salon Franchise</strong></Link> business backed by expertise, trust, and rapid national growth. Benefit from a proven business model, comprehensive training, and continuous operational support designed for long-term success. Join a trusted brand that empowers entrepreneurs to grow confidently in India’s fast-expanding beauty and wellness industry.
+        <Link to="/salon-franchise"><strong className=""> Salon Franchise</strong></Link> business backed by expertise, trust, and rapid national growth. Benefit from a proven business model, comprehensive training, and continuous operational support designed for long-term success. Join a trusted brand that empowers entrepreneurs to grow confidently in India’s fast-expanding beauty and wellness industry.
       </p>
     </>
   )
@@ -36,7 +36,7 @@ const Header = () => {
 
       </Helmet>
       <div className="font-roboto roboto-regular">
-        <article className="relative text-pretty">
+        <article className="relative z-2 text-pretty">
           <div className="float-right my-auto  ml-2 md:ml-[50px] relative">
             <img
               src={LOCAL_IMAGES.monsoonsalon28}
@@ -46,10 +46,10 @@ const Header = () => {
               loading="lazy"
             />
           </div>
-          <h1 className="w-full  mb-2 xl:mb-[40px] underline underline-offset-4 text-black text-start text-md font-kotta  md:text-[1.5rem] xl:text-[2.8rem] xl:leading-[3rem]">
+          <h1 className="w-full relative   mb-2 xl:mb-[40px] underline underline-offset-4 text-black text-start text-md font-kotta  md:text-[1.5rem] xl:text-[2.8rem] xl:leading-[3rem]">
             Best Salon Franchise in India
           </h1>
-          <p className="relative font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
+          <p className="relative  font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
             Monsoon Salon has evolved as a brand with 212+ salons, catering to customers looking for the best talent with international expertise. Our story is based on quality, innovation, and learning, with a major emphasis on enhancing our artists’ capabilities through professional education and development.
 
             Looking ahead at the next three to five years, Monsoon Salon plans to enter new cities, enhance our training infrastructure, and help entrepreneurs and beauty professionals across the country. With a strong foundation, successful business model, and robust infrastructure, we are set to become one of the most recognizable salon chains in the industry.
@@ -57,9 +57,9 @@ const Header = () => {
             Ready to invest in a booming industry?
 
           </p>
-          <div className="absolute top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
+          <div className="absolute  top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
 
-            <img src={LOCAL_IMAGES.phool2} className="h-[80%] aspect-square" />
+            <img src={LOCAL_IMAGES.phool2} className="h-[80%] relative z-0 aspect-square" />
           </div>
 
 
