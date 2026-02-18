@@ -56,7 +56,7 @@ export default function Newfranchise() {
     },
     {
       image: <FaCity className="text-black text-[2.5rem]  " />,
-      heading: "77+ Cities 05 Union Territories",
+      heading: "95+ Cities 05 Union Territories",
       subHeading: "Continued Business Support Operations, HR, Marketing",
     },
     {
@@ -294,7 +294,7 @@ export default function Newfranchise() {
       });
     }
   };
-  const videoUrl = "https://cdn.salon-kart.com/franchiseVideo.mp4";
+  const videoUrl = "https://cdn.salon-kart.com/franchiseVideo2.mp4";
 
   useEffect(() => {
     const isSubmited = sessionStorage.getItem("isSubmitted");

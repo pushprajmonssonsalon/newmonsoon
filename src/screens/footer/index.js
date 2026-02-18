@@ -54,8 +54,10 @@ const NewFooter = () => {
         </div>
       </div>
 
-      <div className="border-t border-neutral-700 mt-12 pt-6 text-center text-sm text-neutral-400">
-        © {new Date().getFullYear()} Monsoon Salon. All rights reserved.
+      <div className="border-t border-neutral-700 mt-4 pt-2 px-3 text-center text-sm text-neutral-400">
+         <div className='text-sm md:text-md mb-5 font-light text-white text-center mt-3'>The Professional Hair Salon & Spa (India) Pvt. Ltd.</div>
+         <div className='text-sm md:text-md font-light text-white text-center mt-3'>Address: Plot No-31 Okhla Industrial Estate, Phase – 3, South Delhi, New Delhi – 110020</div>
+     
       </div>
     </footer>
 

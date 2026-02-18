@@ -50,11 +50,7 @@ const Header = () => {
             Best Salon Franchise in India
           </h1>
           <p className="relative  font-normal text-gray-800 font-jaldi text-[0.89rem] xl:text-[20px] 2xl:text-[20px]  3xl:leading-8 py-1">
-            Monsoon Salon has evolved as a brand with 212+ salons, catering to customers looking for the best talent with international expertise. Our story is based on quality, innovation, and learning, with a major emphasis on enhancing our artists’ capabilities through professional education and development.
-
-            Looking ahead at the next three to five years, Monsoon Salon plans to enter new cities, enhance our training infrastructure, and help entrepreneurs and beauty professionals across the country. With a strong foundation, successful business model, and robust infrastructure, we are set to become one of the most recognizable salon chains in the industry.
-
-            Ready to invest in a booming industry?
+            Monsoon Salon is a rising brand catering to clients who seek world-class talent with global expertise. We are dedicated to enhancing our artists’ skills through advanced education, ensuring they provide top-tier service every day. Over the next three to five years, we have a well-defined plan focused on professional training to elevate our team. In the initial phase, Monsoon will strategically establish its presence in 77 cities and 5 Union Territories. Our goal is to open 200 salons in the first two years, with another 200 locations planned for the following two years. Our strong infrastructure will support this expansion and drive our success. Ready to invest in a booming industry?
 
           </p>
           <div className="absolute  top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">

@@ -1,7 +1,6 @@
 import "./home.css";
 import { Helmet } from "react-helmet";
 import Slider from "react-slick";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { brandsImg, OurServicesData } from "../utils/dummydata";
@@ -90,16 +89,21 @@ export default function Home() {
     "L'ORÉAL",
   ];
   const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 4000,
-    pauseOnHover: true,
+  dots: true,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
 
-    autoplaySpeed: 50,
-  };
+  autoplay: true,
+  autoplaySpeed: 3000,   // delay between slides
+  speed: 600,            // slide animation duration
+
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  arrows: false,
+  cssEase: "ease-in-out"
+};
+
   return (
     <>
       <div className="roboto-regular bg-[#FFF5EB]">

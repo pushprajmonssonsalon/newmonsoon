@@ -20,7 +20,7 @@ const ReadMoreMobile = ({ children }) => {
 
       <button
         onClick={() => setExpanded(!expanded)}
-        className="md:hidden text-[#B14648] font-medium text-[0.78rem] mt-2"
+        className="md:hidden relative z-2 text-[#B14648] font-medium text-[0.78rem] mt-2"
       >
         {expanded ? "Read Less" : "Read More"}
       </button>
