@@ -18,7 +18,9 @@ import CustomInput from "../../components/customInputs/CustomInput";
 import CustomSelect from "../../components/customInputs/CustomSelect";
 import CustomTextArea from "../../components/customInputs/CustomTextArea";
 import { postApiData } from "../../utils/services";
-
+import monsoonsalon from "../../assets/images/monsoon_logo.png"
+import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png"
+import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png"
 const initialData = {
   firstName: "",
   lastName: "",
@@ -30,9 +32,38 @@ const initialData = {
   state: "",
   city: "",
 };
+ const salonData = [
+    {
+      name: "Monsoon",
+    },
 
+    {
+      name: "Monsoon Pro",
+    },
+    {
+      name: "Smart Salon",
+    },
+  ];
+  const images =[
+    {
+      img:monsoonsalon
+    },
+    {
+      img:monsoonsalonpro
+    },
+    {
+      img:monsoonsalonproplus
+
+    },
+  ]
 export default function Newfranchise() {
   const salonBudgetdata = [
+    {
+      name: "15 lac  to 30 lac",
+    },
+    {
+      name: "30 lac  to 45 lac",
+    },
     {
       name: "55 lac  to 1cr",
     },
@@ -256,6 +287,17 @@ export default function Newfranchise() {
       error: !!formErrors.city,
       helperText: formErrors.city,
     },
+     {
+      name: "salonType",
+      label: "Salon Type*",
+      value: formValues?.salonType,
+      options: salonData?.map((item) => ({
+        name: item.name,
+        value: item.name,
+      })),
+      error: !!formErrors.salonType,
+      helperText: formErrors.salonType,
+    },
 
     {
       name: "salonBudget",
@@ -302,6 +344,30 @@ export default function Newfranchise() {
       setIsSubmited(true);
     }
   }, []);
+  const brands = [
+  {
+    id: 1,
+    name: "PRO PLUS Smart Salon",
+    image: monsoonsalonproplus, // update path
+    description:
+      "Premium smart salon model ideal for metro & high-street locations.",
+  },
+  {
+    id: 2,
+    name: "Monsoon Pro Salon",
+    image: monsoonsalonpro,
+    description:
+      "Mid-range professional salon model with strong ROI & brand support.",
+  },
+  {
+    id: 3,
+    name: "Monsoon Salon",
+    image:monsoonsalon,
+    description:
+      "Affordable entry model with trusted brand presence across India.",
+  },
+];
+  console.log(formValues,"formvalues")
   return (
     <>
       <Box>
@@ -373,6 +439,42 @@ export default function Newfranchise() {
               </iframe> */}
             </div>
           </div>
+          <section className="bg-gray-50 py-20 px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+          Our Franchise Brands
+        </h2>
+
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+          Choose the right franchise model that aligns with your investment
+          capacity and city potential.
+        </p>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-8 mt-14">
+          {brands.map((brand) => (
+            <div
+              key={brand.id}
+              className="bg-white p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+            >
+              <img
+                src={brand.image}
+                alt={brand.name}
+                className="h-14 mx-auto object-contain mb-6"
+              />
+
+              <h3 className="text-xl font-semibold text-gray-900">
+                {brand.name}
+              </h3>
+
+            
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
           <div id="franchise" className="" style={{ bgcolor: "white" }}>
             <div className="my-6  w-[90%] md:w-[70%] mx-auto  md:mt-9 md:mb-16 text-center text-[1rem] sm:text-[1.5rem] 2xl:text-[1.5rem] text-pretty font-bold">
@@ -426,8 +528,7 @@ export default function Newfranchise() {
 
                       return (
                         <div
-                          className={`mb-5 w-full bg-white ${label === "Budget" ? "col-span-full" : ""
-                            }`}
+                          className={`mb-5 w-full bg-white`}
                         >
                           <CustomSelect
                             key={index}
@@ -555,7 +656,9 @@ export default function Newfranchise() {
               growing industry. Start your journey toward success today with the <strong> best salon franchise in
                 India</strong>, and turn your passion for beauty into a thriving business.
             </p>
+                
           </div>
+         
           <div className="px-6 my-8 md:my-9  text-center">
             <h2 className="font-bold text-xl mb-5   md:text-[2rem]">
               Why is Monsoon Salon Franchise the Best?
@@ -576,7 +679,7 @@ export default function Newfranchise() {
             })}
           </div>
         </div>
-        <div className=" flex flex-col items-center py-3 px-3 mb-8">
+        <div className="overflow-x-hidden flex flex-col items-center py-3 px-3 mb-8">
           <div>
             <h4 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-3">
               Top Benefits of Opening a Monsoon Salon Franchise

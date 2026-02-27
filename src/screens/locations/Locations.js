@@ -5,24 +5,26 @@ import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { FaClock, FaFilter, FaMapPin, FaSearch, FaStar } from "react-icons/fa";
 import { IoNavigate } from "react-icons/io5";
-
+import monsoonsalon from "../../assets/images/monsoon_logo.png"
+import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png"
+import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png"
 const Locations = () => {
   const [salons, setSalons] = useState([]);
   const [filterSalons, setFilterSalons] = useState([]);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     getApiCall(
       "salons",
 
       (res) => {
         setSalons(res);
-        console.log(res?.map((elm)=>elm._id),"salons")
+        console.log(res?.map((elm) => elm._id), "salons")
       },
       (err) => { }
     );
   }, []);
- 
+
   const handleSingleSalon = async (id, locate) => {
     if (locate) {
       navigate(`${id}?scroll=${true}`);
@@ -103,15 +105,27 @@ const Locations = () => {
     setSearchQuery('');
     setSelectedState('');
   };
-  let MonsoonImage = "https://smartsalon.in/static/media/monsoon_logo.d13fe17aff633a52f677.png"
-  let MonsoonProImage = "https://smartsalon.in/static/media/newLogooo.ea324a2b4aaefefd6201.png"
+
   const getImageUrl = (salon) => {
 
-    return salon.name === "Monsoon" ? MonsoonImage : MonsoonProImage
+    return salon.name === "Monsoon" ? monsoonsalon : salon.name === "Smart Salon" ? monsoonsalonproplus : monsoonsalonpro
 
   }
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [salonsPerPage, setSalonsPerPage] = useState(10);
 
+  // Reset page when filters OR limit changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filterSalons, salonsPerPage]);
+
+  const totalPages = Math.ceil(filterSalons.length / salonsPerPage);
+
+  const startIndex = (currentPage - 1) * salonsPerPage;
+  const endIndex = startIndex + salonsPerPage;
+
+  const currentSalons = filterSalons.slice(startIndex, endIndex);
   return (
     <>
       <Helmet>
@@ -135,59 +149,59 @@ const Locations = () => {
         <div className="pt-9 pb-16">
           <div className="py-9">
             <div className="w-[90%] md:w-[80%] mx-auto">
-  <h1 className="font-bold text-xl text-center leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
-          Explore Premium Beauty Salons and Franchise Opportunities Across India
-          </h1>
-           
-            <p className="text-center text-gray-600 mt-4">
+              <h1 className="font-bold text-xl text-center leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
+                Explore Premium Beauty Salons and Franchise Opportunities Across India
+              </h1>
 
-            India&#39;s beauty industry is experiencing a dynamic transformation, with premium salons
-            offering cutting-edge services designed to elevate your self-care routine. From rejuvenating
-            facials to trendy hair makeovers, the finest beauty salons across the country promise
-            exceptional treatments that blend luxury, expertise, and personalized care. Whether you&#39;re in
-            a metropolitan hub or a growing city, these salons offer an unforgettable experience that
-            leaves you feeling refreshed, confident, and beautiful.
+              <p className="text-center text-gray-600 mt-4">
 
-            </p>
-            <p className="text-center text-gray-600 mt-4">
-            For those seeking <strong>affordable yet high-quality beauty services</strong>, cities like <strong>Chennai</strong> are
-            home to some of the <strong>cheapest and best salon franchises</strong> in India. These franchises offer the
-            perfect mix of expert care and cost-effective pricing, ensuring clients get the best value
-            without compromising on quality. The <strong>salon franchise in Chennai </strong>has become a sought-
-            after choice for entrepreneurs looking to invest in a fast-growing industry with immense
-            potential.
+                India&#39;s beauty industry is experiencing a dynamic transformation, with premium salons
+                offering cutting-edge services designed to elevate your self-care routine. From rejuvenating
+                facials to trendy hair makeovers, the finest beauty salons across the country promise
+                exceptional treatments that blend luxury, expertise, and personalized care. Whether you&#39;re in
+                a metropolitan hub or a growing city, these salons offer an unforgettable experience that
+                leaves you feeling refreshed, confident, and beautiful.
 
-            </p>
-            <p className="text-center text-gray-600 mt-4">
-            In India’s bustling metropolitan cities like <strong>Delhi, Mumbai, Bangalore, Hyderabad</strong>, and
-            Kolkata, salon franchises are flourishing. Cities like <strong>Noida, Pune, Ahmedabad</strong>, and
-            <strong>Chandigarh</strong> also feature thriving beauty markets, creating lucrative opportunities for
-            business owners through <strong>salon franchise</strong> models. Whether you’re looking for a hair salon
-            franchise for sale or aiming to invest in a <strong>salon franchise in Pune</strong>, these cities offer prime
-            locations and a strong customer base for franchise growth.
+              </p>
+              <p className="text-center text-gray-600 mt-4">
+                For those seeking <strong>affordable yet high-quality beauty services</strong>, cities like <strong>Chennai</strong> are
+                home to some of the <strong>cheapest and best salon franchises</strong> in India. These franchises offer the
+                perfect mix of expert care and cost-effective pricing, ensuring clients get the best value
+                without compromising on quality. The <strong>salon franchise in Chennai </strong>has become a sought-
+                after choice for entrepreneurs looking to invest in a fast-growing industry with immense
+                potential.
 
-            </p>
-            <p className="text-center text-gray-600 mt-4">
-            From the metros to tier-2 cities like <strong>Surat, Jaipur, Indore,</strong> and <strong>Lucknow</strong>, India&#39;s beauty
-            salons are redefining the salon experience. With a growing demand for premium beauty
-            services in <strong>Nagpur, Coimbatore, Bhubaneswar</strong>, and <strong>Visakhapatnam</strong>, opportunities to own
-            a salon franchise have never been better.
+              </p>
+              <p className="text-center text-gray-600 mt-4">
+                In India’s bustling metropolitan cities like <strong>Delhi, Mumbai, Bangalore, Hyderabad</strong>, and
+                Kolkata, salon franchises are flourishing. Cities like <strong>Noida, Pune, Ahmedabad</strong>, and
+                <strong>Chandigarh</strong> also feature thriving beauty markets, creating lucrative opportunities for
+                business owners through <strong>salon franchise</strong> models. Whether you’re looking for a hair salon
+                franchise for sale or aiming to invest in a <strong>salon franchise in Pune</strong>, these cities offer prime
+                locations and a strong customer base for franchise growth.
 
-            </p>
-            <p className="text-center text-gray-600 mt-4">
+              </p>
+              <p className="text-center text-gray-600 mt-4">
+                From the metros to tier-2 cities like <strong>Surat, Jaipur, Indore,</strong> and <strong>Lucknow</strong>, India&#39;s beauty
+                salons are redefining the salon experience. With a growing demand for premium beauty
+                services in <strong>Nagpur, Coimbatore, Bhubaneswar</strong>, and <strong>Visakhapatnam</strong>, opportunities to own
+                a salon franchise have never been better.
 
-            Whether you’re a client looking for luxurious, high-quality beauty services or an entrepreneur
-            ready to invest in the growing beauty industry, <strong>salon franchises</strong> in cities across India—from
-            <strong> Kochi to Gurgaon</strong>—offer unmatched business potential and an exceptional customer
-            experience.
-            </p>
+              </p>
+              <p className="text-center text-gray-600 mt-4">
+
+                Whether you’re a client looking for luxurious, high-quality beauty services or an entrepreneur
+                ready to invest in the growing beauty industry, <strong>salon franchises</strong> in cities across India—from
+                <strong> Kochi to Gurgaon</strong>—offer unmatched business potential and an exceptional customer
+                experience.
+              </p>
             </div>
           </div>
 
-            <MainText textdata={"Our Premium Salons"} />
-            <h2 className="text-center text-gray-600 mt-4  mx-auto max-w-2xl mb-4">
-              Discover the finest beauty salons across India. Professional services, expert stylists, and luxurious experiences await you.
-            </h2>
+          <MainText textdata={"Our Premium Salons"} />
+          <h2 className="text-center text-gray-600 mt-4  mx-auto max-w-2xl mb-4">
+            Discover the finest beauty salons across India. Professional services, expert stylists, and luxurious experiences await you.
+          </h2>
           {/* Search and Filter Section */}
           <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto mb-8">
             <div className="bg-white rounded-2xl p-6 shadow-lg border">
@@ -233,17 +247,40 @@ const Locations = () => {
           </div>
 
           {/* Results Count */}
-          <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto mb-6">
+          {/* <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto mb-6">
             <p className="text-gray-600">
               Showing {filterSalons.length} salon{filterSalons.length !== 1 ? 's' : ''}
               {selectedState && ` in ${selectedState}`}
             </p>
-          </div>
+          </div> */}
 
+          <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto flex justify-between items-center mb-6 flex-wrap gap-4">
+
+            <div className="text-sm text-gray-600">
+              Showing {startIndex + 1} -{" "}
+              {Math.min(endIndex, filterSalons.length)} of{" "}
+              {filterSalons.length} salons
+              {selectedState && ` in ${selectedState}`}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium">Salons per page:</span>
+              <select
+                value={salonsPerPage}
+                onChange={(e) => setSalonsPerPage(Number(e.target.value))}
+                className="border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                <option value={10}>10</option>
+                <option value={20}>20</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+              </select>
+            </div>
+          </div>
           {/* Salon Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto">
-            {filterSalons?.length > 0 ? (
-              filterSalons.map((salon, idx) => (
+            {currentSalons?.length > 0 ? (
+              currentSalons.map((salon, idx) => (
                 <div
                   key={idx}
                   className="bg-white relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
@@ -337,6 +374,43 @@ const Locations = () => {
               </div>
             )}
           </div>
+          {totalPages > 1 && (
+  <div className="flex justify-center items-center gap-2 my-10 flex-wrap">
+    
+    <button
+      disabled={currentPage === 1}
+      onClick={() => setCurrentPage((prev) => prev - 1)}
+      className="px-4 py-2 border rounded-lg disabled:bg-gray-200 disabled:text-gray-400 hover:bg-black hover:text-white"
+    >
+      Prev
+    </button>
+
+    {[...Array(totalPages)].map((_, index) => {
+      const page = index + 1;
+      return (
+        <button
+          key={page}
+          onClick={() => setCurrentPage(page)}
+          className={`px-4 py-2 border rounded-lg ${
+            currentPage === page
+              ? "bg-black text-white"
+              : "hover:bg-black hover:text-white"
+          }`}
+        >
+          {page}
+        </button>
+      );
+    })}
+
+    <button
+      disabled={currentPage === totalPages}
+      onClick={() => setCurrentPage((prev) => prev + 1)}
+      className="px-4 py-2 border rounded-lg disabled:bg-gray-200 disabled:text-gray-400 hover:bg-black hover:text-white"
+    >
+      Next
+    </button>
+  </div>
+)}
 
 
         </div>
