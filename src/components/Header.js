@@ -53,10 +53,10 @@ const Header = () => {
             Monsoon Salon is a rising brand catering to clients who seek world-class talent with global expertise. We are dedicated to enhancing our artists’ skills through advanced education, ensuring they provide top-tier service every day. Over the next three to five years, we have a well-defined plan focused on professional training to elevate our team. In the initial phase, Monsoon will strategically establish its presence in 77 cities and 5 Union Territories. Our goal is to open 200 salons in the first two years, with another 200 locations planned for the following two years. Our strong infrastructure will support this expansion and drive our success. Ready to invest in a booming industry?
 
           </p>
-          <div className="absolute  top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
+          {/* <div className="absolute -z-1  top-0 left-0 right-0 bottom-0 h-full w-full flex items-center justify-center">
 
             <img src={LOCAL_IMAGES.phool2} className="h-[80%] relative z-0 aspect-square" />
-          </div>
+          </div> */}
 
 
           {isSmallScreen ? <ReadMoreMobile>

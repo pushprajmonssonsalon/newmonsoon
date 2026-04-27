@@ -204,7 +204,7 @@ const SingleLocation = () => {
             <p className="mt-4 text-sm md:text-base">
               {`Looking for a rejuvenating salon experience in the heart of `}
               <span className="font-bold">{singleSalonDetail?.stateName} </span>
-              {`? Look no further! Smart salon Salon is your go-to destination for top-notch beauty and grooming services that will leave you feeling and looking your best. We’re proud to be the premier salon in `}
+              {`? Look no further! Monsoon Salon is your go-to destination for top-notch beauty and grooming services that will leave you feeling and looking your best. We’re proud to be the premier salon in `}
               <span className="font-bold">{singleSalonDetail.stateName}</span>
               {`, and we’re conveniently located to serve you, whether you’re a local resident or just passing through.`}
             </p>

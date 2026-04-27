@@ -77,7 +77,7 @@ const LatestWork = () => {
             alt="Unisex monsoon salon franchise" loading="lazy" />
  <div className="absolute top-0 right-0 translate-x-[50%] sm:translate-x-[40%] xl:translate-x-[70%] 2xl:translate-x-[140px]">
 
-                      <img src={LOCAL_IMAGES.phool1} className="h-[127.06px] sm:h-[190.59px] md:h-[249.99px] lg:h-[400px] relative  aspect-square"/>
+                      {/* <img src={LOCAL_IMAGES.phool1} className="h-[127.06px] sm:h-[190.59px] md:h-[249.99px] lg:h-[400px] relative  aspect-square"/> */}
           </div>
         </div>
          

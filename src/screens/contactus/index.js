@@ -275,10 +275,10 @@ export default function ContactUs() {
                   Email
                 </h2>
                 <a
-                  href="mailto:info@theprofessionalworld.com"
+                  href="mailto:info@monsoonsalon.com"
                   className="text-regel-gray text-sm md:text-base"
                 >
-                  info@theprofessionalworld.com
+                  info@monsoonsalon.com
                 </a>
               </div>
               <div className="flex h-full py-6 px-3 items-center border shadow-md bg-gray-100  mb-auto text-center justify-center flex-col">
