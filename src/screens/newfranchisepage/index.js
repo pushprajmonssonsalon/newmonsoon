@@ -224,20 +224,20 @@ export default function Newfranchise() {
       return;
     }
 
-    // handlePostapiCall();
+    handlePostapiCall();
 
 
-    // Mock API call with timeout
-      setLoading(true);
-      setTimeout(() => {
-        toast.success("form submited successfully ");
-        setFormValues(initialData);
-        setIsSubmited(true);
-        setLoading(false);
+    // // Mock API call with timeout
+    //   setLoading(true);
+    //   setTimeout(() => {
+    //     toast.success("form submited successfully ");
+    //     setFormValues(initialData);
+    //     setIsSubmited(true);
+    //     setLoading(false);
 
-        sessionStorage.setItem("isSubmitted", true);
-        navigate("/thank-you");
-      }, 1000);
+    //     sessionStorage.setItem("isSubmitted", true);
+    //     navigate("/thank-you");
+    //   }, 1000);
   };
 
   // Cleanup timeout on component unmount
