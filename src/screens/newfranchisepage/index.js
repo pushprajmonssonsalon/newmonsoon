@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./newfranchise.css";
 import { Helmet } from "react-helmet";
 
@@ -57,6 +58,7 @@ const initialData = {
     },
   ]
 export default function Newfranchise() {
+  const navigate = useNavigate();
   const salonBudgetdata = [
     {
       name: "15 lac  to 30 lac",
@@ -203,6 +205,7 @@ export default function Newfranchise() {
         setLoading(false);
 
         sessionStorage.setItem("isSubmitted", true);
+        navigate("/thank-you");
       },
       (err) => {
         setLoading(false);
@@ -222,6 +225,19 @@ export default function Newfranchise() {
     }
 
     handlePostapiCall();
+
+
+    // // Mock API call with timeout
+    //   setLoading(true);
+    //   setTimeout(() => {
+    //     toast.success("form submited successfully ");
+    //     setFormValues(initialData);
+    //     setIsSubmited(true);
+    //     setLoading(false);
+
+    //     sessionStorage.setItem("isSubmitted", true);
+    //     navigate("/thank-you");
+    //   }, 1000);
   };
 
   // Cleanup timeout on component unmount
@@ -484,7 +500,6 @@ export default function Newfranchise() {
               excellence worldwide.
             </div>
             <div className="bg-white ">
-              {!isSubmited ? (
                 <div className="w-[90%] xl:w-[60%] mx-auto">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {inputFields.map((input, index) => {
@@ -589,11 +604,7 @@ export default function Newfranchise() {
                     )}
                   </div>
                 </div>
-              ) : (
-                <div className="flex w-full items-center justify-between">
-                  <FaRegCheckCircle className="w-[100px] mx-auto h-[100px] text-green-600 " />
-                </div>
-              )}
+             
 
               <div className="mt-9">
                 <MainText textdata={"Partner Brands"} />

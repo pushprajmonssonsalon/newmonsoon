@@ -38,6 +38,7 @@ const About = lazy(() => lazyRetry(()=>import("./screens/about/About")));
 const PrivacyPolicy = lazy(() => lazyRetry(()=>import("./screens/privacypolicy")));
 const ContactUs = lazy(() => lazyRetry(()=>import("./screens/contactus")));
 const Newfranchise = lazy(() => lazyRetry(()=>import("./screens/newfranchisepage")));
+const ThankYou = lazy(() => lazyRetry(()=>import("./screens/thankyoupage/thankyou.js")));
 
 const Gallery = lazy(() => lazyRetry(()=>import("./screens/gallery")));
 const NewGallery = lazy(() => lazyRetry(()=>import("./screens/gallery/NewGallery")));
@@ -81,6 +82,7 @@ export default function App() {
             />
 
             <Route path="/franchise-enquiry" element={<Newfranchise />} />
+            <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/franchise-d" element={<Newfranchise />} />
             <Route path="/franchise-enquiry*" element={<Navigate to="/franchise-enquiry" replace />} />
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
