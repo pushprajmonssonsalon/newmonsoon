@@ -25,8 +25,11 @@ const Text = () => {
 }
 const Header = () => {
   const navigate = useNavigate();
-  const handleRedirection = () => {
-    navigate("/franchise");
+  const handleBookAppointment = (event) => {
+    event.preventDefault();
+    navigate("/franchise-enquiry", {
+      state: { scrollTo: "firstName", scrollKey: Date.now() },
+    });
   };
   const isSmallScreen = useIsSmallScreen();
   return (
@@ -82,7 +85,11 @@ const Header = () => {
       </div>
       <div className="h-[40px] clear-both" />
       <div className="flex flex-col lg:flex-row gap-4 lg:items-center justify-between my-5">
-        <Link to="/franchase-enquiry" className="bg-[#c9a961] flex items-center justify-center w-full sm:w-[300px] text-white px-8 py-3 rounded-lg font-body font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md hover:shadow-lg">
+        <Link
+          to="/franchise-enquiry"
+          onClick={handleBookAppointment}
+          className="bg-[#c9a961] flex items-center justify-center w-full sm:w-[300px] text-white px-8 py-3 rounded-lg font-body font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md hover:shadow-lg"
+        >
           Book Appointment
         </Link>
         <div className="flex w-full items-center justify-around">

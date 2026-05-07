@@ -7,8 +7,10 @@ import { IoMdCall, IoMdMail } from "react-icons/io";
 import { postApiData } from "../../utils/services";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 export default function ContactUs() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -77,7 +79,8 @@ export default function ContactUs() {
       "contactUsForm",
       data,
       (res) => {
-        toast.success("Form Sumbited");
+        toast.success("Form Submitted");
+        navigate("/thank-you");
         setFormData({
           firstName: "",
           lastName: "",
@@ -90,6 +93,19 @@ export default function ContactUs() {
         
       }
     );
+
+    // Mock API call with timeout
+    // setTimeout(() => {
+    //   toast.success("Form Submitted");
+    //   setFormData({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     phoneNumber: "",
+    //     description: "",
+    //   });
+    //   navigate("/thank-you");
+    // }, 1000);
   };
 
   const formFields = [

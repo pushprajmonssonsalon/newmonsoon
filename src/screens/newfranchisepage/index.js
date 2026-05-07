@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./newfranchise.css";
 import { Helmet } from "react-helmet";
 
@@ -59,6 +59,7 @@ const initialData = {
   ]
 export default function Newfranchise() {
   const navigate = useNavigate();
+  const location = useLocation();
   const salonBudgetdata = [
     {
       name: "15 lac  to 30 lac",
@@ -338,20 +339,38 @@ export default function Newfranchise() {
     multiline: true,
     rows: 3,
   };
-  const scrollToDivWithOffset = (id) => {
+  const scrollToDivWithOffset = useCallback((id) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 200; // Offset of 100px
+      const offset = 140;
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth", // Smooth scroll
+        behavior: "smooth",
       });
+
+      if (element.tagName === "INPUT") {
+        element.focus({ preventScroll: true });
+      }
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    const scrollTarget =
+      location.state?.scrollTo || location.hash?.replace("#", "");
+
+    if (!scrollTarget) return;
+
+    const scrollTimers = [100, 350, 700].map((delay) => setTimeout(() => {
+      scrollToDivWithOffset(scrollTarget);
+    }, delay));
+
+    return () => scrollTimers.forEach(clearTimeout);
+  }, [location.hash, location.key, location.state, scrollToDivWithOffset]);
+
   const videoUrl = "https://cdn.salon-kart.com/franchiseVideo2.mp4";
 
   useEffect(() => {
@@ -428,7 +447,7 @@ export default function Newfranchise() {
             </div>
 
             <button
-              onClick={() => scrollToDivWithOffset("franchise")}
+              onClick={() => scrollToDivWithOffset("firstName")}
               className="btn-anim  bg-[#191918]  z-[9] h-[45px] xl:h-[50px] text-white  rounded-[10px] w-[150px] font-poppins overflow-hidden"
             >
               Apply Here
