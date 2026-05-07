@@ -20,7 +20,9 @@ export default function Header() {
   );
   const handleNavigate=()=>{
     setOpen(false);
-  navigate("/franchise-enquiry")
+    navigate("/franchise-enquiry", {
+      state: { scrollTo: "firstName", scrollKey: Date.now() },
+     });
   }
 
   return (
@@ -43,8 +45,11 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-4">
           
         <Link
-            to="/booking"
-            onClick={() => setOpen(false)}
+            to="/franchise-enquiry"
+            onClick={(event) => {
+              event.preventDefault();
+              handleNavigate();
+            }}
 className="w-full bg-[#c9a961] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md"          >
             Book Appointment
           </Link>
