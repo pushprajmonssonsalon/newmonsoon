@@ -39,7 +39,7 @@ export default function Home() {
   ];
   useEffect(() => {
     getApiCall(
-      "https://monsoonsalon.com/api/bannerList",
+      "bannerList",
       (res) => {
         setBannerImg(res);
       },

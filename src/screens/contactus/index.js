@@ -74,7 +74,7 @@ export default function ContactUs() {
       comment: description,
     };
     postApiData(
-      "/contactUsForm",
+      "contactUsForm",
       data,
       (res) => {
         toast.success("Form Sumbited");

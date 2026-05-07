@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const BASE_URL = "https://monsoonsalon.com/api/";
+export const BASE_URL = "https://www.monsoonsalon.com/api/";
 export const BASE_URL2 = "https://crm.smartsalon.in/";
 
 

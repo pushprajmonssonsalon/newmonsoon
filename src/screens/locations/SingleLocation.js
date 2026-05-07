@@ -136,7 +136,7 @@ const SingleLocation = () => {
 
   useEffect(() => {
     getApiCall(
-      `/getSingleSalonDetail?id=${params?.id}`,
+      `getSingleSalonDetail?id=${params?.id}`,
       (response) => {
         const data = response;
         setSingleSalonDetail(data);
