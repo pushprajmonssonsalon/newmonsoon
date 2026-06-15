@@ -36,7 +36,7 @@ const NewFooter = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Contact</h4>
           <ul className="space-y-2 text-sm">
-           <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084 , 8882766591   </li>
+           <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084   </li>
             <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoMail size={20} />info@monsoonsalon.com</li>
           </ul>
         </div>
