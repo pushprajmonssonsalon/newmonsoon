@@ -90,7 +90,7 @@ export default function ContactUs() {
         });
       },
       (err) => {
-        
+
       }
     );
 
@@ -203,11 +203,10 @@ export default function ContactUs() {
 
                   return (
                     <div
-                      className={`mb-4 ${
-                        name === "email" || name === "phoneNumber"
+                      className={`mb-4 ${name === "email" || name === "phoneNumber"
                           ? "col-span-full"
                           : ""
-                      }`}
+                        }`}
                     >
                       <CustomInput
                         key={idx}
@@ -278,12 +277,7 @@ export default function ContactUs() {
                 >
                   +91-9315788084
                 </a>
-                <a
-                  href="tel:+91-8882766591"
-                  className="text-regel-gray text-sm md:text-base"
-                >
-                  +91-8882766591
-                </a>
+
               </div>
               <div className="flex h-full py-6 px-3 items-center border shadow-md bg-gray-100 mb-auto justify-center flex-col">
                 <IoMdMail className="text-3xl md:text-[40px]" />
@@ -315,7 +309,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>{" "}
-     
+
     </>
   );
 }
