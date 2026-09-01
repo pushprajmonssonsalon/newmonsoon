@@ -31,7 +31,13 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="">
-            <img src={logo} className="h-[50px]" style={{aspectRatio:1080 / 293}}/>
+            <img
+              src={logo}
+              alt="Monsoon Salon"
+              width="184"
+              height="50"
+              className="h-[50px] w-auto"
+            />
           </div>
         
         </Link>

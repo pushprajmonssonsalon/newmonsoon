@@ -3,18 +3,19 @@ import { Helmet } from "react-helmet";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { brandsImg, OurServicesData } from "../utils/dummydata";
+import { brandsImg } from "../utils/dummydata";
 import Header from "../../components/Header";
 import LatestWork from "../../components/latestWork/LatestWork";
 import Banner from "../../components/banners/Banner";
 import { getApiCall } from "../../utils/services";
 import { useEffect, useState } from "react";
-import hair from "../../assets/images/hair2.png";
-import beauty from "../../assets/images/beauty2.png";
-import makeup from "../../assets/images/beauty1.png";
+import defaultBanner from "../../assets/images/banner1.webp";
+import hair from "../../assets/images/hair2.webp";
+import beauty from "../../assets/images/beauty2.webp";
+import makeup from "../../assets/images/beauty1.webp";
 import nail from "../../assets/images/nail1.png";
 export default function Home() {
-  const [bannerImg, setBannerImg] = useState([]);
+  const [bannerImg, setBannerImg] = useState([defaultBanner]);
   const services = [
     {
       title: "Hair",
@@ -41,10 +42,12 @@ export default function Home() {
     getApiCall(
       "bannerList",
       (res) => {
-        setBannerImg(res);
+        if (res && Array.isArray(res) && res.length > 0) {
+          setBannerImg(res);
+        }
       },
       (err) => {
-
+        console.error("Banner fetch error", err);
       }
     );
   }, []);
@@ -80,14 +83,6 @@ export default function Home() {
       "Skin treatment worked wonders. My face feels refreshed and glowing. Definitely coming back again!",
   },
 ];
- const brands = [
-    "ARGATIN",
-    "SPRINGTIOL",
-    "skin co.",
-    "KÉRASTASE",
-    "THALGO",
-    "L'ORÉAL",
-  ];
   const settings = {
   dots: true,
   infinite: true,
@@ -120,20 +115,12 @@ export default function Home() {
             content="salon franchise, best salon franchise, affordable salon franchise, salon franchise booking portal, unisex salon franchise"
           />
           <link rel="canonical" href="https://monsoonsalon.com/" />
-          {brandsImg.map((elm) => (
-            <link rel="preload" as="image" href={elm.brandUrl} />
-          ))}
-          {OurServicesData.map((elm) => (
-            <link rel="preload" as="image" href={elm.serviceIcon} />
-          ))}
-         
-       
         </Helmet>
 
 
-        <div className="mainsliderContainer p-2 rounded-[25px] overflow-hidden">
+        <div className="mainsliderContainer p-2 rounded-[25px] overflow-hidden aspect-[16/9] md:aspect-[21/9] min-h-[220px] sm:min-h-[350px] md:min-h-[480px]">
            <Slider {...settings}>
-            {bannerImg?.reverse()?.map((image, index) => (
+            {bannerImg?.map((image, index) => (
               <div key={index} className="h-full p-2">
                 <Banner image={image} key={index} index={index} />
               </div>

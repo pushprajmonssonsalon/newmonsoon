@@ -12,7 +12,13 @@ const NewFooter = () => {
         {/* Brand */}
         <div>
          <div className="">
-            <img src={logo} className="h-[50px] mb-5" style={{aspectRatio:1209 / 396}}/>
+            <img
+              src={logo}
+              alt="Monsoon Salon"
+              width="153"
+              height="50"
+              className="h-[50px] w-auto mb-5"
+            />
           </div>
           <p className="text-sm leading-relaxed">
             Experience luxury beauty services with premium ambience and expert stylists across India.
@@ -45,11 +51,11 @@ const NewFooter = () => {
         <div>
           <h4 className="text-white font-semibold mb-4">Follow Us</h4>
          <div className='flex flex-row gap-x-3 md:gap-x-5'>
-               <a target="_blank" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
-               <a target="_blank" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
-               <a target="_blank" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
-               <a target="_blank" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
-               <a target="_blank" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
+               <a target="_blank" rel="noreferrer" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
+               <a target="_blank" rel="noreferrer" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
+               <a target="_blank" rel="noreferrer" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
+               <a target="_blank" rel="noreferrer" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
+               <a target="_blank" rel="noreferrer" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
             </div>
         </div>
       </div>

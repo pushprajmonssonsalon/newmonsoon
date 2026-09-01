@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import LOCAL_IMAGES from "../../screens/utils/localImages";
 import "./LatestWork.css";
 import { useIsSmallScreen } from "../../utils/hooks/useSmallScreen";
@@ -62,10 +61,6 @@ const LatestWork = () => {
  ];
   return (
     <>
-      <Helmet>
-        <link rel="preload" as="image" href={LOCAL_IMAGES.monsoonsalon23} />
-
-      </Helmet>
       <div className="font-roboto ">
      
         <div className="relative">

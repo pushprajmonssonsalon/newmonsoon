@@ -11,11 +11,11 @@ const LOCAL_IMAGES = {
 
 
 
-    aboutUs: require('../../assets/images/aboutus.jpg'),
+    aboutUs: require('../../assets/images/aboutus.webp'),
     gallery: require('../../assets/images/gallery.webp'),
     gallery2: require('../../assets/images/gallery2.webp'),
-    aboutuspage: require('../../assets/images/about_us_banner.png'),
-    about: require('../../assets/images/about.png'),
+    aboutuspage: require('../../assets/images/about_us_banner.webp'),
+    about: require('../../assets/images/about.webp'),
     hairIcon: require('../../assets/images/hair_icon.png'),
     nailIcon: require('../../assets/images/nail_icon.png'),
     beautyIcon: require('../../assets/images/beautyicon.png'),
@@ -23,32 +23,18 @@ const LOCAL_IMAGES = {
 
     quoteicon: require('../../assets/images/quote.png'),
 
-
-
-
-
     //brands banner 
-
-
-    argatinIcon: require('../../assets/images/argatin2.png'),
     springIcon: require('../../assets/images/spring2.png'),
     skinIcon: require('../../assets/images/skinco2.png'),
-    thalgoIcon: require('../../assets/images/thalgo2.png'),
     lorealIcon: require('../../assets/images/loreal2.png'),
 
-
     //phool pati
-    phool1: require('../../assets/images/phool1.png'),
-    phool2: require('../../assets/images/phool2.png'),
-    patti1: require('../../assets/images/patti1.png'),
-    patti2: require('../../assets/images/patti2.png'),
-
-
-
-
+    phool1: require('../../assets/images/phool1.webp'),
+    phool2: require('../../assets/images/phool2.webp'),
+    patti1: require('../../assets/images/patti1.webp'),
+    patti2: require('../../assets/images/patti2.webp'),
 
     //gallery
-
     monsoonsalon12: require('../../assets/images/monsoon12.jpg'),
     monsoonsalon13: require('../../assets/images/monsoon13.jpg'),
     monsoonsalon14: require('../../assets/images/monsoon14.jpg'),
@@ -65,8 +51,8 @@ const LOCAL_IMAGES = {
     monsoonsalon25: require('../../assets/images/monsoon25.jpg'),
     monsoonsalon26: require('../../assets/images/monsoon26.jpg'),
     monsoonsalon27: require('../../assets/images/monsoon27.jpg'),
-    monsoonsalon28: require('../../assets/images/monsoon28.png'),
-    monsoonsalon29: require('../../assets/images/monsoon29.png'),
+    monsoonsalon28: require('../../assets/images/monsoon28.webp'),
+    monsoonsalon29: require('../../assets/images/monsoon29.webp'),
 
 
 

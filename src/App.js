@@ -3,12 +3,9 @@ import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-route
 import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
-import "animate.css/animate.compat.css";
-
 import ReactGA from "react-ga";
 import "animate.css/animate.min.css";
 import NewFooter from "./screens/footer";
-import Navbar from "./screens/navbar";
 import OverLayloader from "./components/loaders/OverLayloader.js";
 import Header from "./screens/navbar/StickyNavbar.js";
 const lazyRetry = function (componentImport) {
@@ -33,17 +30,17 @@ const lazyRetry = function (componentImport) {
   });
 };
 
-const Home = lazy(() => lazyRetry(()=>import("./screens/homepage/home")));
-const About = lazy(() => lazyRetry(()=>import("./screens/about/About")));
-const PrivacyPolicy = lazy(() => lazyRetry(()=>import("./screens/privacypolicy")));
-const ContactUs = lazy(() => lazyRetry(()=>import("./screens/contactus")));
-const Newfranchise = lazy(() => lazyRetry(()=>import("./screens/newfranchisepage")));
-const ThankYou = lazy(() => lazyRetry(()=>import("./screens/thankyoupage/thankyou.js")));
+const Home = lazy(() => lazyRetry(() => import("./screens/homepage/home")));
+const About = lazy(() => lazyRetry(() => import("./screens/about/About")));
+const PrivacyPolicy = lazy(() => lazyRetry(() => import("./screens/privacypolicy")));
+const ContactUs = lazy(() => lazyRetry(() => import("./screens/contactus")));
+const Newfranchise = lazy(() => lazyRetry(() => import("./screens/newfranchisepage")));
+const ThankYou = lazy(() => lazyRetry(() => import("./screens/thankyoupage/thankyou.js")));
 
-const Gallery = lazy(() => lazyRetry(()=>import("./screens/gallery")));
-const NewGallery = lazy(() => lazyRetry(()=>import("./screens/gallery/NewGallery")));
-const Locations = lazy(() => lazyRetry(()=>import("./screens/locations/Locations")));
-const SingleLocation = lazy(() =>lazyRetry(()=> import("./screens/locations/SingleLocation.js")));
+const Gallery = lazy(() => lazyRetry(() => import("./screens/gallery")));
+const NewGallery = lazy(() => lazyRetry(() => import("./screens/gallery/NewGallery")));
+const Locations = lazy(() => lazyRetry(() => import("./screens/locations/Locations")));
+const SingleLocation = lazy(() => lazyRetry(() => import("./screens/locations/SingleLocation.js")));
 const TRACKING_ID = "G-H8LMPD3V4F"; // Replace with your tracking ID
 ReactGA.initialize(TRACKING_ID);
 
@@ -68,30 +65,30 @@ export default function App() {
       <BrowserRouter>
         {window.location.pathname !== "/customSalon" && <Header />}
         <ScrollToTop />
-        <Suspense fallback={<OverLayloader/>}>
-        <div className="">
-        
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<About />} />
+        <Suspense fallback={<OverLayloader />}>
+          <div className="">
 
-            <Route path="/salon-location-near-me" element={<Locations />} />
-            <Route
-              path="/salon-location-near-me/:id"
-              element={<SingleLocation />}
-            />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<About />} />
 
-            <Route path="/franchise-enquiry" element={<Newfranchise />} />
-            <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/franchise-d" element={<Newfranchise />} />
-            <Route path="/franchise-enquiry*" element={<Navigate to="/franchise-enquiry" replace />} />
-            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/media" element={<NewGallery />} />
-            <Route path="*" element={<Navigate to="/franchise-enquiry" replace />} />
-          </Routes>
-        </div>
+              <Route path="/salon-location-near-me" element={<Locations />} />
+              <Route
+                path="/salon-location-near-me/:id"
+                element={<SingleLocation />}
+              />
+
+              <Route path="/franchise-enquiry" element={<Newfranchise />} />
+              <Route path="/thank-you" element={<ThankYou />} />
+              <Route path="/franchise-d" element={<Newfranchise />} />
+              <Route path="/franchise-enquiry*" element={<Navigate to="/franchise-enquiry" replace />} />
+              <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/media" element={<NewGallery />} />
+              <Route path="*" element={<Navigate to="/franchise-enquiry" replace />} />
+            </Routes>
+          </div>
         </Suspense>
         {window.location.pathname !== "/customSalon" && <NewFooter />}
 

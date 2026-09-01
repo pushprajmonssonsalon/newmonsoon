@@ -13,15 +13,13 @@ const Banner = ({image,index=0}) => {
         
         />
         <img
-          loading="lazy"
-          lazyboundary="800px"
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "low"}
+          decoding={index === 0 ? "sync" : "async"}
           sizes="100vw"
           src={image}
-          alt={`Luxury Salon Franchise ${index}`}
-          decoding="async"
-          data-nimg="responsive"
-          className="border border-silverSurfer-300  absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 img-styles"
-          
+          alt={`Luxury Salon Franchise ${index + 1}`}
+          className="border border-silverSurfer-300 absolute inset-0 box-border p-0 border-none m-auto block w-full h-full object-cover img-styles"
         />
 
       </div>
