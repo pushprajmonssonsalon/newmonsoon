@@ -47,6 +47,21 @@ const NewGallery = () => {
           content="monsoon salon media, salon franchise news, media coverage, franchise success stories, beauty industry news, salon updates"
         />
         <link rel="canonical" href="https://monsoonsalon.com/media" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise" />
+        <meta
+          property="og:description"
+          content="Monsoon Salon – a leading ladies beauty parlour franchise, beauty clinic franchise & ladies salon franchise with premium beauty services and proven success."
+        />
+        <meta property="og:url" content="https://monsoonsalon.com/media" />
+        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise" />
+        <meta
+          name="twitter:description"
+          content="Monsoon Salon – a leading ladies beauty parlour franchise, beauty clinic franchise & ladies salon franchise with premium beauty services and proven success."
+        />
+        <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
 
         <link rel="preload" as="image" href={LOCAL_IMAGES.gallery2} />
       </Helmet>

@@ -41,6 +41,7 @@ const Gallery = lazy(() => lazyRetry(() => import("./screens/gallery")));
 const NewGallery = lazy(() => lazyRetry(() => import("./screens/gallery/NewGallery")));
 const Locations = lazy(() => lazyRetry(() => import("./screens/locations/Locations")));
 const SingleLocation = lazy(() => lazyRetry(() => import("./screens/locations/SingleLocation.js")));
+const NotFound = lazy(() => lazyRetry(() => import("./screens/notfound")));
 const TRACKING_ID = "G-H8LMPD3V4F"; // Replace with your tracking ID
 ReactGA.initialize(TRACKING_ID);
 
@@ -86,7 +87,7 @@ export default function App() {
               <Route path="/contact-us" element={<ContactUs />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/media" element={<NewGallery />} />
-              <Route path="*" element={<Navigate to="/franchise-enquiry" replace />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </Suspense>

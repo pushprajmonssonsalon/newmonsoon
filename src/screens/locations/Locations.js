@@ -144,6 +144,21 @@ const Locations = () => {
           rel="canonical"
           href="https://monsoonsalon.com/salon-location-near-me"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More" />
+        <meta
+          property="og:description"
+          content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
+        />
+        <meta property="og:url" content="https://monsoonsalon.com/salon-location-near-me" />
+        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More" />
+        <meta
+          name="twitter:description"
+          content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
+        />
+        <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
       </Helmet>
       <div className="min-h-screen">
         <div className="pt-9 pb-16">
@@ -296,6 +311,8 @@ const Locations = () => {
                     <img
                       src={getImageUrl(salon)}
                       alt={`${salon?.name} ${salon?.stateName}`}
+                      width="290"
+                      height="95"
                       style={{ aspectRatio: "290 / 95" }}
                       className="w-1/3"
                     />

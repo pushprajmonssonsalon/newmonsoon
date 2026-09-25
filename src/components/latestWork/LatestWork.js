@@ -66,6 +66,8 @@ const LatestWork = () => {
         <div className="relative">
         <div className="relative float-left">
          <img
+            width="1164"
+            height="1479"
             style={{ aspectRatio: "1164 / 1479" }}
             src={LOCAL_IMAGES.monsoonsalon29}
             className="my-auto  relative z-0   mr-2 sm:mr-[30px] md:mr-[50px] xl:mr-[90px] object-cover lg:h-[493px] lg:w-[388px] w-[100px] sm:w-[150px] md:w-[196.75px] transition-transform duration-500 "
@@ -107,10 +109,12 @@ const LatestWork = () => {
                    
                         <div key={index}>
                           <img
+                            width="120"
+                            height="60"
                             className="h-[60px] w-[120px] md:h-[100px] md:w-[200px] xl:h-[190px] xl:w-[400px] object-cover rounded-lg"
                             src={elm.galleryimg}
                             alt={elm.name}
-                            
+
                             loading="lazy"
                           />
                         </div>

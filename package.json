@@ -30,6 +30,7 @@
     "build": "react-scripts build",
     "serve": "serve -s build -l 3000",
     "convert:images": "node scripts/convert-to-webp.js",
+    "generate:sitemap": "node scripts/generate-sitemap.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

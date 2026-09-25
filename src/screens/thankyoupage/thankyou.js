@@ -55,6 +55,15 @@ export default function FranchiseThankYou() {
           content="Thank you for connecting with Monsoon Salon. Our franchise team will review your details and contact you shortly."
         />
         <link rel="canonical" href="https://monsoonsalon.com/thank-you" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Thank You for Connecting with Monsoon | Franchise Enquiry" />
+        <meta
+          property="og:description"
+          content="Thank you for connecting with Monsoon Salon. Our franchise team will review your details and contact you shortly."
+        />
+        <meta property="og:url" content="https://monsoonsalon.com/thank-you" />
+        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
       </Helmet>
 
       <main className="thankyou-page">
@@ -117,6 +126,8 @@ export default function FranchiseThankYou() {
                   <div key={index} className="thankyou-brand-slide">
                     <img
                       src={item.brandUrl}
+                      width="290"
+                      height="166"
                       alt="Monsoon Salon Partner Brand"
                       loading="lazy"
                     />

@@ -96,11 +96,11 @@ const NewFooter = () => {
          <div className='flex flex-col'>
             <h3 className='text-xl foot-link  md:text-md mb-5 font-normal text-white  mt-0'>Our Social Media</h3>
             <div className='flex flex-row gap-x-3 md:gap-x-5'>
-               <a target="_blank" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
-               <a target="_blank" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
-               <a target="_blank" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
-               <a target="_blank" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
-               <a target="_blank" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
+               <a target="_blank" rel="noopener noreferrer" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
+               <a target="_blank" rel="noopener noreferrer" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
+               <a target="_blank" rel="noopener noreferrer" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
+               <a target="_blank" rel="noopener noreferrer" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
+               <a target="_blank" rel="noopener noreferrer" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
             </div>
          </div>
       </div>

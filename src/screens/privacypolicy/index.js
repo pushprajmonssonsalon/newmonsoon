@@ -55,10 +55,15 @@ export default function PrivacyPolicy() {
     <>
     <Helmet>
     
-    <title>Monsoon Salon Franchise Policy | Investment, Benefits & Requirements</title>
-    <meta name="description" content="Partner with Monsoon Salon! Learn about our franchise policy, investment options, and business support to start your own premium salon with India’s trusted beauty brand."/>
+    <title>Privacy Policy | Monsoon Salon</title>
+    <meta name="description" content="Read Monsoon Salon's privacy policy to understand how we collect, use, and protect your personal information across our website, app, and services."/>
     <meta name="keywords" content="privacy policy, data protection, personal information, user privacy"/>
     <link rel="canonical" href="https://monsoonsalon.com/privacypolicy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy Policy | Monsoon Salon" />
+    <meta property="og:description" content="Read Monsoon Salon's privacy policy to understand how we collect, use, and protect your personal information across our website, app, and services." />
+    <meta property="og:url" content="https://monsoonsalon.com/privacypolicy" />
+    <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
 
     </Helmet>
     <div className="py-9">
@@ -127,7 +132,8 @@ protect your information.
 contact us freely.
         </p>
       </div>
-            <h2 className="font-semibold text-center text-2xl py-9" >Frequently Asked Questions</h2>
+      {/* FAQ section hidden for now (placeholder content)
+      <h2 className="font-semibold text-center text-2xl py-9" >Frequently Asked Questions</h2>
 
       <ul className=" w-[90%] md:w-[60%] my-9 mx-auto   rounded-md">
        {accordionData.map((item,index)=>{
@@ -160,6 +166,7 @@ contact us freely.
         )
        }) }
       </ul>
+      */}
 </div>
    
      

@@ -115,6 +115,21 @@ export default function Home() {
             content="salon franchise, best salon franchise, affordable salon franchise, salon franchise booking portal, unisex salon franchise"
           />
           <link rel="canonical" href="https://monsoonsalon.com/" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Monsoon Salon | India’s Leading Salon Franchise Chain" />
+          <meta
+            property="og:description"
+            content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
+          />
+          <meta property="og:url" content="https://monsoonsalon.com/" />
+          <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Monsoon Salon | India’s Leading Salon Franchise Chain" />
+          <meta
+            name="twitter:description"
+            content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
+          />
+          <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
         </Helmet>
 
 
@@ -177,6 +192,8 @@ export default function Home() {
                 >
                   <div className=" overflow-hidden">
                     <img
+                    width="284"
+                    height="224"
                     style={{aspectRatio: "284 / 224"}}
                       src={service.img}
                       alt={service.title}
@@ -235,6 +252,8 @@ export default function Home() {
               className="bg-white backdrop-blur rounded-2xl py-6 font-semibold tracking-widest text-neutral-700 shadow hover:shadow-lg transition"
             >
                 <img
+                width="290"
+                height="166"
                 style={{aspectRatio:290 / 166}}
                   src={item.brandUrl}
                   className="h-[60px] sm:h-[100px] mx-auto"

@@ -1,9 +1,14 @@
 # https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
 User-agent: OAI-SearchBot
 Allow: /
 User-agent: Bingbot
 Allow: /
 User-agent: GPTBot
 Allow: /
-User-agent: ChatGPT-User 
+User-agent: ChatGPT-User
 Allow: /
+
+Sitemap: https://monsoonsalon.com/sitemap.xml

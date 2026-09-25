@@ -37,6 +37,8 @@ const Header = () => {
           <div className="float-right my-auto  ml-2 md:ml-[50px] relative">
             <img
               src={LOCAL_IMAGES.monsoonsalon28}
+              width="1164"
+              height="1479"
               style={{ aspectRatio: "1164 / 1479" }}
               className=" float-right relative z-0 object-cover lg:h-[493px] lg:w-[388px] w-[100px] sm:w-auto sm:h-[190.58px] md:h-auto md:w-[196.75px]  transition-transform duration-500 "
               alt="Best monsoon salon franchise"
