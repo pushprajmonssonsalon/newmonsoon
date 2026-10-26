@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import LOCAL_IMAGES from "../utils/localImages";
 import { FaMailBulk, FaPhone, FaWhatsapp } from "react-icons/fa";
 import { Helmet } from "react-helmet";
@@ -130,9 +130,10 @@ const SingleLocation = () => {
   const [singleSalonDetail, setSingleSalonDetail] = useState({});
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
+  const [otherLocations, setOtherLocations] = useState([]);
   const params = useParams();
-  
-  
+
+
 
   useEffect(() => {
     getApiCall(
@@ -148,6 +149,21 @@ const SingleLocation = () => {
       }
     );
   }, [params.id]);
+
+  useEffect(() => {
+    getApiCall(
+      "salons",
+      (res) => {
+        setOtherLocations(res?.filter((elm) => elm._id !== params?.id) || []);
+      },
+      (err) => {}
+    );
+  }, [params.id]);
+
+  const nearbyLocations = [
+    ...otherLocations.filter((elm) => elm.stateName === singleSalonDetail?.stateName),
+    ...otherLocations.filter((elm) => elm.stateName !== singleSalonDetail?.stateName),
+  ].slice(0, 5);
   const scrollToDivWithOffset = useCallback(() => {
     const element = document.getElementById("map");
     if (element) {
@@ -187,7 +203,69 @@ const SingleLocation = () => {
           content={metaDescription}
         />
         <link rel="canonical" href={`https://monsoonsalon.com/salon-location-near-me/${params?.id}`} />
-
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:url" content={`https://monsoonsalon.com/salon-location-near-me/${params?.id}`} />
+        <meta
+          property="og:image"
+          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://monsoonsalon.com/logo1024.png"}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta
+          name="twitter:image"
+          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://monsoonsalon.com/logo1024.png"}
+        />
+        {singleSalonDetail?.stateName && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "HairSalon",
+              name: `Monsoon Salon - ${singleSalonDetail?.stateName}`,
+              image: singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://monsoonsalon.com/logo1024.png",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: singleSalonDetail?.address || "",
+                addressRegion: singleSalonDetail?.stateName || "",
+                addressCountry: "IN",
+              },
+              ...(latitude && longitude
+                ? { geo: { "@type": "GeoCoordinates", latitude, longitude } }
+                : {}),
+              url: `https://monsoonsalon.com/salon-location-near-me/${params?.id}`,
+            })}
+          </script>
+        )}
+        {singleSalonDetail?.stateName && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://monsoonsalon.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Salon Locations",
+                  item: "https://monsoonsalon.com/salon-location-near-me",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: singleSalonDetail?.stateName,
+                  item: `https://monsoonsalon.com/salon-location-near-me/${params?.id}`,
+                },
+              ],
+            })}
+          </script>
+        )}
       </Helmet>
 
       <div className="flex flex-col items-center">
@@ -313,6 +391,25 @@ const SingleLocation = () => {
             </a>
           </div>
         </div>
+
+        {nearbyLocations.length > 0 && (
+          <div className="mt-12 w-full">
+            <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">
+              Other Salon Locations
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {nearbyLocations.map((elm) => (
+                <Link
+                  key={elm._id}
+                  to={`/salon-location-near-me/${elm._id}`}
+                  className="px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 text-sm font-medium text-gray-800"
+                >
+                  Salon Franchise in {elm.stateName}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 import "./Aboutus.css";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -66,6 +65,21 @@ const About = () => {
           content="about monsoon salon, monsoon salon information, monsoon about us, monsoon salon profile"
         />
         <link rel="canonical" href="https://monsoonsalon.com/about-us" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About Monsoon Salon | Leading Salon Franchise Opportunities" />
+        <meta
+          property="og:description"
+          content="Monsoon Salon is a leader in salon franchise opportunities. Join our trusted brand and benefit from premium beauty services and expert franchise support."
+        />
+        <meta property="og:url" content="https://monsoonsalon.com/about-us" />
+        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Monsoon Salon | Leading Salon Franchise Opportunities" />
+        <meta
+          name="twitter:description"
+          content="Monsoon Salon is a leader in salon franchise opportunities. Join our trusted brand and benefit from premium beauty services and expert franchise support."
+        />
+        <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
 
         {brandsImg.map((elm) => (
           <link rel="preload" as="image" href={elm.brandUrl} />
@@ -267,6 +281,8 @@ const About = () => {
                 <div key={index} className="">
                   <img
                     src={item.brandUrl}
+                    width="290"
+                    height="166"
                     className="h-[60%] w-[50%]"
                     alt={item.name3}
                     loading="lazy"

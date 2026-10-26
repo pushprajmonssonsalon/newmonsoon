@@ -176,6 +176,21 @@ export default function ContactUs() {
           content="monsoon salon contact details, monsoon salon address, monsoon salon phone number, monsoon salon email"
         />
         <link rel="canonical" href="https://monsoonsalon.com/contact-us" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Us | Monsoon Salon Franchise Team" />
+        <meta
+          property="og:description"
+          content="Reach out to Monsoon Salon today and explore exciting opportunities to join our growing saloon franchise business network in India."
+        />
+        <meta property="og:url" content="https://monsoonsalon.com/contact-us" />
+        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Monsoon Salon Franchise Team" />
+        <meta
+          name="twitter:description"
+          content="Reach out to Monsoon Salon today and explore exciting opportunities to join our growing saloon franchise business network in India."
+        />
+        <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
       </Helmet>
       <div className="mb-20">
         <div className="w-[90%] md:w-[80%] mx-auto h-full my-10 gap-9 md:gap-0  flex items-center justify-center">

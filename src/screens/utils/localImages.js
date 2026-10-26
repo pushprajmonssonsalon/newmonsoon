@@ -1,7 +1,7 @@
 const LOCAL_IMAGES = {
     IMAGE1: require('../../assets/images/image2.webp'),
 
-    monsoonlogo: require('../../assets/images/monsoonlogo.png'),
+    monsoonlogo: require('../../assets/images/monsoonlogo.webp'),
     skincoIcon: require('../../assets/images/skinco2.png'),
     kerastaseIcon: require('../../assets/images/karastase2.png'),
     thalgoIcon: require('../../assets/images/thalgo2.png'),
@@ -11,11 +11,11 @@ const LOCAL_IMAGES = {
 
 
 
-    aboutUs: require('../../assets/images/aboutus.jpg'),
+    aboutUs: require('../../assets/images/aboutus.webp'),
     gallery: require('../../assets/images/gallery.webp'),
     gallery2: require('../../assets/images/gallery2.webp'),
-    aboutuspage: require('../../assets/images/about_us_banner.png'),
-    about: require('../../assets/images/about.png'),
+    aboutuspage: require('../../assets/images/about_us_banner.webp'),
+    about: require('../../assets/images/about.webp'),
     hairIcon: require('../../assets/images/hair_icon.png'),
     nailIcon: require('../../assets/images/nail_icon.png'),
     beautyIcon: require('../../assets/images/beautyicon.png'),
@@ -23,32 +23,18 @@ const LOCAL_IMAGES = {
 
     quoteicon: require('../../assets/images/quote.png'),
 
-
-
-
-
     //brands banner 
-
-
-    argatinIcon: require('../../assets/images/argatin2.png'),
     springIcon: require('../../assets/images/spring2.png'),
     skinIcon: require('../../assets/images/skinco2.png'),
-    thalgoIcon: require('../../assets/images/thalgo2.png'),
     lorealIcon: require('../../assets/images/loreal2.png'),
 
-
     //phool pati
-    phool1: require('../../assets/images/phool1.png'),
-    phool2: require('../../assets/images/phool2.png'),
-    patti1: require('../../assets/images/patti1.png'),
-    patti2: require('../../assets/images/patti2.png'),
-
-
-
-
+    phool1: require('../../assets/images/phool1.webp'),
+    phool2: require('../../assets/images/phool2.webp'),
+    patti1: require('../../assets/images/patti1.webp'),
+    patti2: require('../../assets/images/patti2.webp'),
 
     //gallery
-
     monsoonsalon12: require('../../assets/images/monsoon12.jpg'),
     monsoonsalon13: require('../../assets/images/monsoon13.jpg'),
     monsoonsalon14: require('../../assets/images/monsoon14.jpg'),
@@ -57,16 +43,16 @@ const LOCAL_IMAGES = {
     monsoonsalon17: require('../../assets/images/monsoon17.jpg'),
     monsoonsalon18: require('../../assets/images/monsoon18.jpg'),
     monsoonsalon19: require('../../assets/images/monsoon19.jpg'),
-    monsoonsalon20: require('../../assets/images/monsoon20.jpg'),
+    monsoonsalon20: require('../../assets/images/monsoon20.webp'),
     monsoonsalon21: require('../../assets/images/monsoon21.jpg'),
-    monsoonsalon22: require('../../assets/images/monsoon22.jpg'),
-    monsoonsalon23: require('../../assets/images/monsoon23.jpg'),
-    monsoonsalon24: require('../../assets/images/monsoon24.jpg'),
-    monsoonsalon25: require('../../assets/images/monsoon25.jpg'),
-    monsoonsalon26: require('../../assets/images/monsoon26.jpg'),
-    monsoonsalon27: require('../../assets/images/monsoon27.jpg'),
-    monsoonsalon28: require('../../assets/images/monsoon28.png'),
-    monsoonsalon29: require('../../assets/images/monsoon29.png'),
+    monsoonsalon22: require('../../assets/images/monsoon22.webp'),
+    monsoonsalon23: require('../../assets/images/monsoon23.webp'),
+    monsoonsalon24: require('../../assets/images/monsoon24.webp'),
+    monsoonsalon25: require('../../assets/images/monsoon25.webp'),
+    monsoonsalon26: require('../../assets/images/monsoon26.webp'),
+    monsoonsalon27: require('../../assets/images/monsoon27.webp'),
+    monsoonsalon28: require('../../assets/images/monsoon28.webp'),
+    monsoonsalon29: require('../../assets/images/monsoon29.webp'),
 
 
 
