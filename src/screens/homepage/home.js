@@ -13,7 +13,7 @@ import defaultBanner from "../../assets/images/banner1.webp";
 import hair from "../../assets/images/hair2.webp";
 import beauty from "../../assets/images/beauty2.webp";
 import makeup from "../../assets/images/beauty1.webp";
-import nail from "../../assets/images/nail1.png";
+import nail from "../../assets/images/nail1.webp";
 export default function Home() {
   const [bannerImg, setBannerImg] = useState([defaultBanner]);
   const services = [

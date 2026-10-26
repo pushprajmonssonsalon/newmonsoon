@@ -2,7 +2,7 @@ import { BsInstagram } from "react-icons/bs";
 import { FaFacebook, FaYoutube, FaTwitter, FaPinterest } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { IoCall, IoMail } from "react-icons/io5";
-import logo from "../../assets/images/monsoonlogo.png";
+import logo from "../../assets/images/monsoonlogo.webp";
 const NewFooter = () => {
    return (
       <>
@@ -89,7 +89,7 @@ const NewFooter = () => {
             <h3 className='text-xl foot-link md:text-md mb-5 mt-0 font-normal text-white  md:mt-0'>Get in touch</h3>
             <div className="flex flex-col gap-3">
 
-            <h4 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084 , 8882766591   </h4>
+            <h4 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084</h4>
             <h4 className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoMail size={20} />info@monsoonsalon.com</h4>
             </div>
          </div>

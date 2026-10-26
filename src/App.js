@@ -4,7 +4,6 @@ import { lazy, Suspense, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 
 import ReactGA from "react-ga";
-import "animate.css/animate.min.css";
 import NewFooter from "./screens/footer";
 import OverLayloader from "./components/loaders/OverLayloader.js";
 import Header from "./screens/navbar/StickyNavbar.js";

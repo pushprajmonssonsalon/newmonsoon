@@ -43,13 +43,26 @@
     ></script>
     <script async src="//www.instagram.com/embed.js"></script>
 
-    <!-- Google Fonts: Single consolidated request with display=swap -->
+    <!-- Google Fonts: Single consolidated request with display=swap, loaded non-render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jaldi:wght@400;700&family=Kotta+One&family=Manrope:wght@400;600&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jaldi:wght@400;700&family=Kotta+One&family=Manrope:wght@400;600&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jaldi:wght@400;700&family=Kotta+One&family=Manrope:wght@400;600&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <title>Monsoon Salon</title>
 
     <!-- Organization structured data (crawlable without JS) -->

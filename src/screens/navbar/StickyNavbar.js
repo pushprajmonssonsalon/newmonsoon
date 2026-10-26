@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/monsoonlogo1.png"
+import logo from "../../assets/images/monsoonlogo1.webp"
 import { IoCall } from "react-icons/io5";
 
 export default function Header() {
@@ -81,7 +81,7 @@ className="w-full bg-[#c9a961] text-white px-6 py-3 rounded-md font-semibold hov
 
           <div className="flex items-center gap-2  text-sm text-neutral-600">
             <span className="text-lg"><IoCall size={20} /></span>
-            <span>+91 9315788084 ,+91 8882766591</span>
+            <span>+91 9315788084</span>
           </div>
 
            <button
