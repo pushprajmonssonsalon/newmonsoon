@@ -10,6 +10,7 @@ const STATIC_ROUTES = [
   { loc: "/", priority: "1.0" },
   { loc: "/salon-location-near-me", priority: "0.9" },
   { loc: "/franchise-enquiry", priority: "0.9" },
+  { loc: "/aesthetics", priority: "0.8" },
   { loc: "/about-us", priority: "0.8" },
   { loc: "/contact-us", priority: "0.7" },
   { loc: "/gallery", priority: "0.6" },
