@@ -38,6 +38,7 @@ const Navbar = () => {
     { label: "Home", to: "/", type: "internal" },
     { label: "Franchise", to: "/franchise-enquiry", type: "internal" },
     
+    { label: "Aesthetics", to: "/aesthetics", type: "internal" },
     { label: "Gallery", to: "/gallery", type: "internal" },
     { label: "Media", to: "/media", type: "internal" },
     { label: "About us", to: "/about-us", type: "internal" },

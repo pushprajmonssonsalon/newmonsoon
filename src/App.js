@@ -34,6 +34,8 @@ const About = lazy(() => lazyRetry(() => import("./screens/about/About")));
 const PrivacyPolicy = lazy(() => lazyRetry(() => import("./screens/privacypolicy")));
 const ContactUs = lazy(() => lazyRetry(() => import("./screens/contactus")));
 const Newfranchise = lazy(() => lazyRetry(() => import("./screens/newfranchisepage")));
+const Aesthetics = lazy(() => lazyRetry(() => import("./screens/aesthetics")));
+const AestheticDetail = lazy(() => lazyRetry(() => import("./screens/aesthetics/AestheticDetail")));
 const ThankYou = lazy(() => lazyRetry(() => import("./screens/thankyoupage/thankyou.js")));
 
 const Gallery = lazy(() => lazyRetry(() => import("./screens/gallery")));
@@ -79,6 +81,8 @@ export default function App() {
               />
 
               <Route path="/franchise-enquiry" element={<Newfranchise />} />
+              <Route path="/aesthetics" element={<Aesthetics />} />
+              <Route path="/aesthetics/:slug" element={<AestheticDetail />} />
               <Route path="/thank-you" element={<ThankYou />} />
               <Route path="/franchise-d" element={<Newfranchise />} />
               <Route path="/franchise-enquiry*" element={<Navigate to="/franchise-enquiry" replace />} />
