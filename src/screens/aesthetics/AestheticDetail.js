@@ -47,7 +47,7 @@ export default function AestheticDetail() {
                   key={s.slug}
                   to={`/aesthetics/${s.slug}`}
                   aria-current={active ? "page" : undefined}
-                  className={`px-3 py-1 rounded-full font-jaldi text-sm md:text-base transition ${
+                  className={`px-3 py-1 rounded-full text-sm md:text-base transition ${
                     active
                       ? "bg-amber-600 text-white font-semibold"
                       : "text-neutral-800 hover:text-amber-600"
@@ -71,13 +71,13 @@ export default function AestheticDetail() {
               className="w-full h-[280px] md:h-[520px] object-cover"
             />
             <div>
-              <h1 className="text-3xl md:text-4xl font-kotta font-semibold text-neutral-800">
+              <h1 className="text-3xl md:text-4xl font-semibold text-neutral-800">
                 {service.machine}
               </h1>
-              <p className="text-amber-600 font-jaldi font-semibold mt-4">
+              <p className="text-amber-600 font-semibold mt-4">
                 {service.category}
               </p>
-              <p className="text-neutral-600 font-jaldi text-base mt-4">
+              <p className="text-neutral-600 text-base mt-4">
                 {service.description}
               </p>
             </div>
@@ -88,17 +88,17 @@ export default function AestheticDetail() {
         <section className="py-10 md:py-16 px-6">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-kotta font-semibold text-neutral-800">
+              <h2 className="text-3xl md:text-4xl font-semibold text-neutral-800">
                 How does this work?
               </h2>
               {service.howItWorks.length > 0 ? (
-                <ul className="list-disc pl-5 mt-6 space-y-3 text-neutral-600 font-jaldi">
+                <ul className="list-disc pl-5 mt-6 space-y-3 text-neutral-600">
                   {service.howItWorks.map((step) => (
                     <li key={step}>{step}</li>
                   ))}
                 </ul>
               ) : (
-                <p className="mt-6 text-neutral-500 font-jaldi">
+                <p className="mt-6 text-neutral-500">
                   Details coming soon.
                 </p>
               )}
@@ -106,8 +106,8 @@ export default function AestheticDetail() {
               <div className="grid grid-cols-2 gap-4 mt-8">
                 {detailLabels.map(([key, label]) => (
                   <div key={key} className="bg-gray-50 rounded-lg p-4">
-                    <p className="text-neutral-700 font-jaldi">{label}</p>
-                    <p className="mt-3 text-neutral-900 font-jaldi font-bold">
+                    <p className="text-neutral-700">{label}</p>
+                    <p className="mt-3 text-neutral-900 font-bold">
                       {service.details[key] || "To be updated"}
                     </p>
                   </div>
@@ -125,12 +125,12 @@ export default function AestheticDetail() {
           </div>
         </section>
 
-        <ClientTestimonials className="py-16" />
+        <ClientTestimonials className="py-16" homeFonts={false} />
 
         {/* FAQ */}
         <section className="py-10 md:py-16 px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-kotta font-semibold text-neutral-800 mb-8">
+            <h2 className="text-3xl md:text-4xl font-semibold text-neutral-800 mb-8">
               Some Frequently Asked Questions (FAQ's)
             </h2>
             <ul>
@@ -141,7 +141,7 @@ export default function AestheticDetail() {
                   >
                     <details className="group">
                       <summary className="flex items-center justify-between gap-3 px-5 py-4 font-medium marker:content-none cursor-pointer list-none">
-                        <span className="text-lg font-jaldi text-neutral-800">
+                        <span className="text-lg text-neutral-800">
                           {item.title}
                         </span>
                         <span className="text-xl group-open:hidden">+</span>
@@ -150,7 +150,7 @@ export default function AestheticDetail() {
                         </span>
                       </summary>
                       <article className="px-5 pb-4">
-                        <p className="text-gray-600 font-jaldi">
+                        <p className="text-gray-600">
                           {item.details}
                         </p>
                       </article>
