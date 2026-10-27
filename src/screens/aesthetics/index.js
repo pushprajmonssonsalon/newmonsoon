@@ -21,13 +21,13 @@ export default function Aesthetics() {
         <section className="bg-[#FFF5EB] py-12 md:py-20 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div className="text-center md:text-left">
-              <p className="text-xl font-kotta tracking-[0.3em] text-amber-600 uppercase">
+              <p className="text-xl tracking-[0.3em] text-amber-600 uppercase">
                 Monsoon Aesthetics
               </p>
-              <h1 className="text-3xl md:text-5xl font-kotta font-semibold text-neutral-800 mt-3">
+              <h1 className="text-3xl md:text-5xl font-semibold text-neutral-800 mt-3">
                 Advanced Aesthetic & Skin Treatments
               </h1>
-              <p className="text-neutral-600 font-jaldi text-base md:text-lg mt-5">
+              <p className="text-neutral-600 text-base md:text-lg mt-5">
                 Step into a space dedicated to your transformation. Advanced
                 technology, a personalised touch and renewed confidence.
               </p>
@@ -47,10 +47,10 @@ export default function Aesthetics() {
         <section className="bg-gradient-to-b from-[#f6efe7] to-[#efe2d6] py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-14">
-              <p className="text-xl font-kotta tracking-[0.3em] text-amber-600 uppercase">
+              <p className="text-xl tracking-[0.3em] text-amber-600 uppercase">
                 Our Services
               </p>
-              <h2 className="text-3xl md:text-5xl font-kotta font-semibold text-neutral-800 mt-3">
+              <h2 className="text-3xl md:text-5xl font-semibold text-neutral-800 mt-3">
                 Treatments Tailored For You
               </h2>
             </div>
@@ -74,10 +74,10 @@ export default function Aesthetics() {
                     />
                   </div>
                   <div className="p-3 sm:p-6 text-center">
-                    <h3 className="text-xl font-jaldi font-semibold text-neutral-800 mb-2">
+                    <h3 className="text-xl font-semibold text-neutral-800 mb-2">
                       {service.category}
                     </h3>
-                    <span className="text-amber-600 font-jaldi text-sm font-semibold">
+                    <span className="text-amber-600 text-sm font-semibold">
                       Know More
                     </span>
                   </div>
@@ -87,11 +87,11 @@ export default function Aesthetics() {
           </div>
         </section>
 
-        <ClientTestimonials className="py-16" />
+        <ClientTestimonials className="py-16" homeFonts={false} />
 
         {/* FAQ */}
         <section className="bg-gradient-to-b from-[#efe2d6] to-[#f6efe7] py-16 px-6">
-          <h2 className="text-3xl md:text-5xl font-kotta font-semibold text-neutral-800 text-center mb-10">
+          <h2 className="text-3xl md:text-5xl font-semibold text-neutral-800 text-center mb-10">
             Frequently Asked Questions
           </h2>
           <ul className="w-full md:w-[70%] mx-auto">
@@ -113,12 +113,12 @@ export default function Aesthetics() {
                         d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
                       />
                     </svg>
-                    <span className="text-lg font-jaldi text-neutral-800">
+                    <span className="text-lg text-neutral-800">
                       {item.title}
                     </span>
                   </summary>
                   <article className="px-4 pb-4">
-                    <p className="text-gray-600 font-jaldi">{item.details}</p>
+                    <p className="text-gray-600">{item.details}</p>
                   </article>
                 </details>
               </li>

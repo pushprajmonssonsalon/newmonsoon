@@ -31,13 +31,13 @@ const testimonials = [
 },
 ];
 
-export default function ClientTestimonials({ className = "py-3" }) {
+export default function ClientTestimonials({ className = "py-3", homeFonts = true }) {
   return (
     <section
       className={`bg-gradient-to-b from-[#efe2d6] to-[#f6efe7] ${className}`}
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-kotta md:text-5xl font-semibold text-neutral-800 mb-14">
+        <h2 className={`text-3xl ${homeFonts ? "font-kotta" : ""} md:text-5xl font-semibold text-neutral-800 mb-14`}>
           Client Testimonials
         </h2>
 
@@ -48,10 +48,10 @@ export default function ClientTestimonials({ className = "py-3" }) {
               className="bg-white/70 backdrop-blur rounded-[28px] p-8 shadow-md hover:shadow-xl transition"
             >
               <div className="text-amber-500 text-xl mb-4">★★★★★</div>
-              <p className="text-neutral-600 font-jaldi text-sm leading-relaxed mb-6">
+              <p className={`text-neutral-600 ${homeFonts ? "font-jaldi" : ""} text-sm leading-relaxed mb-6`}>
                 {t.review}
               </p>
-              <p className="font-semibold font-jaldi text-neutral-800 tracking-wide">
+              <p className={`font-semibold ${homeFonts ? "font-jaldi" : ""} text-neutral-800 tracking-wide`}>
                 {t.name}
               </p>
             </div>
