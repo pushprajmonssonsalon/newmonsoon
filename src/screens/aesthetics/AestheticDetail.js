@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { aestheticServices, aestheticFaqs } from "./data";
+import ClientTestimonials from "../../components/ClientTestimonials";
 import NotFound from "../notfound";
 
 const detailLabels = [
@@ -123,6 +124,8 @@ export default function AestheticDetail() {
             />
           </div>
         </section>
+
+        <ClientTestimonials className="py-16" />
 
         {/* FAQ */}
         <section className="py-10 md:py-16 px-6">

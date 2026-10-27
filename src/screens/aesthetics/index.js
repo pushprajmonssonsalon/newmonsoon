@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import ClientTestimonials from "../../components/ClientTestimonials";
 import { aestheticServices, aestheticFaqs } from "./data";
 import heroImg from "../../assets/images/banner1.webp";
 
@@ -85,6 +86,8 @@ export default function Aesthetics() {
             </div>
           </div>
         </section>
+
+        <ClientTestimonials className="py-16" />
 
         {/* FAQ */}
         <section className="bg-gradient-to-b from-[#efe2d6] to-[#f6efe7] py-16 px-6">
