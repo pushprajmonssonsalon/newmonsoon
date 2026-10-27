@@ -63,6 +63,16 @@ export const aestheticServices = [
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, ""),
   img: dummyImages[i % dummyImages.length],
+  // Placeholders - fill per service later; the detail page renders them as-is.
+  howItWorks: [],
+  details: {
+    procedureTime: "",
+    resultsIn: "",
+    recoveryTime: "",
+    sessions: "",
+    resultsLast: "",
+  },
+  faqs: [],
 }));
 
 export const aestheticFaqs = [
