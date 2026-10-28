@@ -1,3 +1,4 @@
+"use client";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./gallery.css";
@@ -77,10 +78,6 @@ export default function Gallery() {
           content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
         <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
-        {galleryImagesData?.map((elm) => (
-          <link rel="preload" as="image" href={elm.galleryimg} />
-        ))}
-        <link rel="preload" as="image" href={LOCAL_IMAGES.gallery} />
       </Helmet>
 
       <div className="">

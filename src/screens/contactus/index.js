@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import "./contactus.css";
 import CustomInput from "../../components/customInputs/CustomInput";

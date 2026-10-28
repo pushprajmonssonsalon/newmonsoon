@@ -13,7 +13,7 @@ module.exports = {
 
         },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        poppins: ["var(--font-poppins)", "Poppins", "sans-serif"],
         // Add more custom font families as needed
       },
       colors:{

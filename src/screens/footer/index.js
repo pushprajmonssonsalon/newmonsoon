@@ -1,3 +1,4 @@
+"use client";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebook, FaYoutube, FaTwitter, FaPinterest } from "react-icons/fa";
 import { Link } from 'react-router-dom';

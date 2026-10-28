@@ -1,7 +1,6 @@
 import LOCAL_IMAGES from "../screens/utils/localImages";
 import { Link, useNavigate } from "react-router-dom";
 import ReadMoreMobile from "./mainTextcomponent/ReadMoreMobile";
-import { useIsSmallScreen } from "../utils/hooks/useSmallScreen";
 import { AnimatedNumber } from "./mainTextcomponent/AnimatedNumber";
 const Text = () => {
   return (
@@ -29,7 +28,6 @@ const Header = () => {
       state: { scrollTo: "firstName", scrollKey: Date.now() },
     });
   };
-  const isSmallScreen = useIsSmallScreen();
   return (
     <>
       <div className="font-roboto roboto-regular">
@@ -58,9 +56,10 @@ const Header = () => {
           </div> */}
 
 
-          {isSmallScreen ? <ReadMoreMobile>
+          {/* ReadMoreMobile only collapses below md (CSS), so no JS screen-size check is needed */}
+          <ReadMoreMobile>
             <Text />
-          </ReadMoreMobile> : <Text />}
+          </ReadMoreMobile>
 
 
 

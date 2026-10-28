@@ -1,3 +1,4 @@
+"use client";
 import "./Aboutus.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -81,11 +82,6 @@ const About = () => {
         />
         <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
 
-        {brandsImg.map((elm) => (
-          <link rel="preload" as="image" href={elm.brandUrl} />
-        ))}
-        <link rel="preload" as="image" href={LOCAL_IMAGES.aboutuspage} />
-        <link rel="preload" as="image" href={LOCAL_IMAGES.about} />
 
        
       </Helmet>

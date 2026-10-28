@@ -1,6 +1,5 @@
 import LOCAL_IMAGES from "../../screens/utils/localImages";
 import "./LatestWork.css";
-import { useIsSmallScreen } from "../../utils/hooks/useSmallScreen";
 import ReadMoreMobile from "../mainTextcomponent/ReadMoreMobile";
  const Text = () => {
     return (
@@ -29,7 +28,6 @@ import ReadMoreMobile from "../mainTextcomponent/ReadMoreMobile";
   }
 const LatestWork = () => {
 
- const isSmallScreen =useIsSmallScreen();
  const galleryImagesData = [
   
   
@@ -93,11 +91,9 @@ const LatestWork = () => {
             recent work speaks for itself.
 
           </p>
-          {
-            isSmallScreen?<ReadMoreMobile>
-              <Text/>
-            </ReadMoreMobile>:<Text/>
-          }
+          <ReadMoreMobile>
+            <Text/>
+          </ReadMoreMobile>
     
         </div>
       </div>

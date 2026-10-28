@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 import MainText from "../../components/mainTextcomponent";
 import { getApiCall } from "../../utils/services";

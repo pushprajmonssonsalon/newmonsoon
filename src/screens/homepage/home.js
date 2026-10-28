@@ -1,3 +1,4 @@
+"use client";
 import "./home.css";
 import { Helmet } from "react-helmet";
 import Slider from "react-slick";

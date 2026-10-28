@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.9",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@mui/material-nextjs": "^5.18.0",
     "animate.css": "^4.1.1",
     "axios": "^1.5.0",
+    "next": "^14.2.35",
     "react": "^18.2.0",
     "react-animate-on-scroll": "^2.1.9",
     "react-dom": "^18.2.0",
@@ -20,41 +20,20 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-router-dom": "^6.15.0",
-    "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1",
-    "web-vitals": "^2.1.4"
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "serve": "serve -s build -l 3000",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "convert:images": "node scripts/convert-to-webp.js",
-    "generate:sitemap": "node scripts/generate-sitemap.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "dev:warm": "node scripts/warm.js"
   },
   "devDependencies": {
-    "serve": "^14.2.6",
     "sharp": "^0.35.4",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.3",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38"
   }
 }

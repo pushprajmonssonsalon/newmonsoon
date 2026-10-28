@@ -1,3 +1,4 @@
+"use client";
 import { Box } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -373,6 +374,20 @@ export default function Newfranchise() {
 
   const videoUrl = "https://cdn.salon-kart.com/franchiseVideo2.mp4";
 
+  // The hero video is ~10MB: start it after the first interaction (or 6s) so it
+  // doesn't compete with the content that is needed first.
+  const [showVideo, setShowVideo] = useState(false);
+  useEffect(() => {
+    const events = ["scroll", "pointerdown", "keydown", "touchstart", "mousemove"];
+    const start = () => setShowVideo(true);
+    events.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
+    const timer = setTimeout(start, 6000);
+    return () => {
+      clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, start));
+    };
+  }, []);
+
   useEffect(() => {
     const isSubmited = sessionStorage.getItem("isSubmitted");
     if (isSubmited === "true") {
@@ -439,7 +454,6 @@ export default function Newfranchise() {
             />
             <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
 
-            <link rel="preload" as="video" href={videoUrl} />
 
 
             {/* End Google Tag Manager (noscript) */}
@@ -469,16 +483,19 @@ export default function Newfranchise() {
             </button>
 
 
-            <div className="absolute  z-[2]  w-full top-0 left-0  h-full">
-              <video
-                className="w-full h-full object-cover"
-                src={videoUrl}
-                autoPlay
-                loop
-                muted
-                playsInline
-                controlsList="nodownload"
-              />
+            <div className="absolute  z-[2]  w-full top-0 left-0  h-full bg-black">
+              {showVideo && (
+                <video
+                  className="w-full h-full object-cover"
+                  src={videoUrl}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  controlsList="nodownload"
+                />
+              )}
               {/* <iframe
                 width="100%"
                 height="100%"

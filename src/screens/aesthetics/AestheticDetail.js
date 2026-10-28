@@ -1,3 +1,4 @@
+"use client";
 import { Helmet } from "react-helmet";
 import { Link, useParams } from "react-router-dom";
 import { aestheticServices, aestheticFaqs } from "./data";

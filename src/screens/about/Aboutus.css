@@ -116,7 +116,7 @@
     color: #323232;
     /* background-color: rebeccapurple; */
     
-    font-family: "poppins";
+    font-family: var(--font-poppins), "poppins";
     line-height: 1.5;
   }
 .salonlogocontainer{
@@ -148,7 +148,7 @@ color: #323232;
         color: #323232;
         /* text-align: center; */
       
-        font-family: "poppins";
+        font-family: var(--font-poppins), "poppins";
       }
       .text-overlay {
         font-size: 33px;
@@ -162,7 +162,7 @@ color: #323232;
         height: -moz-fit-content;
         height: fit-content;
         margin: auto;
-        font-family: "poppins";
+        font-family: var(--font-poppins), "poppins";
     }
     .namebrandcontainer {
         /* padding: 50px; */
