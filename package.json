@@ -29,7 +29,8 @@
     "build": "next build",
     "start": "next start",
     "convert:images": "node scripts/convert-to-webp.js",
-    "dev:warm": "node scripts/warm.js"
+    "dev:warm": "node scripts/warm.js",
+    "ai-check": "node scripts/ai-visibility.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.3",

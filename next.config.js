@@ -27,6 +27,7 @@ const nextConfig = {
   async redirects() {
     return [
       { source: "/franchise-enquiry/:path+", destination: "/franchise-enquiry", permanent: true },
+      { source: "/franchise", destination: "/franchise-enquiry", permanent: true },
       { source: "/franchise-d", destination: "/franchise-enquiry", permanent: false },
     ];
   },

@@ -5,7 +5,7 @@ export const homeFaqs = [
   {
     title: "What is Monsoon Salon?",
     details:
-      "Monsoon Salon is a unisex salon and spa chain and salon-franchise brand in India, offering hair, beauty, makeup, nail and aesthetic services through 200+ locations. It is run by The Professional Hair Salon & Spa (India) Pvt. Ltd.",
+      "Monsoon Salon is a unisex salon and spa chain and salon-franchise brand in India, offering hair, beauty, makeup, nail and aesthetic services through 212+ locations. It is run by The Professional Hair Salon & Spa (India) Pvt. Ltd.",
   },
   {
     title: "Which services does Monsoon Salon offer?",
@@ -20,7 +20,7 @@ export const homeFaqs = [
   {
     title: "Is Monsoon Salon a good salon franchise opportunity in India?",
     details:
-      "Monsoon Salon offers a technology-backed franchise model with brand support, training and operations help. Investors can choose between the Monsoon, Monsoon Pro and Smart Salon models depending on budget and location.",
+      "Monsoon Salon offers a technology-backed franchise model with brand support, training and operations help. Investment ranges from about ₹15 lakh to ₹3 crore, and investors can choose between the Monsoon, Monsoon Pro and Smart Salon models depending on budget and location.",
   },
   {
     title: "How can I book an appointment or contact Monsoon Salon?",
@@ -48,7 +48,7 @@ export const franchiseFaqs = [
   {
     title: "What is the investment required for a Monsoon Salon franchise?",
     details:
-      "The enquiry form offers investment bands from about 15 lakh up to 3 crore rupees depending on the salon model, size and city. The franchise team shares the exact figures for your location after you enquire.",
+      "Investment ranges from about ₹15 lakh to ₹3 crore, depending on the salon model, size and city. The franchise team shares exact figures for your location after you enquire.",
   },
   {
     title: "What support does Monsoon Salon give franchise partners?",
@@ -58,7 +58,7 @@ export const franchiseFaqs = [
   {
     title: "How many Monsoon Salon locations are there?",
     details:
-      "Monsoon Salon has 200+ locations across India, with over 3,000 artists and technicians, and has served millions of customers.",
+      "Monsoon Salon has 212+ locations across India, with over 3,000 artists and technicians, and has served millions of customers.",
   },
   {
     title: "Who can apply for a Monsoon Salon franchise?",

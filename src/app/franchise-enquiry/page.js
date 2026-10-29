@@ -2,6 +2,7 @@ import Script from "next/script";
 import Newfranchise from "../../screens/newfranchisepage";
 import FaqSection from "../../components/FaqSection";
 import { buildMetadata, jsonLd, pageSchema, breadcrumbSchema, faqSchema, SITE_URL } from "../../lib/seo";
+import Link from "next/link";
 import { franchiseFaqs } from "../../screens/faqData";
 
 const title = "Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon";
@@ -50,6 +51,14 @@ export default function Page() {
         {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-870359358');`}
       </Script>
       <Newfranchise />
+      <section className="px-6 py-10 bg-white text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-neutral-800 mb-4">More about Monsoon Salon franchise</h2>
+        <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-[#8f7229] underline">
+          <li><Link href="/franchise/cost">Franchise cost &amp; investment</Link></li>
+          <li><Link href="/best-salon-franchise-in-india">Best salon franchise in India</Link></li>
+          <li><Link href="/affordable-salon-franchise">Affordable salon franchise</Link></li>
+        </ul>
+      </section>
       <FaqSection faqs={franchiseFaqs} />
     </>
   );

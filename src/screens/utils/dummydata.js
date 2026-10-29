@@ -184,7 +184,7 @@ export const salonFranchiseDiscription = [
   },
   {
     image: LOCAL_IMAGES.calenderIcon,
-    heading: "35+ Cities Pan-India",
+    heading: "95+ Cities Pan-India",
     subHeading: "Continued Business Support Operations, HR, Marketing",
   },
 ];
