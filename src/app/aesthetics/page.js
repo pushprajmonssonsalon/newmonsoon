@@ -1,5 +1,5 @@
 import Aesthetics from "../../screens/aesthetics";
-import { buildMetadata, jsonLd, SITE_URL } from "../../lib/seo";
+import { buildMetadata, jsonLd, SITE_URL, pageSchema, breadcrumbSchema } from "../../lib/seo";
 import { aestheticFaqs, aestheticServices } from "../../screens/aesthetics/data";
 
 export const metadata = buildMetadata({
@@ -32,6 +32,8 @@ export default function Page() {
   };
   return (
     <>
+      <script {...jsonLd(pageSchema({ type: "CollectionPage", name: "Aesthetics & Advanced Skin Treatments | Monsoon Salon", description: metadata.description, path: "/aesthetics" }))} />
+      <script {...jsonLd(breadcrumbSchema([["Home", "/"], ["Aesthetics", "/aesthetics"]]))} />
       <script {...jsonLd(faqSchema)} />
       <script {...jsonLd(listSchema)} />
       <Aesthetics />

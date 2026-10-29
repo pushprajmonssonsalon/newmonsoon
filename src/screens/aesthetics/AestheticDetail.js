@@ -50,8 +50,8 @@ export default function AestheticDetail() {
                   aria-current={active ? "page" : undefined}
                   className={`px-3 py-1 rounded-full text-sm md:text-base transition ${
                     active
-                      ? "bg-amber-600 text-white font-semibold"
-                      : "text-neutral-800 hover:text-amber-600"
+                      ? "bg-amber-700 text-white font-semibold"
+                      : "text-neutral-800 hover:text-amber-700"
                   }`}
                 >
                   {shortName(s.machine)}
@@ -75,7 +75,7 @@ export default function AestheticDetail() {
               <h1 className="text-3xl md:text-4xl font-semibold text-neutral-800">
                 {service.machine}
               </h1>
-              <p className="text-amber-600 font-semibold mt-4">
+              <p className="text-amber-700 font-semibold mt-4">
                 {service.category}
               </p>
               <p className="text-neutral-600 text-base mt-4">

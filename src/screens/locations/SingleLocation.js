@@ -9,15 +9,17 @@ import { getApiCall } from "../../utils/services";
 
 import { getSalonMeta } from "./salonMeta";
 
-const SingleLocation = () => {
+const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
   const [searchParams] = useSearchParams();
   const isScroll = searchParams.get("scroll");
   
-  const [singleSalonDetail, setSingleSalonDetail] = useState({});
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-  const [otherLocations, setOtherLocations] = useState([]);
   const params = useParams();
+  const [singleSalonDetail, setSingleSalonDetail] = useState(initialSalon || {});
+  const [latitude, setLatitude] = useState(initialSalon?.latitude ?? null);
+  const [longitude, setLongitude] = useState(initialSalon?.longitude ?? null);
+  const [otherLocations, setOtherLocations] = useState(
+    initialSalons.filter((elm) => elm._id !== params?.id)
+  );
 
 
 

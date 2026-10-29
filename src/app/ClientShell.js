@@ -23,9 +23,15 @@ export default function ClientShell({ children }) {
 
   return (
     <div className="roboto-regular relative">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded"
+      >
+        Skip to main content
+      </a>
       <Toaster />
       {!hideChrome && <Header />}
-      <div className="">{children}</div>
+      <main id="main">{children}</main>
       {!hideChrome && <NewFooter />}
     </div>
   );

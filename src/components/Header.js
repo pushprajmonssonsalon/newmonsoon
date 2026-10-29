@@ -83,7 +83,7 @@ const Header = () => {
         <Link
           to="/franchise-enquiry"
           onClick={handleBookAppointment}
-          className="bg-[#c9a961] flex items-center justify-center w-full sm:w-[300px] text-white px-8 py-3 rounded-lg font-body font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md hover:shadow-lg"
+          className="bg-[#8f7229] flex items-center justify-center w-full sm:w-[300px] text-white px-8 py-3 rounded-lg font-body font-semibold hover:bg-[#7d6323] transition-all duration-300 shadow-md hover:shadow-lg"
         >
           Book Appointment
         </Link>

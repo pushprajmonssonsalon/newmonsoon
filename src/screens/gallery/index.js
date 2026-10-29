@@ -128,7 +128,7 @@ export default function Gallery() {
                   <img
                     className="h-auto max-w-full rounded-lg"
                     src={item.galleryimg}
-                    alt={item.name}
+                    alt={item.name || "Monsoon Salon partner brand"}
                     
                     loading="lazy"
                   />

@@ -6,7 +6,13 @@ const nextConfig = {
   distDir: process.env.NEXT_DIST_DIR || ".next",
   reactStrictMode: false,
   eslint: { ignoreDuringBuilds: true },
-  images: { unoptimized: true },
+  images: {
+    formats: ["image/webp"],
+    remotePatterns: [
+      { protocol: "https", hostname: "mycombos.s3.ap-south-1.amazonaws.com" },
+      { protocol: "https", hostname: "res.cloudinary.com" },
+    ],
+  },
   experimental: {
     optimizePackageImports: [
       "react-icons/fa",

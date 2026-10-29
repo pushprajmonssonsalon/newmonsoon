@@ -747,9 +747,9 @@ export default function Newfranchise() {
         </div>
         <div className="overflow-x-hidden flex flex-col items-center py-3 px-3 mb-8">
           <div>
-            <h4 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-3">
+            <h2 className="text-center text-[1.8rem] md:text-[2.5rem] font-semibold mb-3">
               Top Benefits of Opening a Monsoon Salon Franchise
-            </h4>
+            </h2>
 
             <p className="text-center font-medium text-lg  mb-3">
               India’s most stable, growing salon chain

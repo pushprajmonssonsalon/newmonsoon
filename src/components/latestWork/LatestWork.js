@@ -109,7 +109,7 @@ const LatestWork = () => {
                             height="60"
                             className="h-[60px] w-[120px] md:h-[100px] md:w-[200px] xl:h-[190px] xl:w-[400px] object-cover rounded-lg"
                             src={elm.galleryimg}
-                            alt={elm.name}
+                            alt={elm.name || "Monsoon Salon interiors and work"}
 
                             loading="lazy"
                           />

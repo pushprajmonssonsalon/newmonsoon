@@ -272,6 +272,7 @@ export default function ContactUs() {
           <div className="w-full flex flex-col items-center justify-between ">
             <div className="w-full h-[350px]">
               <iframe
+                title="Monsoon Salon head office on Google Maps"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3504.6701034106613!2d77.267363!3d28.549634!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce24a702d1c55%3A0x9a5500a8d4eee992!2sMonsoon%20Salon%20Head%20Office!5e0!3m2!1sen!2sin!4v1695618174537!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
@@ -289,7 +290,7 @@ export default function ContactUs() {
                 </h2>
                 <a
                   href="tel:+91-9315788084"
-                  className="text-regel-gray text-sm md:text-base"
+                  className="text-gray-600 text-sm md:text-base"
                 >
                   +91-9315788084
                 </a>
@@ -302,7 +303,7 @@ export default function ContactUs() {
                 </h2>
                 <a
                   href="mailto:info@monsoonsalon.com"
-                  className="text-regel-gray text-sm md:text-base"
+                  className="text-gray-600 text-sm md:text-base"
                 >
                   info@monsoonsalon.com
                 </a>
@@ -314,7 +315,7 @@ export default function ContactUs() {
                 </h2>
                 <a
                   href="https://www.google.com/maps?q=28.549634,77.267363"
-                  className="text-regel-gray text-sm md:text-base"
+                  className="text-gray-600 text-sm md:text-base"
                 >
                   {" "}
                   The Professional Hair Salon & Spa (India) Pvt. Ltd., Plot No -

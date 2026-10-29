@@ -3,7 +3,7 @@ import "../index.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import ClientShell from "./ClientShell";
 import DeferredScripts from "./DeferredScripts";
-import { jsonLd, SITE_URL } from "../lib/seo";
+import { jsonLd, SITE_URL, organizationSchema, websiteSchema } from "../lib/seo";
 
 // Same families as before (previously loaded from the Google Fonts stylesheet),
 // now self-hosted + preloaded by next/font so text renders without waiting on Google.
@@ -35,19 +35,12 @@ export const viewport = {
   initialScale: 1,
 };
 
-const organization = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Monsoon Salon",
-  url: `${SITE_URL}/`,
-  logo: `${SITE_URL}/logo1024.png`,
-};
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={fontVars}>
+    <html lang="en-IN" className={fontVars}>
       <head>
-        <script {...jsonLd(organization)} />
+        <script {...jsonLd(organizationSchema())} />
+        <script {...jsonLd(websiteSchema())} />
       </head>
       <body style={{ margin: 0 }}>
         <noscript>

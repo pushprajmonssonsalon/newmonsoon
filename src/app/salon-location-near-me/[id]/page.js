@@ -1,6 +1,6 @@
 import SingleLocation from "../../../screens/locations/SingleLocation";
 import { buildMetadata, jsonLd, SITE_URL, DEFAULT_OG_IMAGE } from "../../../lib/seo";
-import { getSalonById } from "../../../lib/api";
+import { getSalonById, getSalons } from "../../../lib/api";
 import { getSalonMeta } from "../../../screens/locations/salonMeta";
 
 export const revalidate = 3600;
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Page({ params }) {
-  const salon = await getSalonById(params.id);
+  const [salon, salons] = await Promise.all([getSalonById(params.id), getSalons()]);
   const url = `${SITE_URL}/salon-location-near-me/${params.id}`;
   const schemas = salon?.stateName
     ? [
@@ -36,6 +36,9 @@ export default async function Page({ params }) {
             ? { geo: { "@type": "GeoCoordinates", latitude: salon.latitude, longitude: salon.longitude } }
             : {}),
           url,
+          telephone: "+91-9315788084",
+          areaServed: salon.stateName,
+          parentOrganization: { "@id": `${SITE_URL}/#organization` },
         },
         {
           "@context": "https://schema.org",
@@ -54,7 +57,7 @@ export default async function Page({ params }) {
       {schemas.map((s, i) => (
         <script key={i} {...jsonLd(s)} />
       ))}
-      <SingleLocation />
+      <SingleLocation initialSalon={salon} initialSalons={salons} />
     </>
   );
 }

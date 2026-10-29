@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./Banner.css";
 const Banner = ({image,index=0}) => {
   return (
@@ -12,11 +13,11 @@ const Banner = ({image,index=0}) => {
           className="box-border block bg-none opacity-100 border-0 m-0  pt-[55.75%] md:pt-[35.75%] "
         
         />
-        <img
-          loading={index === 0 ? "eager" : "lazy"}
+        <Image
+          fill
+          priority={index === 0}
           fetchPriority={index === 0 ? "high" : "low"}
-          decoding={index === 0 ? "sync" : "async"}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 1200px"
           src={image}
           alt={`Luxury Salon Franchise ${index + 1}`}
           className="border border-silverSurfer-300 absolute inset-0 box-border p-0 border-none m-auto block w-full h-full object-cover img-styles"

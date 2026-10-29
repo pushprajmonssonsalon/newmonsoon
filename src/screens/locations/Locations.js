@@ -3,15 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import MainText from "../../components/mainTextcomponent";
 import { getApiCall } from "../../utils/services";
 import { Helmet } from "react-helmet";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaClock, FaFilter, FaMapPin, FaSearch, FaStar } from "react-icons/fa";
 import { IoNavigate } from "react-icons/io5";
 import monsoonsalon from "../../assets/images/monsoon_logo.png"
 import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png"
 import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png"
-const Locations = () => {
-  const [salons, setSalons] = useState([]);
-  const [filterSalons, setFilterSalons] = useState([]);
+const Locations = ({ initialSalons = [] }) => {
+  const [salons, setSalons] = useState(initialSalons);
+  const [filterSalons, setFilterSalons] = useState(initialSalons);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -237,6 +237,7 @@ const Locations = () => {
                 {/* State Filter */}
                 <div className="relative">
                   <select
+                    aria-label="Filter salons by state"
                     value={selectedState}
                     onChange={(e) => setSelectedState(e.target.value)}
                     className="appearance-none bg-white border border-gray-200 rounded-xl px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-black"
@@ -282,6 +283,7 @@ const Locations = () => {
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium">Salons per page:</span>
               <select
+                aria-label="Salons per page"
                 value={salonsPerPage}
                 onChange={(e) => setSalonsPerPage(Number(e.target.value))}
                 className="border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-black"
@@ -324,7 +326,9 @@ const Locations = () => {
                   <div className="p-6">
                     <div className="mb-4">
                       <div className="font-bold text-xl mb-2 text-gray-800 line-clamp-1">
-                        {salon.name}
+                        <Link to={`/salon-location-near-me/${salon._id}`}>
+                          {salon.name}
+                        </Link>
                       </div>
 
                       <div className="flex items-center gap-1 mb-2 text-gray-600">

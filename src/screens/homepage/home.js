@@ -16,8 +16,10 @@ import hair from "../../assets/images/hair2.webp";
 import beauty from "../../assets/images/beauty2.webp";
 import makeup from "../../assets/images/beauty1.webp";
 import nail from "../../assets/images/nail1.webp";
-export default function Home() {
-  const [bannerImg, setBannerImg] = useState([defaultBanner]);
+export default function Home({ initialBanners = [] }) {
+  const [bannerImg, setBannerImg] = useState(
+    initialBanners.length > 0 ? initialBanners : [defaultBanner]
+  );
   const services = [
     {
       title: "Hair",
@@ -147,7 +149,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading */}
             <div className="text-center mb-14">
-              <p className="text-xl font-kotta tracking-[0.3em] text-amber-600 uppercase">Our Services</p>
+              <p className="text-xl font-kotta tracking-[0.3em] text-amber-700 uppercase">Our Services</p>
               <h2 className="text-3xl md:text-5xl font-kotta font-semibold text-neutral-800 mt-3">
                 Premium Care For Every Style
               </h2>
@@ -203,8 +205,8 @@ export default function Home() {
                 height="166"
                 style={{aspectRatio:290 / 166}}
                   src={item.brandUrl}
-                  className="h-[60px] sm:h-[100px] mx-auto"
-                  alt={item.name}
+                  className="h-[60px] sm:h-[100px] mx-auto object-contain"
+                  alt={item.name || "Monsoon Salon partner brand"}
                 />
             </div>
           ))}
@@ -270,7 +272,7 @@ export default function Home() {
                 <img
                   src={item.brandUrl}
                   className="h-[70%] w-[70%]"
-                  alt={item.name}
+                  alt={item.name || "Monsoon Salon partner brand"}
                 />
               </div>
             );

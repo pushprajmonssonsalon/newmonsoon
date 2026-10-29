@@ -22,7 +22,7 @@ export default function Aesthetics() {
         <section className="bg-[#FFF5EB] py-12 md:py-20 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <div className="text-center md:text-left">
-              <p className="text-xl tracking-[0.3em] text-amber-600 uppercase">
+              <p className="text-xl tracking-[0.3em] text-amber-700 uppercase">
                 Monsoon Aesthetics
               </p>
               <h1 className="text-3xl md:text-5xl font-semibold text-neutral-800 mt-3">
@@ -48,7 +48,7 @@ export default function Aesthetics() {
         <section className="bg-gradient-to-b from-[#f6efe7] to-[#efe2d6] py-20">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-14">
-              <p className="text-xl tracking-[0.3em] text-amber-600 uppercase">
+              <p className="text-xl tracking-[0.3em] text-amber-700 uppercase">
                 Our Services
               </p>
               <h2 className="text-3xl md:text-5xl font-semibold text-neutral-800 mt-3">
@@ -78,7 +78,7 @@ export default function Aesthetics() {
                     <h3 className="text-xl font-semibold text-neutral-800 mb-2">
                       {service.category}
                     </h3>
-                    <span className="text-amber-600 text-sm font-semibold">
+                    <span className="text-amber-700 text-sm font-semibold">
                       Know More
                     </span>
                   </div>

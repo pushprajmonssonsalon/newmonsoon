@@ -58,7 +58,7 @@ export default function Header() {
               event.preventDefault();
               handleNavigate();
             }}
-className="w-full bg-[#c9a961] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md"          >
+className="w-full bg-[#8f7229] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7d6323] transition-all duration-300 shadow-md"          >
             Book Appointment
           </Link>
          
@@ -87,7 +87,7 @@ className="w-full bg-[#c9a961] text-white px-6 py-3 rounded-md font-semibold hov
           </div>
 
            <button
-            className="w-full bg-[#c9a961] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md"
+            className="w-full bg-[#8f7229] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#7d6323] transition-all duration-300 shadow-md"
             onClick={handleNavigate}
             >
             Book Appointment
