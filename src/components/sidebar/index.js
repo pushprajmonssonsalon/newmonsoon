@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import { FaHome, FaShoppingBag } from "react-icons/fa";
 import { MdCardMembership } from "react-icons/md";
 import { FaRegImages } from 'react-icons/fa6';
+import { SHOW_AESTHETICS } from '../../lib/features';
 
 export default function Sidebar() {
   const [state, setState] = React.useState({
@@ -37,7 +38,7 @@ export default function Sidebar() {
         {[
           { text: 'Home', icon: <FaHome className='text-white' />, link: '/' },
           { text: 'Franchise', icon: <MdCardMembership className='text-white' />, link: '/franchise-enquiry' },
-          { text: 'Aesthetics', icon: <FaRegImages   className='text-white' />, link: '/aesthetics' },
+          ...(SHOW_AESTHETICS ? [{ text: 'Aesthetics', icon: <FaRegImages   className='text-white' />, link: '/aesthetics' }] : []),
           { text: 'Gallery', icon: <FaRegImages   className='text-white' />, link: '/gallery' },
           { text: 'Media', icon: <FaRegImages   className='text-white' />, link: '/media' },
           { text: 'About us', icon: <MailIcon className='text-white' />, link: '/about-us' },

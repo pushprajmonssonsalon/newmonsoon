@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import ClientTestimonials from "../../components/ClientTestimonials";
@@ -34,11 +35,13 @@ export default function Aesthetics() {
               </p>
             </div>
             {/* Dummy hero image - replace with the real aesthetics photo */}
-            <img
+            <Image
               src={heroImg}
               alt="Monsoon Aesthetics"
-              width="600"
-              height="450"
+              width={600}
+              height={450}
+              priority
+              sizes="(min-width: 768px) 600px, 100vw"
               className="w-full h-[260px] md:h-[420px] object-cover rounded-[28px] shadow-md"
             />
           </div>

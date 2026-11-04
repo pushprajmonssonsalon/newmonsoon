@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import { SHOW_AESTHETICS } from "../../lib/features";
 import Aesthetics from "../../screens/aesthetics";
 import { buildMetadata, jsonLd, SITE_URL, pageSchema, breadcrumbSchema } from "../../lib/seo";
 import { aestheticFaqs, aestheticServices } from "../../screens/aesthetics/data";
@@ -10,6 +12,7 @@ export const metadata = buildMetadata({
 });
 
 export default function Page() {
+  if (!SHOW_AESTHETICS) notFound();
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",

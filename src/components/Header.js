@@ -1,3 +1,4 @@
+import Image from "next/image";
 import LOCAL_IMAGES from "../screens/utils/localImages";
 import { Link, useNavigate } from "react-router-dom";
 import ReadMoreMobile from "./mainTextcomponent/ReadMoreMobile";
@@ -33,10 +34,11 @@ const Header = () => {
       <div className="font-roboto roboto-regular">
         <article className="relative z-2 text-pretty">
           <div className="float-right my-auto  ml-2 md:ml-[50px] relative">
-            <img
+            <Image
               src={LOCAL_IMAGES.monsoonsalon28}
-              width="1164"
-              height="1479"
+              width={1164}
+              height={1479}
+              sizes="(min-width: 1024px) 388px, (min-width: 768px) 197px, (min-width: 640px) 150px, 100px"
               style={{ aspectRatio: "1164 / 1479" }}
               className=" float-right relative z-0 object-cover lg:h-[493px] lg:w-[388px] w-[100px] sm:w-auto sm:h-[190.58px] md:h-auto md:w-[196.75px]  transition-transform duration-500 "
               alt="Best monsoon salon franchise"

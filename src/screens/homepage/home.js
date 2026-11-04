@@ -169,6 +169,8 @@ export default function Home({ initialBanners = [] }) {
                     style={{aspectRatio: "284 / 224"}}
                       src={service.img}
                       alt={service.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full  group-hover:scale-110 transition duration-500"
                     />
                   </div>
@@ -205,6 +207,8 @@ export default function Home({ initialBanners = [] }) {
                 height="166"
                 style={{aspectRatio:290 / 166}}
                   src={item.brandUrl}
+                  loading="lazy"
+                  decoding="async"
                   className="h-[60px] sm:h-[100px] mx-auto object-contain"
                   alt={item.name || "Monsoon Salon partner brand"}
                 />

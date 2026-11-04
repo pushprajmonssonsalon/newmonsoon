@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/monsoonlogo1.webp"
 import { IoCall } from "react-icons/io5";
+import { SHOW_AESTHETICS } from "../../lib/features";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Header() {
     <>
       <Link to="/" onClick={onClick} className="hover:text-amber-600 transition">Home</Link>
       <Link to="/franchise-enquiry" onClick={onClick} className="hover:text-amber-600 transition">Franchise</Link>
-      <Link to="/aesthetics" onClick={onClick} className="hover:text-amber-600 transition">Aesthetics</Link>
+      {SHOW_AESTHETICS && <Link to="/aesthetics" onClick={onClick} className="hover:text-amber-600 transition">Aesthetics</Link>}
       <Link to="/salon-location-near-me" onClick={onClick} className="hover:text-amber-600 transition">Locations</Link>
       <Link to="/gallery" onClick={onClick} className="hover:text-amber-600 transition">Gallery</Link>
       <Link to="/contact-us" onClick={onClick} className="hover:text-amber-600 transition">Contact</Link>

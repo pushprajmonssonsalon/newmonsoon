@@ -1,3 +1,4 @@
+import Image from "next/image";
 import LOCAL_IMAGES from "../../screens/utils/localImages";
 import "./LatestWork.css";
 import ReadMoreMobile from "../mainTextcomponent/ReadMoreMobile";
@@ -63,9 +64,10 @@ const LatestWork = () => {
      
         <div className="relative">
         <div className="relative float-left">
-         <img
-            width="1164"
-            height="1479"
+         <Image
+            width={1164}
+            height={1479}
+            sizes="(min-width: 1024px) 388px, (min-width: 768px) 197px, (min-width: 640px) 150px, 100px"
             style={{ aspectRatio: "1164 / 1479" }}
             src={LOCAL_IMAGES.monsoonsalon29}
             className="my-auto  relative z-0   mr-2 sm:mr-[30px] md:mr-[50px] xl:mr-[90px] object-cover lg:h-[493px] lg:w-[388px] w-[100px] sm:w-[150px] md:w-[196.75px] transition-transform duration-500 "
@@ -104,9 +106,10 @@ const LatestWork = () => {
                     <div className="" key={index}>
                    
                         <div key={index}>
-                          <img
-                            width="120"
-                            height="60"
+                          <Image
+                            width={120}
+                            height={60}
+                            sizes="(min-width: 1280px) 400px, (min-width: 768px) 200px, 120px"
                             className="h-[60px] w-[120px] md:h-[100px] md:w-[200px] xl:h-[190px] xl:w-[400px] object-cover rounded-lg"
                             src={elm.galleryimg}
                             alt={elm.name || "Monsoon Salon interiors and work"}

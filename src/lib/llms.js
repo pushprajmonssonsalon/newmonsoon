@@ -1,4 +1,5 @@
 import { SITE_URL, ORG } from "./seo";
+import { SHOW_AESTHETICS } from "./features";
 import { getSalons } from "./api";
 import { aestheticServices, aestheticFaqs } from "../screens/aesthetics/data";
 import { homeFaqs, franchiseFaqs } from "../screens/faqData";
@@ -11,7 +12,9 @@ const pages = [
   ["Franchise cost", "/franchise/cost", `Salon franchise investment: ${INVESTMENT_BAND}, by model. Last updated ${LAST_UPDATED}.`],
   ["Best salon franchise in India", "/best-salon-franchise-in-india", "How to choose a salon franchise in India and why Monsoon Salon is a strong option."],
   ["Affordable salon franchise", "/affordable-salon-franchise", `Low investment salon franchise models starting from ${INVESTMENT_BAND.split(" to ")[0]}.`],
-  ["Aesthetics", "/aesthetics", "Advanced aesthetic and skin treatments: laser hair reduction, HydraFacial, HIFU, RF and more."],
+  ...(SHOW_AESTHETICS
+    ? [["Aesthetics", "/aesthetics", "Advanced aesthetic and skin treatments: laser hair reduction, HydraFacial, HIFU, RF and more."]]
+    : []),
   ["Salon locations", "/salon-location-near-me", "Find a Monsoon Salon near you across India."],
   ["About us", "/about-us", "About the Monsoon Salon brand, its mission and growth plan."],
   ["Contact us", "/contact-us", "Phone, email and head-office address."],
@@ -31,9 +34,13 @@ export async function buildLlmsTxt() {
     "## Key pages",
     ...pages.map(([name, path, desc]) => `- [${name}](${SITE_URL}${path}): ${desc}`),
     "",
-    "## Aesthetic treatments",
-    ...aestheticServices.map((s) => `- [${s.machine.replace(/^\d+\.\s*/, "")} - ${s.category}](${SITE_URL}/aesthetics/${s.slug}): ${s.description}`),
-    "",
+    ...(SHOW_AESTHETICS
+      ? [
+          "## Aesthetic treatments",
+          ...aestheticServices.map((s) => `- [${s.machine.replace(/^\d+\.\s*/, "")} - ${s.category}](${SITE_URL}/aesthetics/${s.slug}): ${s.description}`),
+          "",
+        ]
+      : []),
     "## Contact",
     `- Phone: ${ORG.phone}`,
     `- Email: ${ORG.email}`,
@@ -75,10 +82,7 @@ export async function buildLlmsFull() {
     "",
     qa(homeFaqs),
     "",
-    "# Aesthetics FAQs",
-    "",
-    qa(aestheticFaqs),
-    "",
+    ...(SHOW_AESTHETICS ? ["# Aesthetics FAQs", "", qa(aestheticFaqs), ""] : []),
     `# Salons by city (${groupByCity(salons).length} cities)`,
     "",
     ...groupByCity(salons).map((c) => `- [${c.name}, ${c.state} (${c.salons.length})](${SITE_URL}/salons/${c.slug})`),

@@ -12,9 +12,25 @@ export default function ClientShell({ children }) {
   const pathname = usePathname();
   const hideChrome = pathname === "/customSalon";
 
+  // Analytics is not needed for first paint: start it on the first user interaction
+  // (or after 5s), same timing as the other deferred scripts in DeferredScripts.js.
   useEffect(() => {
-    ReactGA.initialize(TRACKING_ID);
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    let started = false;
+    const events = ["scroll", "pointerdown", "keydown", "touchstart", "mousemove"];
+    const start = () => {
+      if (started) return;
+      started = true;
+      clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, start));
+      ReactGA.initialize(TRACKING_ID);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    };
+    const timer = setTimeout(start, 5000);
+    events.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
+    return () => {
+      clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, start));
+    };
   }, []);
 
   useEffect(() => {

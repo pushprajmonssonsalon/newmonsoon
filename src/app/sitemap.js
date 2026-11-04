@@ -1,5 +1,6 @@
 import { getSalons } from "../lib/api";
 import { aestheticServices } from "../screens/aesthetics/data";
+import { SHOW_AESTHETICS } from "../lib/features";
 import { groupByCity } from "../lib/cities";
 
 const SITE_URL = "https://monsoonsalon.com";
@@ -12,7 +13,7 @@ export default async function sitemap() {
     ["/", 1.0, "daily"],
     ["/salon-location-near-me", 0.9, "weekly"],
     ["/franchise-enquiry", 0.9, "weekly"],
-    ["/aesthetics", 0.8, "weekly"],
+    ...(SHOW_AESTHETICS ? [["/aesthetics", 0.8, "weekly"]] : []),
     ["/franchise/cost", 0.8, "monthly"],
     ["/best-salon-franchise-in-india", 0.8, "monthly"],
     ["/affordable-salon-franchise", 0.8, "monthly"],
@@ -23,12 +24,14 @@ export default async function sitemap() {
     ["/privacypolicy", 0.3, "yearly"],
   ].map(([path, priority, changeFrequency]) => ({ url: `${SITE_URL}${path}`, lastModified: now, changeFrequency, priority }));
 
-  const services = aestheticServices.map((s) => ({
-    url: `${SITE_URL}/aesthetics/${s.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const services = SHOW_AESTHETICS
+    ? aestheticServices.map((s) => ({
+        url: `${SITE_URL}/aesthetics/${s.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+      }))
+    : [];
 
   const allSalons = await getSalons();
 

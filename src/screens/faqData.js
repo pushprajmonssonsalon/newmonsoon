@@ -1,5 +1,6 @@
 // FAQ copy for the AEO/FAQPage sections. Edit answers here - the on-page
 // accordion and the FAQPage JSON-LD are both generated from these lists.
+import { SHOW_AESTHETICS } from "../lib/features";
 
 export const homeFaqs = [
   {
@@ -27,11 +28,16 @@ export const homeFaqs = [
     details:
       "You can call +91 9315788084, email info@monsoonsalon.com, use the Contact Us page, or find your nearest salon on the Locations page.",
   },
-  {
-    title: "Does Monsoon Salon offer aesthetic and skin treatments?",
-    details:
-      "Yes. The Aesthetics section covers laser hair reduction, laser skin treatments, skin rejuvenation and tightening, non-surgical skin lifting, HydraFacial, body contouring, skin analysis and RF skin firming.",
-  },
+  // Refers to the Aesthetics pages, so it is shown only while they are published.
+  ...(SHOW_AESTHETICS
+    ? [
+        {
+          title: "Does Monsoon Salon offer aesthetic and skin treatments?",
+          details:
+            "Yes. The Aesthetics section covers laser hair reduction, laser skin treatments, skin rejuvenation and tightening, non-surgical skin lifting, HydraFacial, body contouring, skin analysis and RF skin firming.",
+        },
+      ]
+    : []),
 ];
 
 export const franchiseFaqs = [

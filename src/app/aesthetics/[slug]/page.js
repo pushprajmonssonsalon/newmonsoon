@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { SHOW_AESTHETICS } from "../../../lib/features";
 import AestheticDetail from "../../../screens/aesthetics/AestheticDetail";
 import { buildMetadata, jsonLd, SITE_URL } from "../../../lib/seo";
 import { aestheticFaqs, aestheticServices } from "../../../screens/aesthetics/data";
@@ -6,10 +7,11 @@ import { aestheticFaqs, aestheticServices } from "../../../screens/aesthetics/da
 export const dynamicParams = false;
 
 export function generateStaticParams() {
+  if (!SHOW_AESTHETICS) return [];
   return aestheticServices.map((s) => ({ slug: s.slug }));
 }
 
-const findService = (slug) => aestheticServices.find((s) => s.slug === slug);
+const findService = (slug) => (SHOW_AESTHETICS ? aestheticServices.find((s) => s.slug === slug) : undefined);
 
 export function generateMetadata({ params }) {
   const service = findService(params.slug);
