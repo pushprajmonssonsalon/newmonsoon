@@ -33,7 +33,7 @@ export default function AestheticDetail() {
         <meta name="description" content={service.description} />
         <link
           rel="canonical"
-          href={`https://monsoonsalon.com/aesthetics/${service.slug}`}
+          href={`https://www.monsoonsalon.com/aesthetics/${service.slug}`}
         />
       </Helmet>
 

@@ -59,12 +59,12 @@ export default function PrivacyPolicy() {
     <title>Privacy Policy | Monsoon Salon</title>
     <meta name="description" content="Read Monsoon Salon's privacy policy to understand how we collect, use, and protect your personal information across our website, app, and services."/>
     <meta name="keywords" content="privacy policy, data protection, personal information, user privacy"/>
-    <link rel="canonical" href="https://monsoonsalon.com/privacypolicy" />
+    <link rel="canonical" href="https://www.monsoonsalon.com/privacypolicy" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Privacy Policy | Monsoon Salon" />
     <meta property="og:description" content="Read Monsoon Salon's privacy policy to understand how we collect, use, and protect your personal information across our website, app, and services." />
-    <meta property="og:url" content="https://monsoonsalon.com/privacypolicy" />
-    <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+    <meta property="og:url" content="https://www.monsoonsalon.com/privacypolicy" />
+    <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
 
     </Helmet>
     <div className="py-9">

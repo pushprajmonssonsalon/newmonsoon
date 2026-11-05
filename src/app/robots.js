@@ -1,4 +1,4 @@
-const SITE_URL = "https://monsoonsalon.com";
+import { SITE_URL } from "../lib/seo";
 
 // Search engines + AI search/answer crawlers are explicitly welcome.
 const aiBots = [

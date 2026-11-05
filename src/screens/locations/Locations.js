@@ -143,7 +143,7 @@ const Locations = ({ initialSalons = [] }) => {
         />
         <link
           rel="canonical"
-          href="https://monsoonsalon.com/salon-location-near-me"
+          href="https://www.monsoonsalon.com/salon-location-near-me"
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More" />
@@ -151,15 +151,15 @@ const Locations = ({ initialSalons = [] }) => {
           property="og:description"
           content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
         />
-        <meta property="og:url" content="https://monsoonsalon.com/salon-location-near-me" />
-        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta property="og:url" content="https://www.monsoonsalon.com/salon-location-near-me" />
+        <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More" />
         <meta
           name="twitter:description"
           content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
         />
-        <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
       </Helmet>
       <div className="min-h-screen">
         <div className="pt-9 pb-16">

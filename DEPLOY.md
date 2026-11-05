@@ -15,13 +15,24 @@ so it runs as a Node process behind nginx. A static `build/` folder is not produ
      proxy_set_header X-Forwarded-Proto $scheme;
    }
    ```
+   Canonical host is `https://www.monsoonsalon.com`. The app already 301-redirects `monsoonsalon.com/*` to
+   `www` (see `next.config.js`), but doing it in nginx is faster. The SSL certificate must cover both names:
+   ```nginx
+   server {
+     listen 443 ssl;
+     server_name monsoonsalon.com;
+     # ssl_certificate / ssl_certificate_key as for www
+     return 301 https://www.monsoonsalon.com$request_uri;
+   }
+   ```
+   (also redirect port 80 for both names to `https://www.monsoonsalon.com$request_uri`).
 4. Open port 80/443 in the security group (not 3000).
 
 ## Deploy / update
 ```bash
 git pull                      # or upload the project (without node_modules and .next)
 npm ci
-npm run build                 # needs internet: it reads the salon list from monsoonsalon.com/api
+npm run build                 # needs internet: it reads the salon list from www.monsoonsalon.com/api
 pm2 start ecosystem.config.js # first time
 pm2 restart monsoon           # later updates
 pm2 save && pm2 startup       # once, so it restarts after a reboot

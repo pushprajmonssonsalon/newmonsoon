@@ -1,4 +1,5 @@
-export const SITE_URL = "https://monsoonsalon.com";
+// Canonical host is www. Override with NEXT_PUBLIC_SITE_URL only for staging; no trailing slash.
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.monsoonsalon.com").replace(/\/+$/, "");
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo1024.png`;
 
 export const ORG = {

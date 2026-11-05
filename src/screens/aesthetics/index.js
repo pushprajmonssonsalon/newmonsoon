@@ -15,7 +15,7 @@ export default function Aesthetics() {
           name="description"
           content="Advanced aesthetic treatments at Monsoon Salon - laser hair reduction, HydraFacial, HIFU, skin rejuvenation and more."
         />
-        <link rel="canonical" href="https://monsoonsalon.com/aesthetics" />
+        <link rel="canonical" href="https://www.monsoonsalon.com/aesthetics" />
       </Helmet>
 
       <div className="max-w-[100vw] overflow-x-hidden">

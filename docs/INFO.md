@@ -7,7 +7,7 @@
 - **Application Name:** `monsoon-app`
 - **Current Version:** `0.1.0`
 - **Application Type:** Single Page Application (SPA)
-- **Primary Domain:** [Monsoon Salon](https://monsoonsalon.com) — Leading luxury salon franchise chain in India (hair, beauty, makeup, nail, franchise discovery).
+- **Primary Domain:** [Monsoon Salon](https://www.monsoonsalon.com) — Leading luxury salon franchise chain in India (hair, beauty, makeup, nail, franchise discovery).
 - **Core Technology Stack:**
   - **Framework / Runtime:** React 18.2.0 (`create-react-app` / `react-scripts` 5.0.1)
   - **Routing:** `react-router-dom` v6.15.0 with code splitting (`React.lazy` + `Suspense`)

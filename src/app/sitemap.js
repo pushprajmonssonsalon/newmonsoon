@@ -2,8 +2,7 @@ import { getSalons } from "../lib/api";
 import { aestheticServices } from "../screens/aesthetics/data";
 import { SHOW_AESTHETICS } from "../lib/features";
 import { groupByCity } from "../lib/cities";
-
-const SITE_URL = "https://monsoonsalon.com";
+import { SITE_URL } from "../lib/seo";
 
 export const revalidate = 3600;
 

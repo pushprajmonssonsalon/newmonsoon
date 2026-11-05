@@ -436,7 +436,7 @@ export default function Newfranchise() {
             />
             <link
               rel="canonical"
-              href="https://monsoonsalon.com/franchise-enquiry"
+              href="https://www.monsoonsalon.com/franchise-enquiry"
             />
             <meta property="og:type" content="website" />
             <meta property="og:title" content="Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon" />
@@ -444,15 +444,15 @@ export default function Newfranchise() {
               property="og:description"
               content="Start your business with Monsoon Salon – the best beauty salon franchise in India. Own a top, low-cost salon franchise with trusted brand support."
             />
-            <meta property="og:url" content="https://monsoonsalon.com/franchise-enquiry" />
-            <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+            <meta property="og:url" content="https://www.monsoonsalon.com/franchise-enquiry" />
+            <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon" />
             <meta
               name="twitter:description"
               content="Start your business with Monsoon Salon – the best beauty salon franchise in India. Own a top, low-cost salon franchise with trusted brand support."
             />
-            <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
+            <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
 
 
 
