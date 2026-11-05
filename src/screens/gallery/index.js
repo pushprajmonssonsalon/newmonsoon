@@ -61,7 +61,7 @@ export default function Gallery() {
         />
         <link
           rel="canonical"
-          href="https://monsoonsalon.com/gallery"
+          href="https://www.monsoonsalon.com/gallery"
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Monsoon Salon | Beauty Salon & Spa Franchise in India" />
@@ -69,15 +69,15 @@ export default function Gallery() {
           property="og:description"
           content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
-        <meta property="og:url" content="https://monsoonsalon.com/gallery" />
-        <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta property="og:url" content="https://www.monsoonsalon.com/gallery" />
+        <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Monsoon Salon | Beauty Salon & Spa Franchise in India" />
         <meta
           name="twitter:description"
           content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
-        <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
+        <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
       </Helmet>
 
       <div className="">

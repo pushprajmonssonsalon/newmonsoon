@@ -26,6 +26,13 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Canonical host is www: send the bare domain there with the same path + query (301).
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "monsoonsalon.com" }],
+        destination: "https://www.monsoonsalon.com/:path*",
+        statusCode: 301,
+      },
       { source: "/franchise-enquiry/:path+", destination: "/franchise-enquiry", permanent: true },
       { source: "/franchise", destination: "/franchise-enquiry", permanent: true },
       { source: "/franchise-d", destination: "/franchise-enquiry", permanent: false },

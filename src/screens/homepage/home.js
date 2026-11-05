@@ -86,22 +86,22 @@ export default function Home({ initialBanners = [] }) {
             name="keywords"
             content="salon franchise, best salon franchise, affordable salon franchise, salon franchise booking portal, unisex salon franchise"
           />
-          <link rel="canonical" href="https://monsoonsalon.com/" />
+          <link rel="canonical" href="https://www.monsoonsalon.com/" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Monsoon Salon | India’s Leading Salon Franchise Chain" />
           <meta
             property="og:description"
             content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
           />
-          <meta property="og:url" content="https://monsoonsalon.com/" />
-          <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
+          <meta property="og:url" content="https://www.monsoonsalon.com/" />
+          <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Monsoon Salon | India’s Leading Salon Franchise Chain" />
           <meta
             name="twitter:description"
             content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
           />
-          <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
+          <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
         </Helmet>
 
 

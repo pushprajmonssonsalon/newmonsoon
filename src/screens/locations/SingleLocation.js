@@ -84,21 +84,21 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
           name="description"
           content={metaDescription}
         />
-        <link rel="canonical" href={`https://monsoonsalon.com/salon-location-near-me/${params?.id}`} />
+        <link rel="canonical" href={`https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:url" content={`https://monsoonsalon.com/salon-location-near-me/${params?.id}`} />
+        <meta property="og:url" content={`https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`} />
         <meta
           property="og:image"
-          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://monsoonsalon.com/logo1024.png"}
+          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://www.monsoonsalon.com/logo1024.png"}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta
           name="twitter:image"
-          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://monsoonsalon.com/logo1024.png"}
+          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://www.monsoonsalon.com/logo1024.png"}
         />
         {singleSalonDetail?.stateName && (
           <script type="application/ld+json">
@@ -106,7 +106,7 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
               "@context": "https://schema.org",
               "@type": "HairSalon",
               name: `Monsoon Salon - ${singleSalonDetail?.stateName}`,
-              image: singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://monsoonsalon.com/logo1024.png",
+              image: singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://www.monsoonsalon.com/logo1024.png",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: singleSalonDetail?.address || "",
@@ -116,7 +116,7 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
               ...(latitude && longitude
                 ? { geo: { "@type": "GeoCoordinates", latitude, longitude } }
                 : {}),
-              url: `https://monsoonsalon.com/salon-location-near-me/${params?.id}`,
+              url: `https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`,
             })}
           </script>
         )}
@@ -130,19 +130,19 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://monsoonsalon.com/",
+                  item: "https://www.monsoonsalon.com/",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "Salon Locations",
-                  item: "https://monsoonsalon.com/salon-location-near-me",
+                  item: "https://www.monsoonsalon.com/salon-location-near-me",
                 },
                 {
                   "@type": "ListItem",
                   position: 3,
                   name: singleSalonDetail?.stateName,
-                  item: `https://monsoonsalon.com/salon-location-near-me/${params?.id}`,
+                  item: `https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`,
                 },
               ],
             })}
