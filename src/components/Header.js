@@ -1,7 +1,7 @@
+import Image from "next/image";
 import LOCAL_IMAGES from "../screens/utils/localImages";
 import { Link, useNavigate } from "react-router-dom";
 import ReadMoreMobile from "./mainTextcomponent/ReadMoreMobile";
-import { useIsSmallScreen } from "../utils/hooks/useSmallScreen";
 import { AnimatedNumber } from "./mainTextcomponent/AnimatedNumber";
 const Text = () => {
   return (
@@ -29,16 +29,16 @@ const Header = () => {
       state: { scrollTo: "firstName", scrollKey: Date.now() },
     });
   };
-  const isSmallScreen = useIsSmallScreen();
   return (
     <>
       <div className="font-roboto roboto-regular">
         <article className="relative z-2 text-pretty">
           <div className="float-right my-auto  ml-2 md:ml-[50px] relative">
-            <img
+            <Image
               src={LOCAL_IMAGES.monsoonsalon28}
-              width="1164"
-              height="1479"
+              width={1164}
+              height={1479}
+              sizes="(min-width: 1024px) 388px, (min-width: 768px) 197px, (min-width: 640px) 150px, 100px"
               style={{ aspectRatio: "1164 / 1479" }}
               className=" float-right relative z-0 object-cover lg:h-[493px] lg:w-[388px] w-[100px] sm:w-auto sm:h-[190.58px] md:h-auto md:w-[196.75px]  transition-transform duration-500 "
               alt="Best monsoon salon franchise"
@@ -58,9 +58,10 @@ const Header = () => {
           </div> */}
 
 
-          {isSmallScreen ? <ReadMoreMobile>
+          {/* ReadMoreMobile only collapses below md (CSS), so no JS screen-size check is needed */}
+          <ReadMoreMobile>
             <Text />
-          </ReadMoreMobile> : <Text />}
+          </ReadMoreMobile>
 
 
 
@@ -84,7 +85,7 @@ const Header = () => {
         <Link
           to="/franchise-enquiry"
           onClick={handleBookAppointment}
-          className="bg-[#c9a961] flex items-center justify-center w-full sm:w-[300px] text-white px-8 py-3 rounded-lg font-body font-semibold hover:bg-[#b89851] transition-all duration-300 shadow-md hover:shadow-lg"
+          className="bg-[#8f7229] flex items-center justify-center w-full sm:w-[300px] text-white px-8 py-3 rounded-lg font-body font-semibold hover:bg-[#7d6323] transition-all duration-300 shadow-md hover:shadow-lg"
         >
           Book Appointment
         </Link>

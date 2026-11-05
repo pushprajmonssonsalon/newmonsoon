@@ -1,3 +1,4 @@
+"use client";
 import "./privacypolicy.css";
 import { Helmet } from "react-helmet";
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import LOCAL_IMAGES from "../utils/localImages";
 import { Link, useLocation } from "react-router-dom";
 import SmallNavbar from "./SmallNavbar";
+import { SHOW_AESTHETICS } from "../../lib/features";
 import "./index.css";
 const Navbar = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -38,7 +39,7 @@ const Navbar = () => {
     { label: "Home", to: "/", type: "internal" },
     { label: "Franchise", to: "/franchise-enquiry", type: "internal" },
     
-    { label: "Aesthetics", to: "/aesthetics", type: "internal" },
+    ...(SHOW_AESTHETICS ? [{ label: "Aesthetics", to: "/aesthetics", type: "internal" }] : []),
     { label: "Gallery", to: "/gallery", type: "internal" },
     { label: "Media", to: "/media", type: "internal" },
     { label: "About us", to: "/about-us", type: "internal" },

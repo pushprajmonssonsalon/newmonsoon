@@ -1,3 +1,4 @@
+"use client";
 import { Helmet } from "react-helmet";
 import InstaCard from "../../components/Cards/InstaCard";
 import Banner from "../../components/banners/Banner";
@@ -63,7 +64,6 @@ const NewGallery = () => {
         />
         <meta name="twitter:image" content="https://monsoonsalon.com/logo1024.png" />
 
-        <link rel="preload" as="image" href={LOCAL_IMAGES.gallery2} />
       </Helmet>
       <div className=" max-w-full overflow-x-hidden">
         <div className="mb-10">

@@ -1,3 +1,4 @@
+"use client";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebook, FaYoutube, FaTwitter, FaPinterest } from "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -27,11 +28,14 @@ const NewFooter = () => {
 
         {/* Explore */}
         <div>
-          <h4 className="text-white font-semibold mb-4">Explore</h4>
+          <h2 className="text-white font-semibold mb-4">Explore</h2>
           <ul className="space-y-2 text-sm">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
             <li><Link to="/franchise-enquiry">Franchise</Link></li>
+            <li><Link to="/franchise/cost">Franchise Cost</Link></li>
+            <li><Link to="/best-salon-franchise-in-india">Best Salon Franchise</Link></li>
+            <li><Link to="/affordable-salon-franchise">Affordable Salon Franchise</Link></li>
             <li><Link to="/about-us">About</Link></li>
             <li><Link to="/contact-us">Contact</Link></li>
             <li><Link to="/privacypolicy">Privacy Policy</Link></li>
@@ -40,22 +44,22 @@ const NewFooter = () => {
 
         {/* Contact */}
         <div>
-          <h4 className="text-white font-semibold mb-4">Contact</h4>
+          <h2 className="text-white font-semibold mb-4">Contact</h2>
           <ul className="space-y-2 text-sm">
-           <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} />9315788084   </li>
-            <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoMail size={20} />info@monsoonsalon.com</li>
+           <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoCall size={20} aria-hidden="true" /><a href="tel:+919315788084">9315788084</a></li>
+            <li className='text-sm flex gap-2 items-center font-light text-white cursor-pointer'><IoMail size={20} aria-hidden="true" /><a href="mailto:info@monsoonsalon.com">info@monsoonsalon.com</a></li>
           </ul>
         </div>
 
         {/* Social */}
         <div>
-          <h4 className="text-white font-semibold mb-4">Follow Us</h4>
+          <h2 className="text-white font-semibold mb-4">Follow Us</h2>
          <div className='flex flex-row gap-x-3 md:gap-x-5'>
-               <a target="_blank" rel="noreferrer" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
-               <a target="_blank" rel="noreferrer" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
-               <a target="_blank" rel="noreferrer" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
-               <a target="_blank" rel="noreferrer" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
-               <a target="_blank" rel="noreferrer" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
+               <a target="_blank" rel="noopener noreferrer" aria-label="Follow Monsoon Salon on Instagram" href={"https://www.instagram.com/monsoonsalon/"} ><span className='text-md font-light text-white cursor-pointer hover:scale-110'><BsInstagram /></span></a>
+               <a target="_blank" rel="noopener noreferrer" aria-label="Follow Monsoon Salon on Facebook" href={"https://www.facebook.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaFacebook /></span></a>
+               <a target="_blank" rel="noopener noreferrer" aria-label="Follow Monsoon Salon on YouTube" href={"https://www.youtube.com/user/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaYoutube /></span></a>
+               <a target="_blank" rel="noopener noreferrer" aria-label="Follow Monsoon Salon on X (Twitter)" href={"https://twitter.com/monsoonsalon"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaTwitter /></span></a>
+               <a target="_blank" rel="noopener noreferrer" aria-label="Follow Monsoon Salon on Pinterest" href={"https://in.pinterest.com/monsoonsalon/"}><span className='text-md font-light text-white cursor-pointer hover:scale-110'><FaPinterest /></span></a>
             </div>
         </div>
       </div>

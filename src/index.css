@@ -25,15 +25,15 @@ code {
   transition: color 0.3s ease-in-out;
 }
 .font-monrope{
-  font-family: "Manrope", system-ui,sans-serif;
+  font-family: var(--font-manrope), "Manrope", system-ui,sans-serif;
 
 }
 .font-kotta{
-  font-family: "Kotta One", serif;
+  font-family: var(--font-kotta), "Kotta One", serif;
 
 }
 .font-jaldi{
-  font-family: "Jaldi", sans-serif;
+  font-family: var(--font-jaldi), "Jaldi", sans-serif;
   
 }
 
@@ -85,7 +85,7 @@ code {
 
 
 .roboto-medium {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
@@ -93,16 +93,16 @@ code {
 
 
 .roboto-regular {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 .font-roboto{
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-roboto), "Roboto", sans-serif;
 
 }
 .font-Cormorant{
-  font-family: "Cormorant Garamond", sans-serif;
+  font-family: var(--font-cormorant), "Cormorant Garamond", sans-serif;
 
 }
 .font-Dancing{

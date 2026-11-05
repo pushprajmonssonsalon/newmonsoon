@@ -1,3 +1,4 @@
+"use client";
 import { Box } from "@mui/material";
 import { Helmet } from "react-helmet";
 import Slider from "react-slick";
@@ -66,7 +67,7 @@ export default function FranchiseThankYou() {
         <meta property="og:image" content="https://monsoonsalon.com/logo1024.png" />
       </Helmet>
 
-      <main className="thankyou-page">
+      <div className="thankyou-page">
         <section className="thankyou-hero">
           <div className="thankyou-content">
             <p className="thankyou-kicker">Franchise Enquiry Received</p>
@@ -137,7 +138,7 @@ export default function FranchiseThankYou() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </Box>
   );
 }
