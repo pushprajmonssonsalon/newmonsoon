@@ -102,6 +102,37 @@ export function cityOf(salon) {
   return null;
 }
 
+// Locality of a salon ("Balaji Nagar" for "Balaji Nagar, New Tarachak, Danapur Nizamat, Patna"):
+// the first part of address2 that is a real place name, or null when there is none (the address
+// is just the city, state and postcode, or only a sector number).
+const areaCase = (s) =>
+  s
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((w) => (/\d/.test(w) ? w.toUpperCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()))
+    .join(" ");
+
+export function areaOf(salon) {
+  const city = (cityOf(salon) || "").toLowerCase();
+  const parts = (salon?.address2 || "").split(",").map((p) => p.trim()).filter(Boolean);
+  for (const part of parts) {
+    const cleaned = part
+      .replace(/\(.*?\)/g, " ")
+      .replace(stateRe, " ")
+      .replace(/[-–\s]*\b\d{5,6}\b/g, " ") // postcodes
+      .replace(/[?.]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const lower = cleaned.toLowerCase();
+    if (!cleaned || STOP.has(lower)) continue;
+    if (city && (lower === city || lower.startsWith(city + " "))) return null; // reached the city itself
+    if (/^(sector|phase|block|ward)\b[\s\-–]*\d*$/i.test(cleaned)) continue; // "Sector -1" says nothing
+    if (CITY_ALIAS.some(([k]) => lower === k)) return null;
+    return areaCase(cleaned);
+  }
+  return null;
+}
+
 export function stateOf(salon) {
   const raw = (salon?.stateName || "").trim();
   return STATE_FIX[raw.toLowerCase()] || raw;

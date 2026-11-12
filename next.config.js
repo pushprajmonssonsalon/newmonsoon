@@ -5,6 +5,8 @@ const nextConfig = {
   // Set NEXT_DIST_DIR to build/run somewhere else so a prod build doesn't overwrite a running `next dev`.
   distDir: process.env.NEXT_DIST_DIR || ".next",
   reactStrictMode: false,
+  // src/middleware.js handles trailing slashes itself so old URLs redirect in a single hop.
+  skipTrailingSlashRedirect: true,
   eslint: { ignoreDuringBuilds: true },
   images: {
     formats: ["image/webp"],
