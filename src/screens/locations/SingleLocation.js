@@ -9,7 +9,7 @@ import { getApiCall } from "../../utils/services";
 
 import { getSalonMeta } from "./salonMeta";
 
-const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
+const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null }) => {
   const [searchParams] = useSearchParams();
   const isScroll = searchParams.get("scroll");
   
@@ -159,8 +159,47 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [] }) => {
         <div className="flex flex-col md:flex-row mt-4 md:mt-8 space-y-4 md:space-y-0 md:space-x-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
           <div className="flex-1">
             <h1 className="font-bold text-lg  md:text-2xl">
-              Best Salon in {singleSalonDetail?.stateName}{" "}
+              {seo?.label || <>Best Salon in {singleSalonDetail?.stateName}{" "}</>}
             </h1>
+            {seo && (
+              <div className="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm md:text-base">
+                <p>
+                  <span className="font-bold">Address:</span> {seo.address}
+                </p>
+                <p className="mt-2">
+                  <span className="font-bold">City:</span> {seo.city}
+                  {seo.state ? `, ${seo.state}` : ""}
+                </p>
+                {seo.phone && (
+                  <p className="mt-2">
+                    <span className="font-bold">Phone:</span>{" "}
+                    <a href={`tel:+91${seo.phone}`} className="underline">
+                      +91 {seo.phone}
+                    </a>
+                  </p>
+                )}
+                <p className="mt-2">
+                  <span className="font-bold">Timings:</span> 10:00 AM - 10:00 PM, all days
+                </p>
+                <p className="mt-2">
+                  <a href={seo.mapUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                    View on Google Maps
+                  </a>
+                </p>
+                {seo.embedUrl && (
+                  <iframe
+                    title={`Map of ${seo.label}`}
+                    src={seo.embedUrl}
+                    width="100%"
+                    height="250"
+                    style={{ border: 0 }}
+                    className="mt-3 rounded-lg"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                )}
+              </div>
+            )}
             <p className="mt-4 text-sm md:text-base">
               {`Looking for a rejuvenating salon experience in the heart of `}
               <span className="font-bold">{singleSalonDetail?.stateName} </span>
