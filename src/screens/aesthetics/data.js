@@ -1,10 +1,24 @@
-import hair from "../../assets/images/hair2.webp";
 import beauty from "../../assets/images/beauty2.webp";
-import makeup from "../../assets/images/beauty1.webp";
-import nail from "../../assets/images/nail1.webp";
+import diode from "../../assets/images/diode_laser.jpg";
+import qSwitch from "../../assets/images/Q-SWITCH LASER.jpg";
+import mnrf from "../../assets/images/MNRF.jpg";
+import hifu from "../../assets/images/HIFU.jpg";
+import hydra from "../../assets/images/HYDRA_FACIAL.jpg";
+import body from "../../assets/images/BODY_CONTOURING.jpg";
+import analyzer from "../../assets/images/FA_FACIAL ANALYZER.jpg";
+import rf from "../../assets/images/radiofrequency_heating.jpg";
 
-// Dummy images for now - replace with real treatment photos later.
-const dummyImages = [hair, beauty, makeup, nail];
+// Keep images in the same order as the services below.
+const treatmentImages = [
+  diode, // 1. Laser Hair Reduction: Diode Laser
+  qSwitch, // 2. Laser Skin Treatments: Q-Switch Laser
+  mnrf, // 3. Skin Rejuvenation & Tightening: Microneedling Radiofrequency
+  hifu, // 4. Non-Surgical Skin Lifting: Focused Ultrasound
+  hydra, // 5. Advanced Facial Treatments: HydraFacial
+  body, // 6. Body Sculpting & Fat Reduction: Body Contouring
+  analyzer, // 7. Skin Analysis & Assessment: Facial Analyzer
+  rf, // Skin Tightening & Firming — radiofrequency heating
+];
 
 export const aestheticServices = [
   {
@@ -52,17 +66,18 @@ export const aestheticServices = [
   {
     category: "Skin Tightening & Firming",
     machine: "8. RF (Radiofrequency)",
+    imagePosition: "50% 65%",
     description:
       "Delivers radiofrequency energy to generate controlled tissue heating. Depending on the device and application, it may help improve the appearance of skin laxity and support skin firmness.",
   },
 ].map((s, i) => ({
   ...s,
+  img: treatmentImages[i],
   slug: s.category
     .toLowerCase()
     .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, ""),
-  img: dummyImages[i % dummyImages.length],
   // Placeholders - fill per service later; the detail page renders them as-is.
   howItWorks: [],
   details: {
