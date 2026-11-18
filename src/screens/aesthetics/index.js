@@ -66,15 +66,15 @@ export default function Aesthetics() {
                   to={`/aesthetics/${service.slug}`}
                   className="group text-left bg-white/60 backdrop-blur rounded-[28px] overflow-hidden shadow-md hover:shadow-xl transition duration-300"
                 >
-                  <div className="overflow-hidden">
+                  <div className="aspect-[284/224] overflow-hidden">
                     <img
                       width="284"
                       height="224"
-                      style={{ aspectRatio: "284 / 224" }}
+                      style={{ objectPosition: service.imagePosition || "center" }}
                       src={service.img}
                       alt={service.category}
                       loading="lazy"
-                      className="w-full group-hover:scale-110 transition duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                     />
                   </div>
                   <div className="p-3 sm:p-6 text-center">

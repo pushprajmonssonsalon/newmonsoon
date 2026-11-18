@@ -69,6 +69,7 @@ export default function AestheticDetail() {
               alt={service.machine}
               width="540"
               height="520"
+              style={{ objectPosition: service.imagePosition || "center" }}
               className="w-full h-[280px] md:h-[520px] object-cover"
             />
             <div>
@@ -121,6 +122,7 @@ export default function AestheticDetail() {
               loading="lazy"
               width="540"
               height="520"
+              style={{ objectPosition: service.imagePosition || "center" }}
               className="w-full h-[280px] md:h-[520px] object-cover"
             />
           </div>
