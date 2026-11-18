@@ -38,6 +38,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "Home", to: "/", type: "internal" },
     { label: "Franchise", to: "/franchise-enquiry", type: "internal" },
+    { label: "Academy", to: "/academy", type: "internal" },
     
     ...(SHOW_AESTHETICS ? [{ label: "Aesthetics", to: "/aesthetics", type: "internal" }] : []),
     { label: "Gallery", to: "/gallery", type: "internal" },

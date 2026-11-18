@@ -14,6 +14,7 @@ export default function Header() {
       <Link to="/" onClick={onClick} className="hover:text-amber-600 transition">Home</Link>
       <Link to="/franchise-enquiry" onClick={onClick} className="hover:text-amber-600 transition">Franchise</Link>
       {SHOW_AESTHETICS && <Link to="/aesthetics" onClick={onClick} className="hover:text-amber-600 transition">Aesthetics</Link>}
+      <Link to="/academy" onClick={onClick} className="hover:text-amber-600 transition">Academy</Link>
       <Link to="/salon-location-near-me" onClick={onClick} className="hover:text-amber-600 transition">Locations</Link>
       <Link to="/gallery" onClick={onClick} className="hover:text-amber-600 transition">Gallery</Link>
       <Link to="/contact-us" onClick={onClick} className="hover:text-amber-600 transition">Contact</Link>
@@ -46,7 +47,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-2 md:gap-8 text-xs lg:text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-3 xl:gap-6 text-xs lg:text-sm font-medium">
           <NavLinks />
         </nav>
 

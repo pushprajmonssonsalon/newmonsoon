@@ -32,6 +32,7 @@ const NewFooter = () => {
           <ul className="space-y-2 text-sm">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/academy">Academy</Link></li>
             <li><Link to="/franchise-enquiry">Franchise</Link></li>
             <li><Link to="/franchise/cost">Franchise Cost</Link></li>
             <li><Link to="/best-salon-franchise-in-india">Best Salon Franchise</Link></li>
