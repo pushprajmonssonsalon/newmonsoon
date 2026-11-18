@@ -1,0 +1,92 @@
+.page { --ink: #262626; --gold: #8f7229; --cream: #fff5eb; color: var(--ink); background: white; font-family: inherit; }
+.container { width: min(1280px, 100%); padding-inline: 24px; margin-inline: auto; }
+.page a, .page button, .page input { -webkit-tap-highlight-color: transparent; }
+.page a:focus-visible, .page button:focus-visible { outline: 3px solid #946b28; outline-offset: 5px; }
+.hero { padding: 80px 0; background: var(--cream); }
+.heroGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.location { display: flex; gap: 9px; align-items: center; color: #6b5d47; font-size: 12px; letter-spacing: .06em; }
+.location svg { width: 15px; height: 15px; }
+.location span { width: 3px; height: 3px; border-radius: 50%; background: currentColor; margin-inline: 3px; }
+.wordmark { margin: 30px 0 24px; font-size: 42px; font-weight: 600; letter-spacing: .12em; line-height: 1; }
+.wordmark span { display: block; font-size: 11px; letter-spacing: .38em; margin: 10px 0 0 2px; }
+.hero h1, .program h2 { font-family: inherit; font-weight: 600; font-size: 48px; line-height: 1.2; letter-spacing: normal; }
+.hero h1 em, .program h2 em { font-style: normal; color: var(--gold); }
+.heroDescription { max-width: 540px; font-size: 18px; line-height: 1.75; color: #525252; margin-top: 20px; }
+.jobPromise { display: flex; align-items: flex-start; gap: 14px; border-top: 1px solid #dfd6c6; padding-top: 22px; margin: 25px 0; }
+.jobPromise > svg { margin-top: 2px; color: var(--gold); flex-shrink: 0; }
+.jobPromise strong { font-size: 18px; font-weight: 600; }
+.jobPromise p { margin-top: 7px; font-size: 16px; line-height: 1.7; color: #525252; }
+.jobPromise b { color: var(--ink); }
+.primaryButton, .lightButton { display: inline-flex; align-items: center; justify-content: center; gap: 16px; padding: 12px 24px; background: var(--gold); color: white; font-size: 16px; font-weight: 600; border-radius: 6px; box-shadow: 0 4px 6px -1px #0000001a; transition: background .3s; }
+.primaryButton:hover { background: #7d6323; }
+.primaryButton svg, .lightButton svg { width: 19px; height: 19px; }
+.powered { font-size: 14px; color: #525252; margin-top: 20px; }
+.powered strong { color: #4f4738; font-weight: 600; }
+.posterWrap { min-width: 0; overflow: hidden; background: white; border-radius: 28px; box-shadow: 0 4px 6px -1px #0000001a; }
+.poster { width: 100%; height: auto; }
+.scholarship { background: linear-gradient(to bottom, #f6efe7, #efe2d6); color: var(--ink); padding: 48px 0; }
+.scholarshipInner { display: flex; gap: 38px; align-items: center; }
+.percentage { font-family: inherit; font-weight: 600; font-size: 96px; letter-spacing: normal; line-height: 1; color: var(--gold); }
+.percentage span { font-size: 54px; letter-spacing: -.04em; }
+.eyebrow { font-size: 20px; font-weight: 400; letter-spacing: .3em; text-transform: uppercase; color: #b45309; margin-bottom: 12px; }
+.scholarship .eyebrow { font-size: 14px; margin-bottom: 8px; }
+.scholarship h2 { font-family: inherit; font-size: 30px; font-weight: 600; line-height: 1.3; }
+.scholarshipNote { font-size: 12px; color: #525252; margin-top: 12px; }
+.lightButton { margin-left: auto; flex-shrink: 0; }
+.lightButton:hover { background: #7d6323; }
+.courses { padding-block: 80px; }
+.sectionHeading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 35px; }
+.sectionHeading h2, .form h2 { font-family: inherit; font-weight: 600; font-size: 48px; line-height: 1.2; letter-spacing: normal; }
+.sectionHeading > p { color: #525252; font-size: 16px; line-height: 1.75; }
+.courseGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.course { background: #fff9f3; border-radius: 28px; overflow: hidden; padding-bottom: 24px; box-shadow: 0 4px 6px -1px #0000001a; }
+.courseImage { aspect-ratio: 284 / 224; position: relative; overflow: hidden; background: #f6efe7; }
+.courseImage img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.course:hover .courseImage img { transform: scale(1.035); }
+.courseImage > span { position: absolute; bottom: 12px; left: 12px; background: #fff9ee; padding: 5px 10px; font-size: 11px; color: #5b492b; }
+.course h3 { font-size: 20px; font-weight: 600; margin: 20px 24px 0; }
+.course > p { font-size: 14px; color: #525252; line-height: 1.75; margin: 8px 24px 0; }
+.course > a { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: #b45309; margin: 16px 24px 0; }
+.course > a svg { width: 16px; height: 16px; }
+.application { padding: 80px 0; background: linear-gradient(to bottom, #f6efe7, #efe2d6); scroll-margin-top: 90px; }
+.applicationGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.program { padding-top: 20px; }
+.program h2 { font-size: 48px; }
+.programIntro { color: #525252; font-size: 16px; line-height: 1.75; max-width: 540px; margin-top: 20px; }
+.highlights { margin: 30px 0; padding: 0; list-style: none; }
+.highlights li { display: flex; gap: 17px; padding: 18px 0; border-bottom: 1px solid #ddd3c1; }
+.highlights li > svg { width: 25px; height: 25px; color: var(--gold); flex-shrink: 0; }
+.highlights h3 { font-size: 20px; font-weight: 600; }
+.highlights p { color: #525252; font-size: 16px; line-height: 1.7; margin-top: 5px; }
+.academyLocation { display: flex; align-items: center; gap: 14px; }
+.academyLocation svg { color: var(--gold); }
+.academyLocation span { display: block; font-size: 14px; letter-spacing: .15em; color: #525252; }
+.academyLocation strong { display: block; font-size: 21px; margin-top: 5px; font-weight: 600; }
+.limited { display: flex; gap: 8px; align-items: center; font-size: 16px; margin-top: 25px; color: #b45309; }
+.limited svg { width: 16px; height: 16px; }
+.form { min-width: 0; background: white; padding: 32px; border-radius: 24px; box-shadow: 0 4px 6px -1px #0000001a; }
+.form .eyebrow { font-size: 14px; letter-spacing: .15em; }
+.form h2 { font-size: 30px; }
+.formIntro { font-size: 16px; line-height: 1.75; color: #525252; margin-top: 16px; }
+.fields { display: grid; gap: 18px; margin: 25px 0; }
+.fields label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; }
+.fields label span { color: var(--gold); }
+.fields input { width: 100%; min-height: 49px; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 6px; background: white; font-size: 16px; font-family: inherit; color: var(--ink); }
+.fields input::placeholder { color: #857d70; }
+.fields input:focus { outline: 2px solid var(--gold); outline-offset: 2px; }
+.consent { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #525252; line-height: 1.75; cursor: pointer; }
+.consent input { flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px; accent-color: var(--gold); }
+.consent a { color: #73531f; text-decoration: underline; text-underline-offset: 2px; }
+.finePrint { font-size: 12px; line-height: 1.7; color: #525252; margin-top: 14px; }
+.submit { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 12px 24px; background: var(--gold); color: white; border-radius: 6px; font-family: inherit; font-size: 16px; font-weight: 600; margin-top: 24px; box-shadow: 0 4px 6px -1px #0000001a; }
+.submit:disabled { cursor: not-allowed; opacity: .6; }
+.submit span { font-size: 20px; }
+.formStatus { font-size: 12px; text-align: center; line-height: 1.7; color: #525252; margin-top: 12px; }
+.signoff { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 15px; padding: 27px 24px; font-size: 14px; color: #525252; }
+.signoff svg { width: 17px; height: 17px; }
+.signoffDivider { color: #b3a792; }
+@media (min-width: 768px) { .course { display: flex; flex-direction: column; } .course > a { margin-top: auto; padding-top: 15px; } }
+@media (max-width: 1099px) { .heroGrid { gap: 28px; } .applicationGrid { gap: 32px; } .scholarshipInner { flex-wrap: wrap; gap: 24px; } .percentage { font-size: 80px; } .scholarship h2 { font-size: 27px; } .lightButton { margin-left: 0; } .form { padding: 24px; } .courseGrid { gap: 16px; } }
+@media (max-width: 767px) { .hero { padding: 48px 0; } .heroGrid { grid-template-columns: 1fr; gap: 40px; } .heroCopy { text-align: center; } .location, .jobPromise { justify-content: center; } .hero h1 { font-size: 30px; } .heroDescription { font-size: 16px; margin-inline: auto; } .posterWrap { max-width: 550px; width: 100%; margin-inline: auto; } .scholarshipInner { gap: 20px; } .percentage { font-size: 64px; } .percentage span { font-size: 36px; } .scholarship h2 { font-size: 24px; } .lightButton { margin: 8px 0 0; } .courses { padding-block: 48px; } .sectionHeading { align-items: center; text-align: center; flex-direction: column; gap: 16px; margin-bottom: 32px; } .sectionHeading h2 { font-size: 30px; } .sectionHeading > p br { display: none; } .courseGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } .course h3 { font-size: 20px; margin-inline: 12px; } .course > p, .course > a { margin-inline: 12px; } .course > a { font-size: 14px; } .application { padding-block: 48px; } .applicationGrid { grid-template-columns: 1fr; gap: 40px; } .program h2 { font-size: 30px; } .program { padding-top: 0; } .form { padding: 24px; } .form h2 { font-size: 30px; } }
+@media (max-width: 380px) { .scholarshipInner { gap: 16px; } .percentage { font-size: 56px; } .percentage span { font-size: 32px; } .scholarship h2 { font-size: 22px; } .form { padding: 20px; } .signoffDivider { display: none; } }
+@media (prefers-reduced-motion: reduce) { .page * { transition: none !important; scroll-behavior: auto !important; } }

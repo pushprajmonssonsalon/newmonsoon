@@ -38,6 +38,7 @@ export default function Sidebar() {
         {[
           { text: 'Home', icon: <FaHome className='text-white' />, link: '/' },
           { text: 'Franchise', icon: <MdCardMembership className='text-white' />, link: '/franchise-enquiry' },
+          { text: 'Academy', icon: <MdCardMembership className='text-white' />, link: '/academy' },
           ...(SHOW_AESTHETICS ? [{ text: 'Aesthetics', icon: <FaRegImages   className='text-white' />, link: '/aesthetics' }] : []),
           { text: 'Gallery', icon: <FaRegImages   className='text-white' />, link: '/gallery' },
           { text: 'Media', icon: <FaRegImages   className='text-white' />, link: '/media' },

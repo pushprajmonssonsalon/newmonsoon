@@ -12,6 +12,7 @@ export default async function sitemap() {
     ["/", 1.0, "daily"],
     ["/salon-location-near-me", 0.9, "weekly"],
     ["/franchise-enquiry", 0.9, "weekly"],
+    ["/academy", 0.8, "monthly"],
     ...(SHOW_AESTHETICS ? [["/aesthetics", 0.8, "weekly"]] : []),
     ["/franchise/cost", 0.8, "monthly"],
     ["/best-salon-franchise-in-india", 0.8, "monthly"],
