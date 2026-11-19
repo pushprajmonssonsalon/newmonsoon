@@ -6,22 +6,25 @@ import { FaMailBulk, FaPhone, FaWhatsapp } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { getApiCall } from "../../utils/services";
 
-
 import { getSalonMeta } from "./salonMeta";
 
-const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null }) => {
+const SingleLocation = ({
+  initialSalon = null,
+  initialSalons = [],
+  seo = null,
+}) => {
   const [searchParams] = useSearchParams();
   const isScroll = searchParams.get("scroll");
-  
+
   const params = useParams();
-  const [singleSalonDetail, setSingleSalonDetail] = useState(initialSalon || {});
+  const [singleSalonDetail, setSingleSalonDetail] = useState(
+    initialSalon || {},
+  );
   const [latitude, setLatitude] = useState(initialSalon?.latitude ?? null);
   const [longitude, setLongitude] = useState(initialSalon?.longitude ?? null);
   const [otherLocations, setOtherLocations] = useState(
-    initialSalons.filter((elm) => elm._id !== params?.id)
+    initialSalons.filter((elm) => elm._id !== params?.id),
   );
-
-
 
   useEffect(() => {
     getApiCall(
@@ -34,7 +37,7 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
       },
       (err) => {
         console.error("Error fetching salon details:", err);
-      }
+      },
     );
   }, [params.id]);
 
@@ -44,61 +47,76 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
       (res) => {
         setOtherLocations(res?.filter((elm) => elm._id !== params?.id) || []);
       },
-      (err) => {}
+      (err) => {},
     );
   }, [params.id]);
 
   const nearbyLocations = [
-    ...otherLocations.filter((elm) => elm.stateName === singleSalonDetail?.stateName),
-    ...otherLocations.filter((elm) => elm.stateName !== singleSalonDetail?.stateName),
+    ...otherLocations.filter(
+      (elm) => elm.stateName === singleSalonDetail?.stateName,
+    ),
+    ...otherLocations.filter(
+      (elm) => elm.stateName !== singleSalonDetail?.stateName,
+    ),
   ].slice(0, 5);
   const scrollToDivWithOffset = useCallback(() => {
     const element = document.getElementById("map");
     if (element) {
       const offset = 100; // Offset of 100px
       const elementPosition =
-      element.getBoundingClientRect().top + window.scrollY;
+        element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
-      
+
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth", // Smooth scroll
       });
     }
   }, [isScroll]);
-  
+
   useEffect(() => {
     if (isScroll) {
       scrollToDivWithOffset(isScroll);
     }
   }, [isScroll]);
-  
-  const { title: metaTitle, description: metaDescription } = getSalonMeta(singleSalonDetail?.stateName);
+
+  const { title: metaTitle, description: metaDescription } = getSalonMeta(
+    singleSalonDetail?.stateName,
+  );
   return (
     <>
       <Helmet>
-        <title>
-          {metaTitle}
-        </title>
-        <meta
-          name="description"
-          content={metaDescription}
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link
+          rel="canonical"
+          href={`https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`}
         />
-        <link rel="canonical" href={`https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`} />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metaTitle} />
         <meta property="og:description" content={metaDescription} />
-        <meta property="og:url" content={`https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`} />
+        <meta
+          property="og:url"
+          content={`https://www.monsoonsalon.com/salon-location-near-me/${params?.id}`}
+        />
         <meta
           property="og:image"
-          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://www.monsoonsalon.com/logo1024.png"}
+          content={
+            singleSalonDetail?.images?.length > 0
+              ? singleSalonDetail.images[0]
+              : "https://www.monsoonsalon.com/logo1024.png"
+          }
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta
           name="twitter:image"
-          content={singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://www.monsoonsalon.com/logo1024.png"}
+          content={
+            singleSalonDetail?.images?.length > 0
+              ? singleSalonDetail.images[0]
+              : "https://www.monsoonsalon.com/logo1024.png"
+          }
         />
         {singleSalonDetail?.stateName && (
           <script type="application/ld+json">
@@ -106,7 +124,10 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
               "@context": "https://schema.org",
               "@type": "HairSalon",
               name: `Monsoon Salon - ${singleSalonDetail?.stateName}`,
-              image: singleSalonDetail?.images?.length > 0 ? singleSalonDetail.images[0] : "https://www.monsoonsalon.com/logo1024.png",
+              image:
+                singleSalonDetail?.images?.length > 0
+                  ? singleSalonDetail.images[0]
+                  : "https://www.monsoonsalon.com/logo1024.png",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: singleSalonDetail?.address || "",
@@ -159,7 +180,7 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
         <div className="flex flex-col md:flex-row mt-4 md:mt-8 space-y-4 md:space-y-0 md:space-x-8 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
           <div className="flex-1">
             <h1 className="font-bold text-lg  md:text-2xl">
-              {seo?.label || <>Best Salon in {singleSalonDetail?.stateName}{" "}</>}
+              {seo?.label || <>Best Salon in {singleSalonDetail?.stateName} </>}
             </h1>
             {seo && (
               <div className="mt-4 rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm md:text-base">
@@ -179,10 +200,16 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
                   </p>
                 )}
                 <p className="mt-2">
-                  <span className="font-bold">Timings:</span> 10:00 AM - 10:00 PM, all days
+                  <span className="font-bold">Timings:</span> 10:00 AM - 10:00
+                  PM, all days
                 </p>
                 <p className="mt-2">
-                  <a href={seo.mapUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                  <a
+                    href={seo.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
                     View on Google Maps
                   </a>
                 </p>
@@ -233,7 +260,6 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
             alt={`${singleSalonDetail?.name} ${singleSalonDetail?.stateName}`}
             style={{ objectFit: "cover" }}
           />
-
         </div>
 
         <div
@@ -282,7 +308,10 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
               href="mailto:enquiry@theprofessionalworld.com"
               className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
             >
-              <FaMailBulk className="text-blue-500 group-hover:text-blue-600 mb-3" size={32} />
+              <FaMailBulk
+                className="text-blue-500 group-hover:text-blue-600 mb-3"
+                size={32}
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 text-center text-sm">
                 enquiry@theprofessionalworld.com
@@ -293,7 +322,10 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
               href="tel:+919315743367"
               className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
             >
-              <FaPhone className="text-green-500 group-hover:text-green-600 mb-3" size={32} />
+              <FaPhone
+                className="text-green-500 group-hover:text-green-600 mb-3"
+                size={32}
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-2">Call Now</h3>
               <p className="text-gray-600 text-center text-sm">
                 +91 9315743367
@@ -304,11 +336,12 @@ const SingleLocation = ({ initialSalon = null, initialSalons = [], seo = null })
               href="https://wa.me/+919315743367"
               className="group flex flex-col items-center justify-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:scale-105"
             >
-              <FaWhatsapp className="text-green-500 group-hover:text-green-600 mb-3" size={32} />
+              <FaWhatsapp
+                className="text-green-500 group-hover:text-green-600 mb-3"
+                size={32}
+              />
               <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
-              <p className="text-gray-600 text-center text-sm">
-                Click to Chat
-              </p>
+              <p className="text-gray-600 text-center text-sm">Click to Chat</p>
             </a>
           </div>
         </div>

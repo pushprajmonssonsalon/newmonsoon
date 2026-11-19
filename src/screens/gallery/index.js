@@ -48,36 +48,43 @@ export default function Gallery() {
   return (
     <>
       <Helmet>
-        <title>
-          Monsoon Salon | Beauty Salon & Spa Franchise in India
-        </title>
+        <title>Monsoon Salon | Beauty Salon & Spa Franchise in India</title>
         <meta
           name="description"
           content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
-        <meta
-          name="keywords"
-          content="monsoon salon , explore salon"
-        />
-        <link
-          rel="canonical"
-          href="https://www.monsoonsalon.com/gallery"
-        />
+        <meta name="keywords" content="monsoon salon , explore salon" />
+        <link rel="canonical" href="https://www.monsoonsalon.com/gallery" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Monsoon Salon | Beauty Salon & Spa Franchise in India" />
+        <meta
+          property="og:title"
+          content="Monsoon Salon | Beauty Salon & Spa Franchise in India"
+        />
         <meta
           property="og:description"
           content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
-        <meta property="og:url" content="https://www.monsoonsalon.com/gallery" />
-        <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          property="og:url"
+          content="https://www.monsoonsalon.com/gallery"
+        />
+        <meta
+          property="og:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Monsoon Salon | Beauty Salon & Spa Franchise in India" />
+        <meta
+          name="twitter:title"
+          content="Monsoon Salon | Beauty Salon & Spa Franchise in India"
+        />
         <meta
           name="twitter:description"
           content="Monsoon Salon offers the best beauty salon franchise in India. Start your own salon and spa franchise in India with expert support and high profit potential."
         />
-        <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          name="twitter:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
       </Helmet>
 
       <div className="">
@@ -89,36 +96,40 @@ export default function Gallery() {
             Monsoon Beauty Salon Franchise in India
           </h1>
           <p className="text-lg py-6  text-center w-[80%] mx-auto  text-regel-gray">
-
-            Welcome to the Monsoon Salon Gallery! Here, you can explore the vibrant world of our
-            <strong> beauty salon franchise</strong> and get a closer look at the stunning salons we’ve established across
-            India. Our franchises blend style, comfort, and top-tier beauty services to create an
-            unforgettable experience for every client. Whether you&#39;re looking for inspiration or
-            considering joining our growing network, this gallery offers a glimpse into what makes our
-            salons stand out.
-
+            Welcome to the Monsoon Salon Gallery! Here, you can explore the
+            vibrant world of our
+            <strong> beauty salon franchise</strong> and get a closer look at
+            the stunning salons we’ve established across India. Our franchises
+            blend style, comfort, and top-tier beauty services to create an
+            unforgettable experience for every client. Whether you&#39;re
+            looking for inspiration or considering joining our growing network,
+            this gallery offers a glimpse into what makes our salons stand out.
           </p>
           <p className="text-lg py-1  text-center w-[80%] mx-auto  text-regel-gray">
-
-            As one of the leading <strong>beauty salon franchises in India</strong>, Monsoon Salon is committed to
-            delivering excellence. Each franchise location is designed with the latest trends, state-of-the-
-            art equipment, and a welcoming atmosphere that enhances the customer experience. Our
-            salons reflect our commitment to both quality and luxury, providing the best services in the
-            industry.
-
+            As one of the leading{" "}
+            <strong>beauty salon franchises in India</strong>, Monsoon Salon is
+            committed to delivering excellence. Each franchise location is
+            designed with the latest trends, state-of-the- art equipment, and a
+            welcoming atmosphere that enhances the customer experience. Our
+            salons reflect our commitment to both quality and luxury, providing
+            the best services in the industry.
           </p>
 
-          <p className="text-lg py-1  text-center w-[80%] mx-auto  text-regel-gray">Our <strong>salon and spa franchise in India</strong> model combines innovation, scalability, and
-            affordability, making it easier for entrepreneurs to run their own beauty business. In this
-            gallery, you’ll see examples of how our salons are equipped to offer an extensive range of
-            services, from haircuts and styling to luxurious spa treatments all under one roof.</p>
+          <p className="text-lg py-1  text-center w-[80%] mx-auto  text-regel-gray">
+            Our <strong>salon and spa franchise in India</strong> model combines
+            innovation, scalability, and affordability, making it easier for
+            entrepreneurs to run their own beauty business. In this gallery,
+            you’ll see examples of how our salons are equipped to offer an
+            extensive range of services, from haircuts and styling to luxurious
+            spa treatments all under one roof.
+          </p>
           <p className="text-lg py-6 text-center w-[80%] mx-auto  text-regel-gray">
-            Ready to start your own beauty salon franchise with us? Browse through our gallery to see
-            how Monsoon Salon locations are designed for success. From interior aesthetics to customer
-            satisfaction, our franchises set the standard for beauty and wellness in India.
+            Ready to start your own beauty salon franchise with us? Browse
+            through our gallery to see how Monsoon Salon locations are designed
+            for success. From interior aesthetics to customer satisfaction, our
+            franchises set the standard for beauty and wellness in India.
           </p>
         </div>
-
 
         <div className=" w-[95%] my-16 mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryImagesData.map((elm, index) => (
@@ -129,7 +140,6 @@ export default function Gallery() {
                     className="h-auto max-w-full rounded-lg"
                     src={item.galleryimg}
                     alt={item.name || "Monsoon Salon partner brand"}
-                    
                     loading="lazy"
                   />
                 </div>

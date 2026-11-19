@@ -18,7 +18,7 @@ import makeup from "../../assets/images/beauty1.webp";
 import nail from "../../assets/images/nail1.webp";
 export default function Home({ initialBanners = [] }) {
   const [bannerImg, setBannerImg] = useState(
-    initialBanners.length > 0 ? initialBanners : [defaultBanner]
+    initialBanners.length > 0 ? initialBanners : [defaultBanner],
   );
   const services = [
     {
@@ -34,7 +34,7 @@ export default function Home({ initialBanners = [] }) {
     {
       title: "Makeup",
       desc: "Party & bridal makeup by certified professionals.",
-      img: makeup ,
+      img: makeup,
     },
     {
       title: "Nail",
@@ -52,32 +52,30 @@ export default function Home({ initialBanners = [] }) {
       },
       (err) => {
         console.error("Banner fetch error", err);
-      }
+      },
     );
   }, []);
   const settings = {
-  dots: true,
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
 
-  autoplay: true,
-  autoplaySpeed: 3000,   // delay between slides
-  speed: 600,            // slide animation duration
+    autoplay: true,
+    autoplaySpeed: 3000, // delay between slides
+    speed: 600, // slide animation duration
 
-  pauseOnHover: false,
-  pauseOnFocus: false,
-  arrows: false,
-  cssEase: "ease-in-out"
-};
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    arrows: false,
+    cssEase: "ease-in-out",
+  };
 
   return (
     <>
       <div className="roboto-regular bg-[#FFF5EB]">
         <Helmet>
-          <title>
-            Monsoon Salon | India’s Leading Salon Franchise Chain
-          </title>
+          <title>Monsoon Salon | India’s Leading Salon Franchise Chain</title>
           <meta
             name="description"
             content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
@@ -88,25 +86,36 @@ export default function Home({ initialBanners = [] }) {
           />
           <link rel="canonical" href="https://www.monsoonsalon.com/" />
           <meta property="og:type" content="website" />
-          <meta property="og:title" content="Monsoon Salon | India’s Leading Salon Franchise Chain" />
+          <meta
+            property="og:title"
+            content="Monsoon Salon | India’s Leading Salon Franchise Chain"
+          />
           <meta
             property="og:description"
             content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
           />
           <meta property="og:url" content="https://www.monsoonsalon.com/" />
-          <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
+          <meta
+            property="og:image"
+            content="https://www.monsoonsalon.com/logo1024.png"
+          />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Monsoon Salon | India’s Leading Salon Franchise Chain" />
+          <meta
+            name="twitter:title"
+            content="Monsoon Salon | India’s Leading Salon Franchise Chain"
+          />
           <meta
             name="twitter:description"
             content="Join Monsoon Salon – the best unisex salon franchise in India. Explore top salon brands, compare the top 10 salon franchises, and start your business today!"
           />
-          <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
+          <meta
+            name="twitter:image"
+            content="https://www.monsoonsalon.com/logo1024.png"
+          />
         </Helmet>
 
-
         <div className="mainsliderContainer p-2 rounded-[25px] overflow-hidden aspect-[16/9] md:aspect-[21/9] min-h-[220px] sm:min-h-[350px] md:min-h-[480px]">
-           <Slider {...settings}>
+          <Slider {...settings}>
             {bannerImg?.map((image, index) => (
               <div key={index} className="h-full p-2">
                 <Banner image={image} key={index} index={index} />
@@ -120,16 +129,12 @@ export default function Home({ initialBanners = [] }) {
           /> */}
           {/* Content layer */}
           <div className="relative bg-[#FFF5EB] px-4 pt-4 sm:px-6 sm:pt-6 md:px-9 md:pt-9">
-
-
-
             <Header />
 
             <div className="h-[70px] md:h-[100px]" />
 
             <LatestWork />
             {/* <div className="h-[70px] md:h-[100px]" /> */}
-
           </div>
           {/* <div className="custom-shape-divider-bottom-1770896521 bg-[#FFF5EB]">
               <svg
@@ -149,7 +154,9 @@ export default function Home({ initialBanners = [] }) {
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading */}
             <div className="text-center mb-14">
-              <p className="text-xl font-kotta tracking-[0.3em] text-amber-700 uppercase">Our Services</p>
+              <p className="text-xl font-kotta tracking-[0.3em] text-amber-700 uppercase">
+                Our Services
+              </p>
               <h2 className="text-3xl md:text-5xl font-kotta font-semibold text-neutral-800 mt-3">
                 Premium Care For Every Style
               </h2>
@@ -164,9 +171,9 @@ export default function Home({ initialBanners = [] }) {
                 >
                   <div className=" overflow-hidden">
                     <img
-                    width="284"
-                    height="224"
-                    style={{aspectRatio: "284 / 224"}}
+                      width="284"
+                      height="224"
+                      style={{ aspectRatio: "284 / 224" }}
                       src={service.img}
                       alt={service.title}
                       loading="lazy"
@@ -179,44 +186,44 @@ export default function Home({ initialBanners = [] }) {
                     <h3 className="text-xl font-jaldi font-semibold text-neutral-800 mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-neutral-600 font-jaldi text-sm">{service.desc}</p>
+                    <p className="text-neutral-600 font-jaldi text-sm">
+                      {service.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
-
-
           </div>
         </section>
         <ClientTestimonials />
 
         <section className="bg-gradient-to-b from-[#f6efe7] to-[#efe2d6] py-9 md:py-16">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-3xl font-kotta md:text-5xl font-semibold text-neutral-800 mb-12">
-          Partner Brands
-        </h2>
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h2 className="text-3xl font-kotta md:text-5xl font-semibold text-neutral-800 mb-12">
+              Partner Brands
+            </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {brandsImg.map((item, i) => (
-            <div
-              key={i}
-              className="bg-white backdrop-blur rounded-2xl py-6 font-semibold tracking-widest text-neutral-700 shadow hover:shadow-lg transition"
-            >
-                <img
-                width="290"
-                height="166"
-                style={{aspectRatio:290 / 166}}
-                  src={item.brandUrl}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-[60px] sm:h-[100px] mx-auto object-contain"
-                  alt={item.name || "Monsoon Salon partner brand"}
-                />
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              {brandsImg.map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white backdrop-blur rounded-2xl py-6 font-semibold tracking-widest text-neutral-700 shadow hover:shadow-lg transition"
+                >
+                  <img
+                    width="290"
+                    height="166"
+                    style={{ aspectRatio: 290 / 166 }}
+                    src={item.brandUrl}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-[60px] sm:h-[100px] mx-auto object-contain"
+                    alt={item.name || "Monsoon Salon partner brand"}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+        </section>
         {/* <div className="my-5">
           <h2 className="w-full text-center mb-2 xl:mb-[40px] underline underline-offset-4 text-black  text-md font-kotta  md:text-[1.5rem] xl:text-[2.8rem] xl:leading-[3rem]">
             Our Services
@@ -230,7 +237,6 @@ export default function Home({ initialBanners = [] }) {
             making you look and feel your absolute best, guiding you every step of the way. Let us take
             you on a transformative journey that leaves you feeling confident, radiant, and renewed.    </p>
         </div> */}
-
 
         {/* <h4 className="text-xl font-medium text-center  roboto-regular opacity-80 ">
           What We Do

@@ -20,14 +20,23 @@ const BATCH = 10000; // IndexNow limit per request
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
-const sitemapUrl = (args.find((a) => a.startsWith("--sitemap=")) || "").split("=")[1] || DEFAULT_SITEMAP;
+const sitemapUrl =
+  (args.find((a) => a.startsWith("--sitemap=")) || "").split("=")[1] ||
+  DEFAULT_SITEMAP;
 
 async function main() {
   const res = await fetch(sitemapUrl);
-  if (!res.ok) throw new Error(`Could not read ${sitemapUrl}: HTTP ${res.status}`);
+  if (!res.ok)
+    throw new Error(`Could not read ${sitemapUrl}: HTTP ${res.status}`);
   const xml = await res.text();
 
-  const urls = [...new Set([...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) => m[1].replace(/&amp;/g, "&")))];
+  const urls = [
+    ...new Set(
+      [...xml.matchAll(/<loc>\s*([^<\s]+)\s*<\/loc>/g)].map((m) =>
+        m[1].replace(/&amp;/g, "&"),
+      ),
+    ),
+  ];
   // IndexNow only accepts URLs on the declared host.
   const valid = urls.filter((u) => {
     try {
@@ -36,7 +45,8 @@ async function main() {
       return false;
     }
   });
-  if (valid.length !== urls.length) console.warn(`Skipped ${urls.length - valid.length} URL(s) not on ${HOST}`);
+  if (valid.length !== urls.length)
+    console.warn(`Skipped ${urls.length - valid.length} URL(s) not on ${HOST}`);
   if (!valid.length) throw new Error("No URLs found in the sitemap.");
 
   console.log(`${valid.length} URL(s) from ${sitemapUrl}`);
@@ -50,7 +60,10 @@ async function main() {
   // Confirm the key file is live, otherwise IndexNow answers 403.
   const keyRes = await fetch(KEY_LOCATION);
   const keyBody = keyRes.ok ? (await keyRes.text()).trim() : "";
-  if (keyBody !== KEY) throw new Error(`Key file is not live at ${KEY_LOCATION} (HTTP ${keyRes.status}). Deploy first.`);
+  if (keyBody !== KEY)
+    throw new Error(
+      `Key file is not live at ${KEY_LOCATION} (HTTP ${keyRes.status}). Deploy first.`,
+    );
 
   let failed = false;
   for (let i = 0; i < valid.length; i += BATCH) {
@@ -58,14 +71,21 @@ async function main() {
     const r = await fetch(ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({ host: HOST, key: KEY, keyLocation: KEY_LOCATION, urlList }),
+      body: JSON.stringify({
+        host: HOST,
+        key: KEY,
+        keyLocation: KEY_LOCATION,
+        urlList,
+      }),
     });
     // 200 = received, 202 = received (key validation pending). Anything else is a problem.
     if (r.status === 200 || r.status === 202) {
       console.log(`Submitted ${urlList.length} URL(s): HTTP ${r.status}`);
     } else {
       failed = true;
-      console.error(`Batch failed: HTTP ${r.status} ${await r.text().catch(() => "")}`);
+      console.error(
+        `Batch failed: HTTP ${r.status} ${await r.text().catch(() => "")}`,
+      );
     }
   }
   if (failed) process.exit(1);

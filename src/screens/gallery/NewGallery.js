@@ -37,7 +37,7 @@ const NewGallery = () => {
     <>
       <Helmet>
         <title>
-         Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise
+          Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise
         </title>
         <meta
           name="description"
@@ -49,56 +49,69 @@ const NewGallery = () => {
         />
         <link rel="canonical" href="https://www.monsoonsalon.com/media" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise" />
+        <meta
+          property="og:title"
+          content="Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise"
+        />
         <meta
           property="og:description"
           content="Monsoon Salon – a leading ladies beauty parlour franchise, beauty clinic franchise & ladies salon franchise with premium beauty services and proven success."
         />
         <meta property="og:url" content="https://www.monsoonsalon.com/media" />
-        <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          property="og:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise" />
+        <meta
+          name="twitter:title"
+          content="Monsoon Salon | Ladies Beauty Parlour, Beauty Clinic & Salon Franchise"
+        />
         <meta
           name="twitter:description"
           content="Monsoon Salon – a leading ladies beauty parlour franchise, beauty clinic franchise & ladies salon franchise with premium beauty services and proven success."
         />
-        <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
-
+        <meta
+          name="twitter:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
       </Helmet>
       <div className=" max-w-full overflow-x-hidden">
         <div className="mb-10">
           <Banner image={LOCAL_IMAGES.gallery2} />
         </div>
-           <div className="mt-8 md:mt-16 text-center w-[95%] md:w-[80%] mx-auto">
-            <h1 className="font-bold text-xl leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
-             Monsoon Salon: Media Coverage and Highlights of Our Premium Beauty
-          Services and Franchise Success
-            </h1>
-            </div>
+        <div className="mt-8 md:mt-16 text-center w-[95%] md:w-[80%] mx-auto">
+          <h1 className="font-bold text-xl leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
+            Monsoon Salon: Media Coverage and Highlights of Our Premium Beauty
+            Services and Franchise Success
+          </h1>
+        </div>
 
         <p className="text-lg py-6 text-balance md:text-center w-[80%] mx-auto  text-regel-gray">
-
-          Monsoon Salon is proud to be a leader in the beauty and wellness industry, offering a
-          premium range of services that cater to every beauty need. Our commitment to excellence
-          and customer satisfaction has earned us widespread recognition in the media, with features in
-          top beauty and lifestyle publications. From haircuts and styling to facials, manicures,
-          pedicures, and advanced skincare treatments, Monsoon Salon combines luxury with the latest
-          beauty trends to give our clients an exceptional salon experience.
-          Our franchise success is a testament to the quality of our services and the trust our clients
-          place in us. We have expanded our footprint across the country, with multiple locations
-          offering a high standard of beauty services. Each Monsoon Salon is a hub of professionalism,
-          where our skilled beauty experts use only premium products and state-of-the-art equipment to
-          deliver outstanding results.
-          In addition to our personalized beauty services, Monsoon Salon also offers exclusive
-          packages tailored to suit every client&#39;s individual needs. Our team of stylists, skincare
-          specialists, and wellness experts are trained to provide treatments that leave clients feeling
-          rejuvenated, confident, and looking their best.
-          The growing media buzz surrounding Monsoon Salon highlights our commitment to both
-          beauty excellence and business growth. Our franchise model offers aspiring entrepreneurs an
-          opportunity to be part of a trusted brand that delivers both financial success and customer
-          satisfaction. As we continue to grow, we aim to redefine beauty standards and provide top-
-          tier services to all.
-
+          Monsoon Salon is proud to be a leader in the beauty and wellness
+          industry, offering a premium range of services that cater to every
+          beauty need. Our commitment to excellence and customer satisfaction
+          has earned us widespread recognition in the media, with features in
+          top beauty and lifestyle publications. From haircuts and styling to
+          facials, manicures, pedicures, and advanced skincare treatments,
+          Monsoon Salon combines luxury with the latest beauty trends to give
+          our clients an exceptional salon experience. Our franchise success is
+          a testament to the quality of our services and the trust our clients
+          place in us. We have expanded our footprint across the country, with
+          multiple locations offering a high standard of beauty services. Each
+          Monsoon Salon is a hub of professionalism, where our skilled beauty
+          experts use only premium products and state-of-the-art equipment to
+          deliver outstanding results. In addition to our personalized beauty
+          services, Monsoon Salon also offers exclusive packages tailored to
+          suit every client&#39;s individual needs. Our team of stylists,
+          skincare specialists, and wellness experts are trained to provide
+          treatments that leave clients feeling rejuvenated, confident, and
+          looking their best. The growing media buzz surrounding Monsoon Salon
+          highlights our commitment to both beauty excellence and business
+          growth. Our franchise model offers aspiring entrepreneurs an
+          opportunity to be part of a trusted brand that delivers both financial
+          success and customer satisfaction. As we continue to grow, we aim to
+          redefine beauty standards and provide top- tier services to all.
         </p>
         <div className="my-16 grid grid-cols-1 sm:grid-cols-2  xl:grid-cols-3 gap-6 w-[90%] md:w-[85%] 2xl:w-[75%] mx-auto ">
           {urls.map((url, index) => (

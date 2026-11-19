@@ -6,9 +6,9 @@ import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import { FaClock, FaFilter, FaMapPin, FaSearch, FaStar } from "react-icons/fa";
 import { IoNavigate } from "react-icons/io5";
-import monsoonsalon from "../../assets/images/monsoon_logo.png"
-import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png"
-import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png"
+import monsoonsalon from "../../assets/images/monsoon_logo.png";
+import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png";
+import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png";
 const Locations = ({ initialSalons = [] }) => {
   const [salons, setSalons] = useState(initialSalons);
   const [filterSalons, setFilterSalons] = useState(initialSalons);
@@ -20,9 +20,12 @@ const Locations = ({ initialSalons = [] }) => {
 
       (res) => {
         setSalons(res);
-        console.log(res?.map((elm) => elm._id), "salons")
+        console.log(
+          res?.map((elm) => elm._id),
+          "salons",
+        );
       },
-      (err) => { }
+      (err) => {},
     );
   }, []);
 
@@ -34,16 +37,12 @@ const Locations = ({ initialSalons = [] }) => {
     }
   };
 
-
-
-
-
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedState, setSelectedState] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedState, setSelectedState] = useState("");
   const [showFilters, setShowFilters] = useState(false);
 
   // Get unique states for filter
-  const states = [...new Set(salons.map(salon => salon.stateName))].sort();
+  const states = [...new Set(salons.map((salon) => salon.stateName))].sort();
 
   // Filter salons based on search and state
   const searchTimeoutRef = useRef(null);
@@ -56,16 +55,17 @@ const Locations = ({ initialSalons = [] }) => {
     // Apply search filter
     if (query && query.trim().length > 0) {
       const searchTerm = query.toLowerCase().trim();
-      filtered = filtered.filter(salon =>
-        salon?.name?.toLowerCase().includes(searchTerm) ||
-        salon?.address2?.toLowerCase().includes(searchTerm) ||
-        salon?.stateName?.toLowerCase().includes(searchTerm)
+      filtered = filtered.filter(
+        (salon) =>
+          salon?.name?.toLowerCase().includes(searchTerm) ||
+          salon?.address2?.toLowerCase().includes(searchTerm) ||
+          salon?.stateName?.toLowerCase().includes(searchTerm),
       );
     }
 
     // Apply state filter
     if (state) {
-      filtered = filtered.filter(salon => salon?.stateName === state);
+      filtered = filtered.filter((salon) => salon?.stateName === state);
     }
 
     setFilterSalons(filtered);
@@ -103,15 +103,17 @@ const Locations = ({ initialSalons = [] }) => {
       clearTimeout(searchTimeoutRef.current);
     }
 
-    setSearchQuery('');
-    setSelectedState('');
+    setSearchQuery("");
+    setSelectedState("");
   };
 
   const getImageUrl = (salon) => {
-
-    return salon.name === "Monsoon" ? monsoonsalon : salon.name === "Smart Salon" ? monsoonsalonproplus : monsoonsalonpro
-
-  }
+    return salon.name === "Monsoon"
+      ? monsoonsalon
+      : salon.name === "Smart Salon"
+        ? monsoonsalonproplus
+        : monsoonsalonpro;
+  };
 
   const [currentPage, setCurrentPage] = useState(1);
   const [salonsPerPage, setSalonsPerPage] = useState(10);
@@ -146,77 +148,106 @@ const Locations = ({ initialSalons = [] }) => {
           href="https://www.monsoonsalon.com/salon-location-near-me"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More" />
+        <meta
+          property="og:title"
+          content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More"
+        />
         <meta
           property="og:description"
           content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
         />
-        <meta property="og:url" content="https://www.monsoonsalon.com/salon-location-near-me" />
-        <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          property="og:url"
+          content="https://www.monsoonsalon.com/salon-location-near-me"
+        />
+        <meta
+          property="og:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More" />
+        <meta
+          name="twitter:title"
+          content="Monsoon Salon | Salon Franchise in Chennai, Noida, Pune & More"
+        />
         <meta
           name="twitter:description"
           content="Explore Monsoon Salon – cheap and best salon franchise in Chennai, plus salon franchises in Noida, Pune, Ahmedabad, Bangalore, Kolkata, Lucknow & more."
         />
-        <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          name="twitter:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
       </Helmet>
       <div className="min-h-screen">
         <div className="pt-9 pb-16">
           <div className="py-9">
             <div className="w-[90%] md:w-[80%] mx-auto">
               <h1 className="font-bold text-xl text-center leading-2xl  px-6  md:text-[2.5rem] md:leading-[3rem] mb-4">
-                Explore Premium Beauty Salons and Franchise Opportunities Across India
+                Explore Premium Beauty Salons and Franchise Opportunities Across
+                India
               </h1>
 
               <p className="text-center text-gray-600 mt-4">
-
-                India&#39;s beauty industry is experiencing a dynamic transformation, with premium salons
-                offering cutting-edge services designed to elevate your self-care routine. From rejuvenating
-                facials to trendy hair makeovers, the finest beauty salons across the country promise
-                exceptional treatments that blend luxury, expertise, and personalized care. Whether you&#39;re in
-                a metropolitan hub or a growing city, these salons offer an unforgettable experience that
-                leaves you feeling refreshed, confident, and beautiful.
-
+                India&#39;s beauty industry is experiencing a dynamic
+                transformation, with premium salons offering cutting-edge
+                services designed to elevate your self-care routine. From
+                rejuvenating facials to trendy hair makeovers, the finest beauty
+                salons across the country promise exceptional treatments that
+                blend luxury, expertise, and personalized care. Whether
+                you&#39;re in a metropolitan hub or a growing city, these salons
+                offer an unforgettable experience that leaves you feeling
+                refreshed, confident, and beautiful.
               </p>
               <p className="text-center text-gray-600 mt-4">
-                For those seeking <strong>affordable yet high-quality beauty services</strong>, cities like <strong>Chennai</strong> are
-                home to some of the <strong>cheapest and best salon franchises</strong> in India. These franchises offer the
-                perfect mix of expert care and cost-effective pricing, ensuring clients get the best value
-                without compromising on quality. The <strong>salon franchise in Chennai </strong>has become a sought-
-                after choice for entrepreneurs looking to invest in a fast-growing industry with immense
-                potential.
-
+                For those seeking{" "}
+                <strong>affordable yet high-quality beauty services</strong>,
+                cities like <strong>Chennai</strong> are home to some of the{" "}
+                <strong>cheapest and best salon franchises</strong> in India.
+                These franchises offer the perfect mix of expert care and
+                cost-effective pricing, ensuring clients get the best value
+                without compromising on quality. The{" "}
+                <strong>salon franchise in Chennai </strong>has become a sought-
+                after choice for entrepreneurs looking to invest in a
+                fast-growing industry with immense potential.
               </p>
               <p className="text-center text-gray-600 mt-4">
-                In India’s bustling metropolitan cities like <strong>Delhi, Mumbai, Bangalore, Hyderabad</strong>, and
-                Kolkata, salon franchises are flourishing. Cities like <strong>Noida, Pune, Ahmedabad</strong>, and
-                <strong>Chandigarh</strong> also feature thriving beauty markets, creating lucrative opportunities for
-                business owners through <strong>salon franchise</strong> models. Whether you’re looking for a hair salon
-                franchise for sale or aiming to invest in a <strong>salon franchise in Pune</strong>, these cities offer prime
-                locations and a strong customer base for franchise growth.
-
+                In India’s bustling metropolitan cities like{" "}
+                <strong>Delhi, Mumbai, Bangalore, Hyderabad</strong>, and
+                Kolkata, salon franchises are flourishing. Cities like{" "}
+                <strong>Noida, Pune, Ahmedabad</strong>, and
+                <strong>Chandigarh</strong> also feature thriving beauty
+                markets, creating lucrative opportunities for business owners
+                through <strong>salon franchise</strong> models. Whether you’re
+                looking for a hair salon franchise for sale or aiming to invest
+                in a <strong>salon franchise in Pune</strong>, these cities
+                offer prime locations and a strong customer base for franchise
+                growth.
               </p>
               <p className="text-center text-gray-600 mt-4">
-                From the metros to tier-2 cities like <strong>Surat, Jaipur, Indore,</strong> and <strong>Lucknow</strong>, India&#39;s beauty
-                salons are redefining the salon experience. With a growing demand for premium beauty
-                services in <strong>Nagpur, Coimbatore, Bhubaneswar</strong>, and <strong>Visakhapatnam</strong>, opportunities to own
-                a salon franchise have never been better.
-
+                From the metros to tier-2 cities like{" "}
+                <strong>Surat, Jaipur, Indore,</strong> and{" "}
+                <strong>Lucknow</strong>, India&#39;s beauty salons are
+                redefining the salon experience. With a growing demand for
+                premium beauty services in{" "}
+                <strong>Nagpur, Coimbatore, Bhubaneswar</strong>, and{" "}
+                <strong>Visakhapatnam</strong>, opportunities to own a salon
+                franchise have never been better.
               </p>
               <p className="text-center text-gray-600 mt-4">
-
-                Whether you’re a client looking for luxurious, high-quality beauty services or an entrepreneur
-                ready to invest in the growing beauty industry, <strong>salon franchises</strong> in cities across India—from
-                <strong> Kochi to Gurgaon</strong>—offer unmatched business potential and an exceptional customer
-                experience.
+                Whether you’re a client looking for luxurious, high-quality
+                beauty services or an entrepreneur ready to invest in the
+                growing beauty industry, <strong>salon franchises</strong> in
+                cities across India—from
+                <strong> Kochi to Gurgaon</strong>—offer unmatched business
+                potential and an exceptional customer experience.
               </p>
             </div>
           </div>
 
           <MainText textdata={"Our Premium Salons"} />
           <h2 className="text-center text-gray-600 mt-4  mx-auto max-w-2xl mb-4">
-            Discover the finest beauty salons across India. Professional services, expert stylists, and luxurious experiences await you.
+            Discover the finest beauty salons across India. Professional
+            services, expert stylists, and luxurious experiences await you.
           </h2>
           {/* Search and Filter Section */}
           <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto mb-8">
@@ -243,8 +274,10 @@ const Locations = ({ initialSalons = [] }) => {
                     className="appearance-none bg-white border border-gray-200 rounded-xl px-4 py-3 pr-8 focus:outline-none focus:ring-2 focus:ring-black"
                   >
                     <option value="">All States</option>
-                    {states.map(state => (
-                      <option key={state} value={state}>{state}</option>
+                    {states.map((state) => (
+                      <option key={state} value={state}>
+                        {state}
+                      </option>
                     ))}
                   </select>
                   <FaFilter className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
@@ -272,11 +305,10 @@ const Locations = ({ initialSalons = [] }) => {
           </div> */}
 
           <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto flex justify-between items-center mb-6 flex-wrap gap-4">
-
             <div className="text-sm text-gray-600">
               Showing {startIndex + 1} -{" "}
-              {Math.min(endIndex, filterSalons.length)} of{" "}
-              {filterSalons.length} salons
+              {Math.min(endIndex, filterSalons.length)} of {filterSalons.length}{" "}
+              salons
               {selectedState && ` in ${selectedState}`}
             </div>
 
@@ -306,7 +338,9 @@ const Locations = ({ initialSalons = [] }) => {
                   <div className="absolute top-3 right-3 bg-white rounded-full p-2 shadow-md">
                     <div className="flex items-center gap-1">
                       <FaStar className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="text-sm font-semibold">{salon.rating}</span>
+                      <span className="text-sm font-semibold">
+                        {salon.rating}
+                      </span>
                     </div>
                   </div>
                   {/* Salon Image */}
@@ -319,7 +353,6 @@ const Locations = ({ initialSalons = [] }) => {
                       style={{ aspectRatio: "290 / 95" }}
                       className="w-1/3"
                     />
-
                   </div>
 
                   {/* Content */}
@@ -341,13 +374,13 @@ const Locations = ({ initialSalons = [] }) => {
                         <span className="text-sm">10:00 AM - 10:00 PM</span>
                       </div>
 
-
-
-
                       {/* Services Tags */}
                       <div className="flex flex-wrap gap-1 mb-4">
                         {salon?.services?.slice(0, 2).map((service, i) => (
-                          <span key={i} className="text-xs bg-black text-white px-2 py-1 rounded-full">
+                          <span
+                            key={i}
+                            className="text-xs bg-black text-white px-2 py-1 rounded-full"
+                          >
                             {service}
                           </span>
                         ))}
@@ -383,9 +416,12 @@ const Locations = ({ initialSalons = [] }) => {
                 <div className="text-gray-400 mb-4">
                   <FaSearch className="w-16 h-16 mx-auto mb-4" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-600 mb-2">No salons found</h3>
+                <h3 className="text-xl font-semibold text-gray-600 mb-2">
+                  No salons found
+                </h3>
                 <p className="text-gray-500 mb-4">
-                  Try adjusting your search criteria or clear filters to see all salons.
+                  Try adjusting your search criteria or clear filters to see all
+                  salons.
                 </p>
                 <button
                   onClick={clearFilters}
@@ -397,44 +433,41 @@ const Locations = ({ initialSalons = [] }) => {
             )}
           </div>
           {totalPages > 1 && (
-  <div className="flex justify-center items-center gap-2 my-10 flex-wrap">
-    
-    <button
-      disabled={currentPage === 1}
-      onClick={() => setCurrentPage((prev) => prev - 1)}
-      className="px-4 py-2 border rounded-lg disabled:bg-gray-200 disabled:text-gray-400 hover:bg-black hover:text-white"
-    >
-      Prev
-    </button>
+            <div className="flex justify-center items-center gap-2 my-10 flex-wrap">
+              <button
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage((prev) => prev - 1)}
+                className="px-4 py-2 border rounded-lg disabled:bg-gray-200 disabled:text-gray-400 hover:bg-black hover:text-white"
+              >
+                Prev
+              </button>
 
-    {[...Array(totalPages)].map((_, index) => {
-      const page = index + 1;
-      return (
-        <button
-          key={page}
-          onClick={() => setCurrentPage(page)}
-          className={`px-4 py-2 border rounded-lg ${
-            currentPage === page
-              ? "bg-black text-white"
-              : "hover:bg-black hover:text-white"
-          }`}
-        >
-          {page}
-        </button>
-      );
-    })}
+              {[...Array(totalPages)].map((_, index) => {
+                const page = index + 1;
+                return (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`px-4 py-2 border rounded-lg ${
+                      currentPage === page
+                        ? "bg-black text-white"
+                        : "hover:bg-black hover:text-white"
+                    }`}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
 
-    <button
-      disabled={currentPage === totalPages}
-      onClick={() => setCurrentPage((prev) => prev + 1)}
-      className="px-4 py-2 border rounded-lg disabled:bg-gray-200 disabled:text-gray-400 hover:bg-black hover:text-white"
-    >
-      Next
-    </button>
-  </div>
-)}
-
-
+              <button
+                disabled={currentPage === totalPages}
+                onClick={() => setCurrentPage((prev) => prev + 1)}
+                className="px-4 py-2 border rounded-lg disabled:bg-gray-200 disabled:text-gray-400 hover:bg-black hover:text-white"
+              >
+                Next
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </>
