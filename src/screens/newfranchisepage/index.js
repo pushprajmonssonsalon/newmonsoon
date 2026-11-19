@@ -20,9 +20,9 @@ import CustomInput from "../../components/customInputs/CustomInput";
 import CustomSelect from "../../components/customInputs/CustomSelect";
 import CustomTextArea from "../../components/customInputs/CustomTextArea";
 import { postApiData } from "../../utils/services";
-import monsoonsalon from "../../assets/images/monsoon_logo.png"
-import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png"
-import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png"
+import monsoonsalon from "../../assets/images/monsoon_logo.png";
+import monsoonsalonpro from "../../assets/images/monsoon_pro_logo.png";
+import monsoonsalonproplus from "../../assets/images/monsoon_proplus_logo.png";
 const initialData = {
   firstName: "",
   lastName: "",
@@ -34,30 +34,29 @@ const initialData = {
   state: "",
   city: "",
 };
- const salonData = [
-    {
-      name: "Monsoon",
-    },
+const salonData = [
+  {
+    name: "Monsoon",
+  },
 
-    {
-      name: "Monsoon Pro",
-    },
-    {
-      name: "Smart Salon",
-    },
-  ];
-  const images =[
-    {
-      img:monsoonsalon
-    },
-    {
-      img:monsoonsalonpro
-    },
-    {
-      img:monsoonsalonproplus
-
-    },
-  ]
+  {
+    name: "Monsoon Pro",
+  },
+  {
+    name: "Smart Salon",
+  },
+];
+const images = [
+  {
+    img: monsoonsalon,
+  },
+  {
+    img: monsoonsalonpro,
+  },
+  {
+    img: monsoonsalonproplus,
+  },
+];
 export default function Newfranchise() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -213,7 +212,7 @@ export default function Newfranchise() {
         setLoading(false);
 
         toast.error("error submitting response");
-      }
+      },
     );
     // setTimeout(()=>{
     //     setLoading(false)
@@ -227,7 +226,6 @@ export default function Newfranchise() {
     }
 
     handlePostapiCall();
-
 
     // // Mock API call with timeout
     //   setLoading(true);
@@ -305,7 +303,7 @@ export default function Newfranchise() {
       error: !!formErrors.city,
       helperText: formErrors.city,
     },
-     {
+    {
       name: "salonType",
       label: "Salon Type*",
       value: formValues?.salonType,
@@ -365,9 +363,11 @@ export default function Newfranchise() {
 
     if (!scrollTarget) return;
 
-    const scrollTimers = [100, 350, 700].map((delay) => setTimeout(() => {
-      scrollToDivWithOffset(scrollTarget);
-    }, delay));
+    const scrollTimers = [100, 350, 700].map((delay) =>
+      setTimeout(() => {
+        scrollToDivWithOffset(scrollTarget);
+      }, delay),
+    );
 
     return () => scrollTimers.forEach(clearTimeout);
   }, [location.hash, location.key, location.state, scrollToDivWithOffset]);
@@ -378,9 +378,17 @@ export default function Newfranchise() {
   // doesn't compete with the content that is needed first.
   const [showVideo, setShowVideo] = useState(false);
   useEffect(() => {
-    const events = ["scroll", "pointerdown", "keydown", "touchstart", "mousemove"];
+    const events = [
+      "scroll",
+      "pointerdown",
+      "keydown",
+      "touchstart",
+      "mousemove",
+    ];
     const start = () => setShowVideo(true);
-    events.forEach((e) => window.addEventListener(e, start, { once: true, passive: true }));
+    events.forEach((e) =>
+      window.addEventListener(e, start, { once: true, passive: true }),
+    );
     const timer = setTimeout(start, 6000);
     return () => {
       clearTimeout(timer);
@@ -395,29 +403,29 @@ export default function Newfranchise() {
     }
   }, []);
   const brands = [
-  {
-    id: 1,
-    name: "PRO PLUS Smart Salon",
-    image: monsoonsalonproplus, // update path
-    description:
-      "Premium smart salon model ideal for metro & high-street locations.",
-  },
-  {
-    id: 2,
-    name: "Monsoon Pro Salon",
-    image: monsoonsalonpro,
-    description:
-      "Mid-range professional salon model with strong ROI & brand support.",
-  },
-  {
-    id: 3,
-    name: "Monsoon Salon",
-    image:monsoonsalon,
-    description:
-      "Affordable entry model with trusted brand presence across India.",
-  },
-];
-  console.log(formValues,"formvalues")
+    {
+      id: 1,
+      name: "PRO PLUS Smart Salon",
+      image: monsoonsalonproplus, // update path
+      description:
+        "Premium smart salon model ideal for metro & high-street locations.",
+    },
+    {
+      id: 2,
+      name: "Monsoon Pro Salon",
+      image: monsoonsalonpro,
+      description:
+        "Mid-range professional salon model with strong ROI & brand support.",
+    },
+    {
+      id: 3,
+      name: "Monsoon Salon",
+      image: monsoonsalon,
+      description:
+        "Affordable entry model with trusted brand presence across India.",
+    },
+  ];
+  console.log(formValues, "formvalues");
   return (
     <>
       <Box>
@@ -439,22 +447,35 @@ export default function Newfranchise() {
               href="https://www.monsoonsalon.com/franchise-enquiry"
             />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon" />
+            <meta
+              property="og:title"
+              content="Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon"
+            />
             <meta
               property="og:description"
               content="Start your business with Monsoon Salon – the best beauty salon franchise in India. Own a top, low-cost salon franchise with trusted brand support."
             />
-            <meta property="og:url" content="https://www.monsoonsalon.com/franchise-enquiry" />
-            <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
+            <meta
+              property="og:url"
+              content="https://www.monsoonsalon.com/franchise-enquiry"
+            />
+            <meta
+              property="og:image"
+              content="https://www.monsoonsalon.com/logo1024.png"
+            />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon" />
+            <meta
+              name="twitter:title"
+              content="Best & Low Cost Beauty Salon Franchise in India | Monsoon Salon"
+            />
             <meta
               name="twitter:description"
               content="Start your business with Monsoon Salon – the best beauty salon franchise in India. Own a top, low-cost salon franchise with trusted brand support."
             />
-            <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
-
-
+            <meta
+              name="twitter:image"
+              content="https://www.monsoonsalon.com/logo1024.png"
+            />
 
             {/* End Google Tag Manager (noscript) */}
             <script
@@ -482,7 +503,6 @@ export default function Newfranchise() {
               Apply Here
             </button>
 
-
             <div className="absolute  z-[2]  w-full top-0 left-0  h-full bg-black">
               {showVideo && (
                 <video
@@ -507,163 +527,157 @@ export default function Newfranchise() {
             </div>
           </div>
           <section className="bg-gray-50 py-20 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        
-        {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-          Our Franchise Brands
-        </h2>
+            <div className="max-w-6xl mx-auto text-center">
+              {/* Heading */}
+              <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
+                Our Franchise Brands
+              </h2>
 
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Choose the right franchise model that aligns with your investment
-          capacity and city potential.
-        </p>
+              <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Choose the right franchise model that aligns with your
+                investment capacity and city potential.
+              </p>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mt-14">
-          {brands.map((brand) => (
-            <div
-              key={brand.id}
-              className="bg-white p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
-            >
-              <img
-                src={brand.image}
-                alt={brand.name}
-                width="290"
-                height="166"
-                className="h-14 mx-auto object-contain mb-6"
-              />
+              {/* Cards */}
+              <div className="grid md:grid-cols-3 gap-8 mt-14">
+                {brands.map((brand) => (
+                  <div
+                    key={brand.id}
+                    className="bg-white p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                  >
+                    <img
+                      src={brand.image}
+                      alt={brand.name}
+                      width="290"
+                      height="166"
+                      className="h-14 mx-auto object-contain mb-6"
+                    />
 
-              <h3 className="text-xl font-semibold text-gray-900">
-                {brand.name}
-              </h3>
-
-            
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {brand.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </section>
 
           <div id="franchise" className="" style={{ bgcolor: "white" }}>
             <div className="my-6  w-[90%] md:w-[70%] mx-auto  md:mt-9 md:mb-16 text-center text-[1rem] sm:text-[1.5rem] 2xl:text-[1.5rem] text-pretty font-bold">
               Join the elite circle of beauty pioneers by opening a Monsoon
-              franchise in India. Elevate your business with a brand that reshapes
-              trends, inspires confidence, and sets the gold standard in salon
-              excellence worldwide.
+              franchise in India. Elevate your business with a brand that
+              reshapes trends, inspires confidence, and sets the gold standard
+              in salon excellence worldwide.
             </div>
             <div className="bg-white ">
-                <div className="w-[90%] xl:w-[60%] mx-auto">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {inputFields.map((input, index) => {
-                      const {
-                        placeholder,
-                        value,
-                        name,
-                        label,
-                        type,
-                        required,
-                        error,
-                        helperText,
-                      } = input;
-                      return (
-                        <div className="mb-5">
-                          <CustomInput
-                            key={index}
-                            type={type}
-                            label={label}
-                            value={value}
-                            placeholder={placeholder}
-                            required={required}
-                            name={name}
-                            error={error} // Red border if error
-                            helperText={helperText}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      );
-                    })}
-                    {selectFields.map((input, index) => {
-                      const {
-                        value,
-                        name,
-                        label,
-                        required,
-                        error,
-                        helperText,
-                        options,
-                      } = input;
+              <div className="w-[90%] xl:w-[60%] mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {inputFields.map((input, index) => {
+                    const {
+                      placeholder,
+                      value,
+                      name,
+                      label,
+                      type,
+                      required,
+                      error,
+                      helperText,
+                    } = input;
+                    return (
+                      <div className="mb-5">
+                        <CustomInput
+                          key={index}
+                          type={type}
+                          label={label}
+                          value={value}
+                          placeholder={placeholder}
+                          required={required}
+                          name={name}
+                          error={error} // Red border if error
+                          helperText={helperText}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    );
+                  })}
+                  {selectFields.map((input, index) => {
+                    const {
+                      value,
+                      name,
+                      label,
+                      required,
+                      error,
+                      helperText,
+                      options,
+                    } = input;
 
-                      return (
-                        <div
-                          className={`mb-5 w-full bg-white`}
-                        >
-                          <CustomSelect
-                            key={index}
-                            options={options}
-                            label={label}
-                            value={value}
-                            required={required}
-                            name={name}
-                            error={error} // Red border if error
-                            helperText={helperText}
-                            onChange={handleChange}
-                          />
-                        </div>
-                      );
-                    })}
-                    <div className="mb-5 col-span-full ">
-                      <CustomTextArea
-                        type={descFields.type}
-                        label={descFields.label}
-                        value={descFields.value}
-                        placeholder={descFields.placeholder}
-                        name={descFields.name}
-                        onChange={handleChange}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="" style={{ display: "flex" }}>
-                    {!loading ? (
-                      <button
-                        onClick={submithandle}
-                        className="inline-flex mt-5  w-[150px] h-[45px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  "
-                      >
-                        Submit
-                      </button>
-                    ) : (
-                      <button className="inline-flex mt-5 h-[45px] w-[150px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  ">
-                        <div role="status">
-                          <svg
-                            aria-hidden="true"
-                            className="w-8 h-8 text-gray-200 animate-spin  fill-blue-600"
-                            viewBox="0 0 100 101"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                              fill="currentColor"
-                            />
-                            <path
-                              d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                              fill="currentFill"
-                            />
-                          </svg>
-                          <span className="sr-only">Loading...</span>
-                        </div>
-                      </button>
-                    )}
+                    return (
+                      <div className={`mb-5 w-full bg-white`}>
+                        <CustomSelect
+                          key={index}
+                          options={options}
+                          label={label}
+                          value={value}
+                          required={required}
+                          name={name}
+                          error={error} // Red border if error
+                          helperText={helperText}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    );
+                  })}
+                  <div className="mb-5 col-span-full ">
+                    <CustomTextArea
+                      type={descFields.type}
+                      label={descFields.label}
+                      value={descFields.value}
+                      placeholder={descFields.placeholder}
+                      name={descFields.name}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
-             
+
+                <div className="" style={{ display: "flex" }}>
+                  {!loading ? (
+                    <button
+                      onClick={submithandle}
+                      className="inline-flex mt-5  w-[150px] h-[45px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  "
+                    >
+                      Submit
+                    </button>
+                  ) : (
+                    <button className="inline-flex mt-5 h-[45px] w-[150px] items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap drop-shadow-md border border-transparent rounded-md shadow-sm bg-black  ">
+                      <div role="status">
+                        <svg
+                          aria-hidden="true"
+                          className="w-8 h-8 text-gray-200 animate-spin  fill-blue-600"
+                          viewBox="0 0 100 101"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                            fill="currentFill"
+                          />
+                        </svg>
+                        <span className="sr-only">Loading...</span>
+                      </div>
+                    </button>
+                  )}
+                </div>
+              </div>
 
               <div className="mt-9">
                 <MainText textdata={"Partner Brands"} />
                 <div
                   className="my-6 overflow-hidden"
-                // style={{ marginTop: 10, marginBottom: '10px', height: '100px', backgroundColor: '', justifyContent: 'center', alignItems: 'center' }}
+                  // style={{ marginTop: 10, marginBottom: '10px', height: '100px', backgroundColor: '', justifyContent: 'center', alignItems: 'center' }}
                 >
                   <Slider {...settings}>
                     {brandsImg?.map((item, index) => {
@@ -710,21 +724,26 @@ export default function Newfranchise() {
               Salon.
             </p>
             <p className="discriptionText ">
-              As one of the <strong>best beauty salon franchises in India</strong>, we provide comprehensive support
-              from training to marketing, ensuring your salon operates smoothly and attracts a loyal
-              customer base. Our franchise program is designed to suit both experienced entrepreneurs and
-              newcomers, offering flexibility and scalability to match your goals.
-              Why choose us? Our <strong>low-cost franchise</strong> model combines quality with affordability, giving
-              you access to premium beauty products, expert guidance, and a recognized brand name.
-              Whether you&#39;re looking to open a single salon or expand across multiple locations, we offer a
-              franchise model that adapts to your needs.
-              Join one of the most trusted beauty salon franchises in India and become part of an ever-
-              growing industry. Start your journey toward success today with the <strong> best salon franchise in
-                India</strong>, and turn your passion for beauty into a thriving business.
+              As one of the{" "}
+              <strong>best beauty salon franchises in India</strong>, we provide
+              comprehensive support from training to marketing, ensuring your
+              salon operates smoothly and attracts a loyal customer base. Our
+              franchise program is designed to suit both experienced
+              entrepreneurs and newcomers, offering flexibility and scalability
+              to match your goals. Why choose us? Our{" "}
+              <strong>low-cost franchise</strong> model combines quality with
+              affordability, giving you access to premium beauty products,
+              expert guidance, and a recognized brand name. Whether you&#39;re
+              looking to open a single salon or expand across multiple
+              locations, we offer a franchise model that adapts to your needs.
+              Join one of the most trusted beauty salon franchises in India and
+              become part of an ever- growing industry. Start your journey
+              toward success today with the{" "}
+              <strong> best salon franchise in India</strong>, and turn your
+              passion for beauty into a thriving business.
             </p>
-                
           </div>
-         
+
           <div className="px-6 my-8 md:my-9  text-center">
             <h2 className="font-bold text-xl mb-5   md:text-[2rem]">
               Why is Monsoon Salon Franchise the Best?
@@ -774,7 +793,6 @@ export default function Newfranchise() {
             ))}
           </div>
         </div>
-
 
         {/* <Footer/> */}
       </Box>

@@ -90,9 +90,7 @@ export default function ContactUs() {
           description: "",
         });
       },
-      (err) => {
-
-      }
+      (err) => {},
     );
 
     // Mock API call with timeout
@@ -165,9 +163,7 @@ export default function ContactUs() {
   return (
     <>
       <Helmet>
-        <title>
-          Contact Us | Monsoon Salon Franchise Team
-        </title>
+        <title>Contact Us | Monsoon Salon Franchise Team</title>
         <meta
           name="description"
           content="Reach out to Monsoon Salon today and explore exciting opportunities to join our growing saloon franchise business network in India."
@@ -178,20 +174,35 @@ export default function ContactUs() {
         />
         <link rel="canonical" href="https://www.monsoonsalon.com/contact-us" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact Us | Monsoon Salon Franchise Team" />
+        <meta
+          property="og:title"
+          content="Contact Us | Monsoon Salon Franchise Team"
+        />
         <meta
           property="og:description"
           content="Reach out to Monsoon Salon today and explore exciting opportunities to join our growing saloon franchise business network in India."
         />
-        <meta property="og:url" content="https://www.monsoonsalon.com/contact-us" />
-        <meta property="og:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          property="og:url"
+          content="https://www.monsoonsalon.com/contact-us"
+        />
+        <meta
+          property="og:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Monsoon Salon Franchise Team" />
+        <meta
+          name="twitter:title"
+          content="Contact Us | Monsoon Salon Franchise Team"
+        />
         <meta
           name="twitter:description"
           content="Reach out to Monsoon Salon today and explore exciting opportunities to join our growing saloon franchise business network in India."
         />
-        <meta name="twitter:image" content="https://www.monsoonsalon.com/logo1024.png" />
+        <meta
+          name="twitter:image"
+          content="https://www.monsoonsalon.com/logo1024.png"
+        />
       </Helmet>
       <div className="mb-20">
         <div className="w-[90%] md:w-[80%] mx-auto h-full my-10 gap-9 md:gap-0  flex items-center justify-center">
@@ -219,10 +230,11 @@ export default function ContactUs() {
 
                   return (
                     <div
-                      className={`mb-4 ${name === "email" || name === "phoneNumber"
+                      className={`mb-4 ${
+                        name === "email" || name === "phoneNumber"
                           ? "col-span-full"
                           : ""
-                        }`}
+                      }`}
                     >
                       <CustomInput
                         key={idx}
@@ -294,7 +306,6 @@ export default function ContactUs() {
                 >
                   +91-9315788084
                 </a>
-
               </div>
               <div className="flex h-full py-6 px-3 items-center border shadow-md bg-gray-100 mb-auto justify-center flex-col">
                 <IoMdMail className="text-3xl md:text-[40px]" />
@@ -326,7 +337,6 @@ export default function ContactUs() {
           </div>
         </div>
       </div>{" "}
-
     </>
   );
 }

@@ -60,17 +60,18 @@ newmonsoon/
 ```
 
 ### Route Map
-| Route Path | Component | Description |
-| :--- | :--- | :--- |
-| `/` | `Home` | Hero banner slider, franchise intro, services, testimonials, brand partners |
-| `/about-us` | `About` | Brand history, mission, leadership, achievements |
-| `/salon-location-near-me` | `Locations` | Pan-India salon directory with state/city filtering |
-| `/salon-location-near-me/:id` | `SingleLocation`| Detailed view of an individual salon branch |
-| `/franchise-enquiry` | `Newfranchise` | Franchise information, brochure download, inquiry form |
-| `/contact-us` | `ContactUs` | Contact details, inquiry form, map embed |
-| `/gallery` & `/media` | `Gallery` / `NewGallery` | Photo showcase of salon branches & transformations |
-| `/privacypolicy` | `PrivacyPolicy` | Legal & privacy disclosures |
-| `/thank-you` | `ThankYou` | Post-form submission confirmation |
+
+| Route Path                    | Component                | Description                                                                 |
+| :---------------------------- | :----------------------- | :-------------------------------------------------------------------------- |
+| `/`                           | `Home`                   | Hero banner slider, franchise intro, services, testimonials, brand partners |
+| `/about-us`                   | `About`                  | Brand history, mission, leadership, achievements                            |
+| `/salon-location-near-me`     | `Locations`              | Pan-India salon directory with state/city filtering                         |
+| `/salon-location-near-me/:id` | `SingleLocation`         | Detailed view of an individual salon branch                                 |
+| `/franchise-enquiry`          | `Newfranchise`           | Franchise information, brochure download, inquiry form                      |
+| `/contact-us`                 | `ContactUs`              | Contact details, inquiry form, map embed                                    |
+| `/gallery` & `/media`         | `Gallery` / `NewGallery` | Photo showcase of salon branches & transformations                          |
+| `/privacypolicy`              | `PrivacyPolicy`          | Legal & privacy disclosures                                                 |
+| `/thank-you`                  | `ThankYou`               | Post-form submission confirmation                                           |
 
 ---
 
@@ -113,11 +114,13 @@ In [public/index.html](file:///d:/Work/newmonsoon/public/index.html):
 ### Issue #2: Font Loading Waterfall via CSS `@import` in `src/index.css`
 
 In [src/index.css](file:///d:/Work/newmonsoon/src/index.css#L5-L6):
+
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@...&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:...&family=Lora:...&family=Merriweather:...&family=Roboto:...&family=Sedan+SC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@...&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:...&family=Lora:...&family=Merriweather:...&family=Roboto:...&family=Sedan+SC&display=swap");
 ```
-- **The Problem:** CSS `@import` creates a **network waterfall**. The browser must download and parse `index.css` *before* it even discovers the font URLs.
+
+- **The Problem:** CSS `@import` creates a **network waterfall**. The browser must download and parse `index.css` _before_ it even discovers the font URLs.
 - Furthermore, `Roboto` is imported here twice, while also being linked inside `index.html`. Fonts like `DM Sans`, `Lora`, `Merriweather`, and `Sedan SC` are loaded even though they are scarcely used.
 
 ---
@@ -136,12 +139,16 @@ The Largest Contentful Paint (LCP) element on the homepage is the primary hero b
 2. **Misdirected Preloads in `<Helmet>`:**
    - In [src/screens/homepage/home.js](file:///d:/Work/newmonsoon/src/screens/homepage/home.js#L123-L128):
      ```jsx
-     {brandsImg.map((elm) => (
-       <link rel="preload" as="image" href={elm.brandUrl} />
-     ))}
-     {OurServicesData.map((elm) => (
-       <link rel="preload" as="image" href={elm.serviceIcon} />
-     ))}
+     {
+       brandsImg.map((elm) => (
+         <link rel="preload" as="image" href={elm.brandUrl} />
+       ));
+     }
+     {
+       OurServicesData.map((elm) => (
+         <link rel="preload" as="image" href={elm.serviceIcon} />
+       ));
+     }
      ```
    - In [src/components/Header.js](file:///d:/Work/newmonsoon/src/components/Header.js#L38):
      Preloads `monsoonsalon22.jpg` (which isn't even displayed on this section).
@@ -192,20 +199,26 @@ The Largest Contentful Paint (LCP) element on the homepage is the primary hero b
 ## 4. Performance Optimization Action Plan (Target: 85+ to 95+ Score)
 
 ### Step 1: Clean Up `public/index.html` (Expected Boost: +25 to +35 points)
+
 - Consolidate all font links into a single, optimized Google Fonts request:
   ```html
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jaldi:wght@400;700&family=Kotta+One&family=Manrope:wght@400;600&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jaldi:wght@400;700&family=Kotta+One&family=Manrope:wght@400;600&family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
   ```
 - Remove the non-existent `<script src="/js/non-critical.js"></script>`.
 - Defer or lazy-load external third-party widgets (`kavisha.ai`, `instagram.com`) only after user interaction or on idle (`requestIdleCallback`).
 - Remove duplicate analytics tags. Keep either GTM or GA4.
 
 ### Step 2: Remove Font `@import` from `src/index.css`
+
 - Delete lines 5 and 6 in `src/index.css` so fonts are only requested once directly via HTML `<link>`.
 
 ### Step 3: Fix LCP & Image Loading in `Banner.jsx` and Screens (Expected Boost: +20 points)
+
 - In `Banner.jsx`:
   ```jsx
   <img
@@ -222,10 +235,12 @@ The Largest Contentful Paint (LCP) element on the homepage is the primary hero b
 - Compress hero banner images from 600 KB to ~80–120 KB WebP format.
 
 ### Step 4: Eliminate Cumulative Layout Shift (CLS)
+
 - Provide a fixed aspect-ratio skeleton placeholder for the hero banner slider before API responses arrive.
 - Add `alt` attributes and explicit aspect ratios to all images.
 
 ### Step 5: Clean Up Dependencies & Bundle Size
+
 - Remove unused packages from `package.json`:
   - `npm uninstall @react-google-maps/api google-map-react leaflet react-leaflet bootstrap react-bootstrap styled-components dayjs lodash fg-loadcss react-google-recaptcha react-google-recaptcha-v3 react-responsive-carousel`
 - Remove unused `@mui/icons-material` import from `Header.js`.
@@ -235,9 +250,9 @@ The Largest Contentful Paint (LCP) element on the homepage is the primary hero b
 
 ## 5. Development & Build Commands
 
-| Command | Action |
-| :--- | :--- |
-| `npm start` | Starts local development server on `http://localhost:3000` |
-| `npm run build` | Compiles an optimized production build in `/build` |
-| `npx serve -s build` | Serves the production build locally to test performance |
-| `npm test` | Runs Jest unit tests |
+| Command              | Action                                                     |
+| :------------------- | :--------------------------------------------------------- |
+| `npm start`          | Starts local development server on `http://localhost:3000` |
+| `npm run build`      | Compiles an optimized production build in `/build`         |
+| `npx serve -s build` | Serves the production build locally to test performance    |
+| `npm test`           | Runs Jest unit tests                                       |

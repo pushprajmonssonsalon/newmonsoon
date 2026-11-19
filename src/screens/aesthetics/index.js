@@ -70,7 +70,9 @@ export default function Aesthetics() {
                     <img
                       width="284"
                       height="224"
-                      style={{ objectPosition: service.imagePosition || "center" }}
+                      style={{
+                        objectPosition: service.imagePosition || "center",
+                      }}
                       src={service.img}
                       alt={service.category}
                       loading="lazy"
@@ -130,7 +132,6 @@ export default function Aesthetics() {
           </ul>
         </section>
       </div>
-
     </>
   );
 }

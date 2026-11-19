@@ -100,9 +100,7 @@ export default function AestheticDetail() {
                   ))}
                 </ul>
               ) : (
-                <p className="mt-6 text-neutral-500">
-                  Details coming soon.
-                </p>
+                <p className="mt-6 text-neutral-500">Details coming soon.</p>
               )}
 
               <div className="grid grid-cols-2 gap-4 mt-8">
@@ -137,30 +135,28 @@ export default function AestheticDetail() {
               Some Frequently Asked Questions (FAQ's)
             </h2>
             <ul>
-                {faqs.map((item) => (
-                  <li
-                    key={item.title}
-                    className="border rounded-md mb-3 last:mb-0"
-                  >
-                    <details className="group">
-                      <summary className="flex items-center justify-between gap-3 px-5 py-4 font-medium marker:content-none cursor-pointer list-none">
-                        <span className="text-lg text-neutral-800">
-                          {item.title}
-                        </span>
-                        <span className="text-xl group-open:hidden">+</span>
-                        <span className="text-xl hidden group-open:inline">
-                          −
-                        </span>
-                      </summary>
-                      <article className="px-5 pb-4">
-                        <p className="text-gray-600">
-                          {item.details}
-                        </p>
-                      </article>
-                    </details>
-                  </li>
-                ))}
-              </ul>
+              {faqs.map((item) => (
+                <li
+                  key={item.title}
+                  className="border rounded-md mb-3 last:mb-0"
+                >
+                  <details className="group">
+                    <summary className="flex items-center justify-between gap-3 px-5 py-4 font-medium marker:content-none cursor-pointer list-none">
+                      <span className="text-lg text-neutral-800">
+                        {item.title}
+                      </span>
+                      <span className="text-xl group-open:hidden">+</span>
+                      <span className="text-xl hidden group-open:inline">
+                        −
+                      </span>
+                    </summary>
+                    <article className="px-5 pb-4">
+                      <p className="text-gray-600">{item.details}</p>
+                    </article>
+                  </details>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>

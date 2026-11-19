@@ -26,6 +26,14 @@ const nextConfig = {
       "@mui/icons-material",
     ],
   },
+  async rewrites() {
+    return process.env.NODE_ENV === "development"
+      ? [{
+          source: "/api/:path*",
+          destination: "http://localhost:4010/api/:path*",
+        }]
+      : [];
+  },
   async redirects() {
     return [
       // Canonical host is www: send the bare domain there with the same path + query (301).
@@ -35,15 +43,33 @@ const nextConfig = {
         destination: "https://www.monsoonsalon.com/:path*",
         statusCode: 301,
       },
-      { source: "/franchise-enquiry/:path+", destination: "/franchise-enquiry", permanent: true },
-      { source: "/franchise", destination: "/franchise-enquiry", permanent: true },
-      { source: "/franchise-d", destination: "/franchise-enquiry", permanent: false },
+      {
+        source: "/franchise-enquiry/:path+",
+        destination: "/franchise-enquiry",
+        permanent: true,
+      },
+      {
+        source: "/franchise",
+        destination: "/franchise-enquiry",
+        permanent: true,
+      },
+      {
+        source: "/franchise-d",
+        destination: "/franchise-enquiry",
+        permanent: false,
+      },
     ];
   },
   webpack(config) {
     // Keep the existing code working unchanged: router + helmet shims.
-    config.resolve.alias["react-router-dom"] = path.resolve(__dirname, "src/shims/react-router-dom.js");
-    config.resolve.alias["react-helmet"] = path.resolve(__dirname, "src/shims/react-helmet.js");
+    config.resolve.alias["react-router-dom"] = path.resolve(
+      __dirname,
+      "src/shims/react-router-dom.js",
+    );
+    config.resolve.alias["react-helmet"] = path.resolve(
+      __dirname,
+      "src/shims/react-helmet.js",
+    );
 
     // CRA behaviour: importing an image gives its URL string (not a next/image object).
     config.module.rules.forEach((rule) => {

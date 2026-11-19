@@ -20,4 +20,5 @@ export const getBanners = async () => {
   return Array.isArray(res) ? res : [];
 };
 export const getSalons = async () => (await apiGet("salons")) || [];
-export const getSalonById = (id) => apiGet(`getSingleSalonDetail?id=${encodeURIComponent(id)}`);
+export const getSalonById = (id) =>
+  apiGet(`getSingleSalonDetail?id=${encodeURIComponent(id)}`);
