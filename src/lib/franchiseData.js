@@ -35,7 +35,7 @@ export const COMPETITORS = [
 
 export const MONSOON_ROW = {
   name: "Monsoon Salon",
-  locations: "212+",
+  locations: "111+",
   years: "10+",
   investment: INVESTMENT_BAND.replace("about ", "About "),
   support: "Training, setup, marketing and operations support",
@@ -66,7 +66,7 @@ export const costFaqs = [
 export const bestFaqs = [
   {
     title: "Which is the best salon franchise in India?",
-    details: `The best salon franchise depends on your budget, city and goals. Monsoon Salon is a strong option with 212+ locations, 95+ cities, 10+ years of operation and full training, setup, marketing and operations support, starting from ${INVESTMENT_BAND.split(" to ")[0]}.`,
+    details: `The best salon franchise depends on your budget, city and goals. Monsoon Salon is a strong option with 111+ locations, 79 cities, 10+ years of operation and full training, setup, marketing and operations support, starting from ${INVESTMENT_BAND.split(" to ")[0]}.`,
   },
   {
     title: "What is the investment for a salon franchise in India?",

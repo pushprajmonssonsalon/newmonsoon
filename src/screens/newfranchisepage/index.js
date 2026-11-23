@@ -80,7 +80,7 @@ export default function Newfranchise() {
   const salonFranchiseDiscription = [
     {
       image: <FaLocationArrow className="text-black text-[2.5rem]  " />,
-      heading: "212+ locations",
+      heading: "111+ locations",
       subHeading: "Two unique business solutions: Salon & Studio",
     },
     {
@@ -90,7 +90,7 @@ export default function Newfranchise() {
     },
     {
       image: <FaCity className="text-black text-[2.5rem]  " />,
-      heading: "95+ Cities 05 Union Territories",
+      heading: "79 Cities 05 Union Territories",
       subHeading: "Continued Business Support Operations, HR, Marketing",
     },
     {
@@ -717,7 +717,7 @@ export default function Newfranchise() {
               a company of salons that use technology to run their businesses
               more efficiently and earn 30% more money. Our ecosystem works with
               both online and offline systems, which gives us an edge over our
-              competitors. There are more than 212 Monsoon Salon franchises and
+              competitors. There are more than 111 Monsoon Salon franchises and
               more than 1,000 beauty and makeup experts all over India. It is
               the fastest-growing salon and the best salon franchise in India.
               Also on the list of the best salon franchises in India is Monsoon

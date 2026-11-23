@@ -211,7 +211,7 @@ const About = () => {
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
                   With{" "}
                   <strong>
-                    over 212+ salons across 95+ cities and 4 Union Territories
+                    over 111+ salons across 79 cities and 4 Union Territories
                   </strong>
                   , Monsoon Salon is already a well-established name with
                   ambitious plans for the future. Over the next 3-5 years, we

@@ -94,10 +94,10 @@ const Header = () => {
           {/* Statistics Cards */}
           <div className="text-center">
             <div className="text-2xl sm:text-4xl font-display font-bold text-gray-900 mb-1">
-              <AnimatedNumber value="212" suffix="+" duration={2000} />
+              <AnimatedNumber value="111" suffix="+" duration={2000} />
 
             </div>
-            <div className="text-xs sm:text-sm text-gray-600 font-body">Locations in 95+ Cities</div>
+            <div className="text-xs sm:text-sm text-gray-600 font-body">Locations in 79 Cities</div>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-4xl font-display font-bold text-gray-900 mb-1">

@@ -3,7 +3,7 @@ import { buildMetadata, jsonLd, pageSchema, breadcrumbSchema, faqSchema } from "
 import { INVESTMENT_BAND, MONSOON_ROW, COMPETITORS, CHOOSE_CRITERIA, bestFaqs } from "../../lib/franchiseData";
 
 const title = "Best Salon Franchise in India (2026) | Monsoon Salon";
-const description = `Compare salon franchise options in India. Monsoon Salon has 212+ locations, 95+ cities and 10+ years of experience, with investment from ${INVESTMENT_BAND.split(" to ")[0]}.`;
+const description = `Compare salon franchise options in India. Monsoon Salon has 111+ locations, 79 cities and 10+ years of experience, with investment from ${INVESTMENT_BAND.split(" to ")[0]}.`;
 const path = "/best-salon-franchise-in-india";
 
 export const metadata = buildMetadata({
@@ -32,7 +32,7 @@ export default function Page() {
       <LandingPage
         breadcrumbs={[["Home", "/"], ["Franchise", "/franchise-enquiry"], ["Best Salon Franchise in India", path]]}
         h1="Best Salon Franchise in India (2026)"
-        answer={`Monsoon Salon is a strong choice for a salon franchise in India, with 212+ locations, 95+ cities, 10+ years of experience and full training, setup and operations support. Investment starts from ${INVESTMENT_BAND.split(" to ")[0]}.`}
+        answer={`Monsoon Salon is a strong choice for a salon franchise in India, with 111+ locations, 79 cities, 10+ years of experience and full training, setup and operations support. Investment starts from ${INVESTMENT_BAND.split(" to ")[0]}.`}
         table={
           <DataTable
             columns={["Brand", "Locations", "Years", "Investment range", "Training & support"]}
