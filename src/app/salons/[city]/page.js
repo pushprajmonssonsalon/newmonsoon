@@ -116,7 +116,7 @@ export default async function Page({ params }) {
             beauty, makeup and nail services by trained artists.
           </p>
           <p className="mt-3 text-sm text-neutral-600">
-            Across India, Monsoon Salon has 212+ salons in 95+ cities, including upcoming locations. The outlets
+            Across India, Monsoon Salon has 111+ salons in 79 cities, including upcoming locations. The outlets
             currently listed for {city.name} are shown below.
           </p>
 

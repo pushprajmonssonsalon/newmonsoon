@@ -6,7 +6,7 @@ export const homeFaqs = [
   {
     title: "What is Monsoon Salon?",
     details:
-      "Monsoon Salon is a unisex salon and spa chain and salon-franchise brand in India, offering hair, beauty, makeup, nail and aesthetic services through 212+ locations. It is run by The Professional Hair Salon & Spa (India) Pvt. Ltd.",
+      "Monsoon Salon is a unisex salon and spa chain and salon-franchise brand in India, offering hair, beauty, makeup, nail and aesthetic services through 111+ locations. It is run by The Professional Hair Salon & Spa (India) Pvt. Ltd.",
   },
   {
     title: "Which services does Monsoon Salon offer?",
@@ -64,7 +64,7 @@ export const franchiseFaqs = [
   {
     title: "How many Monsoon Salon locations are there?",
     details:
-      "Monsoon Salon has 212+ locations across India, with over 3,000 artists and technicians, and has served millions of customers.",
+      "Monsoon Salon has 111+ locations across India, with over 3,000 artists and technicians, and has served millions of customers.",
   },
   {
     title: "Who can apply for a Monsoon Salon franchise?",
